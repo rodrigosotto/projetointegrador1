@@ -1,0 +1,28 @@
+page-login {
+    .loginPage{
+        background: url("/assets/imgs/background-2.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .login-container {
+        border-radius: 10px;
+        opacity: 0.9;
+        width: 80%;
+        text-align: center;
+        background-color: white;
+     }
+     .login-logo{
+         vertical-align: center;
+         text-align: center;
+     }
+     .login-form{
+         opacity: none!important;
+     }
+     .button-ios {
+        border-radius: 15px;
+        color: #d8d8d8;
+        background-color: #FE9A2E;
+        
+    }
+ }

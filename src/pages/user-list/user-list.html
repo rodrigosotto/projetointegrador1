@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+     Lista de Funcionários
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let user of users">
+      <ion-item (click)="openUser(user.id)">
+        
+        <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+      </ion-item>
+
+      <ion-item-options side="left">
+        <button ion-button color="primary" (click)="openEditUser(user.id)">
+            <ion-icon name="create"></ion-icon>
+            Editar
+          </button>
+        <button ion-button color="danger" (click)="deleteUser(user)">
+            <ion-icon name="trash"></ion-icon>
+            Excluir
+          </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="getUsers($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Aguarde...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  <ion-fab right bottom>
+    <button ion-fab color="light" (click)="openCreateUser()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>

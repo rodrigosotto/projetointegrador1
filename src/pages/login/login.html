@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      z
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="loginPage" scroll="false">
+  <ion-grid style="height: 100%">
+  <ion-row justify-content-center align-items-center style="height: 80%">
+  <ion-grid class="login-container">
+  <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off" class="login-form">
+  <ion-row align-items-center>
+  <ion-col>
+    <img src="/assets/imgs/logo-pontuall.png" width="200px" height="200px">
+  </ion-col>
+  </ion-row>
+  <ion-row>
+  <ion-col>
+  <ion-list inset>
+  <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input type="text" name="email" [(ngModel)]="model.email"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label stacked>Senha</ion-label>
+      <ion-input type="password" name="password" [(ngModel)]="model.password"></ion-input>
+  </ion-item>
+  </ion-list>
+  </ion-col>
+  </ion-row>
+  <ion-row>
+  <ion-col>
+  <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+
+  <button ion-button class="submit-btn" fulltype="submit" (click)="login()" >ENTRAR</button>
+  </ion-col>
+  </ion-row>
+  </form>
+  </ion-grid>
+  </ion-row>
+  </ion-grid>
+  </ion-content>
