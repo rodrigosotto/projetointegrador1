@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
+ 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -19,5 +19,12 @@ export class HomePage {
 
   openListUsers() {
     this.navCtrl.push('UserListPage');
+  }
+  
+  openFrequencias() {
+    this.navCtrl.push('FrequenciasPage');
+  }
+  openTabelaFrequencias() {
+    this.navCtrl.push('TabelaFrequenciasPage');
   }
 }

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+     Lista de Frequências.
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-row justify-content-center align-items-center>
+<h1 ion-text-center style="margin-bottom: 1em;">Frequência dos Funcionários</h1>
+</ion-row>
+  <ion-list>
+    <ion-item-sliding *ngFor="let user of users">
+      <!--<ion-item (click)="openUser(user.id)">-->
+        <!--NA TAG ION-ITEM TEM QUE DEFINIR QUAL FUNCÃO O CLICK VAI CHAMAR, NESTE CASO TEMOS QUE CRIAR ESTA FUNÇÃO QUE CHAMO A TABELA DA API OU BANCO DE DADOS NAO SEI!!-->
+        
+        <ion-item (click)="openTabelaFrequencia(user.id)"> <!--CLICA NO USUARIO ABRE OS DETALHES RELACIONADOS AQU-->
+        <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+      </ion-item>
+
+    </ion-item-sliding>
+
+
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="getUsers($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Aguarde...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+<!--
+  <ion-fab right bottom>
+    <button ion-fab color="light" (click)="openCreateUser()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+  -->
+  
+ 
+</ion-content>
