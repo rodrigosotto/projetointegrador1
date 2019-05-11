@@ -9,11 +9,13 @@ import { HomePage } from '../pages/home/home';
 
 import { HttpModule } from '@angular/http';
 import { UsersProvider } from '../providers/users-providers/users-providers';
+import { LoginPage } from '../pages/login/login';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import { UsersProvider } from '../providers/users-providers/users-providers';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    LoginPage
   ],
   providers: [
     StatusBar,

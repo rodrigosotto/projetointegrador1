@@ -1,6 +1,7 @@
 import { UsersProvider } from './../../providers/users-providers/users-providers';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { HomePage } from './../home/home' ;
 
 @IonicPage()
 @Component({
@@ -15,7 +16,10 @@ export class LoginPage {
     this.model.email = 'sydney@fife';
     this.model.password = 'pistol';
   }
-
+  openHome(){
+    this.navCtrl.push(HomePage, {}, {animate: true} );    
+  }
+  /*
   login() {
     this.userProvider.login(this.model.email, this.model.password)
       .then((result: any) => {
@@ -30,6 +34,7 @@ export class LoginPage {
         this.toast.create({ message: 'Erro ao efetuar login. Erro: ' + error.error, position: 'botton', duration: 3000 }).present();
       });
   }
+  */
 }
 
 export class User {

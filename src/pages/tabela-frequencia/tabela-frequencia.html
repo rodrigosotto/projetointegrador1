@@ -4,35 +4,30 @@
     </ion-navbar>
   </ion-header>
   <ion-content padding>
+      <ion-item-sliding *ngFor="let user of users">
       <ion-row justify-content-center align-items-center>
-          <h1 ion-text-center style="margin-bottom: 1em;">Nome do Funcionário</h1>
+          <h1 ion-text-center style="margin-bottom: 1em;">{{ user.first_name }} {{ user.last_name }}</h1><!--verificar porque nao esta trazendo o nome-->
           </ion-row>
-
+          </ion-item-sliding>
       <ion-grid>
+        
         <ion-row>
-          <ion-col>Dia</ion-col>
-          <ion-col>Horário</ion-col>
+          <ion-col><b>Dia</b></ion-col>
+          <ion-col><b>Horário</b></ion-col>
           
         </ion-row>
-        <!--<div *ngFor="let itens da lista"> -->
-            <div>
+        <div *ngFor="let item of lista" > 
+             
           <ion-row>
-              <ion-col size="2">01</ion-col>
-              <ion-col size="10">07:00 / 18:00</ion-col>
-          </ion-row>
-          <ion-row>
-              <ion-col size="2">02</ion-col>
-              <ion-col size="10">07:00 / 18:00</ion-col>
-          </ion-row>
-          <ion-row>
-              <ion-col size="2">03</ion-col>
-              <ion-col size="10" style="color:#ff0000">09:00 / 18:00</ion-col>
-          </ion-row>
-          <ion-row>
-              <ion-col size="2">04</ion-col>
-              <ion-col size="10">07:00 / 18:00</ion-col>
-          </ion-row>
-          
+            <ion-col>{{item.dia}}</ion-col>
+            <ion-col>{{item.hora}}</ion-col>
+            </ion-row>
+         
         </div>
       </ion-grid>
+      <ion-infinite-scroll (ionInfinite)="getUsers($event)">
+          <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Aguarde...">
+          </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+    
     </ion-content>

@@ -11,7 +11,8 @@
   <ion-grid style="height: 100%">
   <ion-row justify-content-center align-items-center style="height: 80%">
   <ion-grid class="login-container">
-  <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off" class="login-form">
+  <!-- <form #loginForm="ngForm" (ngSubmit)="openHome()" autocomplete="off" class="login-form">-->
+  <form> 
   <ion-row align-items-center>
   <ion-col>
     <img src="/assets/imgs/logo-pontuall.png" width="200px" height="200px">
@@ -21,6 +22,7 @@
   <ion-col>
   <ion-list inset>
   <ion-item>
+    <!--VERIFICAR NA API SE O NOME EXISTE E SE EXISTIR ENTRAR SENAO MANSAFEM DE ERRO!! VER COMO PODERIA SER IMPLEMENTADO ISSO-->
       <ion-label stacked>Email</ion-label>
       <ion-input type="text" name="email" [(ngModel)]="model.email"></ion-input>
   </ion-item>
@@ -35,7 +37,7 @@
   <ion-col>
   <div *ngIf="error" class="alert alert-danger">{{error}}</div>
 
-  <button ion-button class="submit-btn" fulltype="submit" (click)="login()" >ENTRAR</button>
+  <button ion-button class="submit-btn" fulltype="submit" (click)="openHome()" >ENTRAR</button>
   </ion-col>
   </ion-row>
   </form>
