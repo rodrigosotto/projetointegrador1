@@ -11,6 +11,7 @@ import { LoginPage } from '../pages/login/login';
 export class MyApp {
   /*rootPage:any = HomePage;*/
   rootPage:any = LoginPage;
+ 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -20,5 +21,6 @@ export class MyApp {
       splashScreen.hide();
     });
   }
+   
 }
 

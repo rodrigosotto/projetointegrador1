@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable()
 export class UsersProvider {
-  private API_URL = 'https://reqres.in/api/'
+ private API_URL = 'https://reqres.in/api/'
+   
+  //private API_URL = 'https://jsonplaceholder.typicode.com/users'
 
-  constructor(public http: Http) { }
+  constructor(public http: HttpClient) { }
 
   createAccount(email: string, password: string) {
     return new Promise((resolve, reject) => {
@@ -17,14 +21,14 @@ export class UsersProvider {
 
       this.http.post(this.API_URL + 'register', data)
         .subscribe((result: any) => {
-          resolve(result.json());
+          resolve(result);
         },
         (error) => {
-          reject(error.json());
+          reject(error);
         });
     });
   }
-
+  /**DEFINI QUE MANEIRA SERA FEITO O LOGIN COM A FUNCAO LOGIN */
   login(email: string, password: string) {
     return new Promise((resolve, reject) => {
       var data = {
@@ -34,10 +38,10 @@ export class UsersProvider {
 
       this.http.post(this.API_URL + 'login', data)
         .subscribe((result: any) => {
-          resolve(result.json());
+          resolve(result);
         },
         (error) => {
-          reject(error.json());
+          reject(error);
         });
     });
   }
@@ -49,10 +53,10 @@ export class UsersProvider {
 
       this.http.get(url)
         .subscribe((result: any) => {
-          resolve(result.json());
+          resolve(result);
         },
         (error) => {
-          reject(error.json());
+          reject(error);
         });
     });
   }
@@ -63,10 +67,10 @@ export class UsersProvider {
 
       this.http.get(url)
         .subscribe((result: any) => {
-          resolve(result.json());
+          resolve(result);
         },
         (error) => {
-          reject(error.json());
+          reject(error);
         });
     });
   }
@@ -77,10 +81,10 @@ export class UsersProvider {
 
       this.http.post(url, user)
         .subscribe((result: any) => {
-          resolve(result.json());
+          resolve(result);
         },
         (error) => {
-          reject(error.json());
+          reject(error);
         });
     });
   }
@@ -98,7 +102,7 @@ export class UsersProvider {
           resolve(result.json());
         },
         (error) => {
-          reject(error.json());
+          reject(error);
         });
     });
   }
@@ -109,10 +113,10 @@ export class UsersProvider {
 
       this.http.delete(url)
         .subscribe((result: any) => {
-          resolve(result.json());
+          resolve(result);
         },
         (error) => {
-          reject(error.json());
+          reject(error);
         });
     });
   }

@@ -38,7 +38,7 @@ export class UserListPage {
         }
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao listar os usuários. Erro: ' + error.error, position: 'botton', duration: 3000 }).present();
+        this.toast.create({ message: 'Erro ao listar os usuários. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();
       });
   }
 
@@ -55,7 +55,7 @@ export class UserListPage {
         this.navCtrl.push('UserDetailPage', { user: result.data });
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao recuperar o usuário. Erro: ' + error.error, position: 'botton', duration: 3000 }).present();
+        this.toast.create({ message: 'Erro ao recuperar o usuário. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();
       });
 
   }
@@ -83,7 +83,7 @@ export class UserListPage {
         this.toast.create({ message: 'Usuário excluído com sucesso.', position: 'botton', duration: 3000 }).present();
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao excluir o usuário. Erro: ' + error.error, position: 'botton', duration: 3000 }).present();
+        this.toast.create({ message: 'Erro ao excluir o usuário. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();
       });
   }
 }

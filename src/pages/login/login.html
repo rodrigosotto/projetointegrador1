@@ -22,7 +22,7 @@
   <ion-col>
   <ion-list inset>
   <ion-item>
-    <!--VERIFICAR NA API SE O NOME EXISTE E SE EXISTIR ENTRAR SENAO MANSAFEM DE ERRO!! VER COMO PODERIA SER IMPLEMENTADO ISSO-->
+    <!--VERIFICAR NA API SE O NOME EXISTE E SE EXISTIR ENTRAR SENAO MANSAGEM DE ERRO!! VER COMO PODERIA SER IMPLEMENTADO ISSO-->
       <ion-label stacked>Email</ion-label>
       <ion-input type="text" name="email" [(ngModel)]="model.email"></ion-input>
   </ion-item>
@@ -37,7 +37,8 @@
   <ion-col>
   <div *ngIf="error" class="alert alert-danger">{{error}}</div>
 
-  <button ion-button class="submit-btn" fulltype="submit" (click)="openHome()" >ENTRAR</button>
+  <!--<button ion-button class="submit-btn" fulltype="submit" (click)="login()" >ENTRAR</button>-->
+  <button ion-button block (click)="login()" color="primary">Logar</button>
   </ion-col>
   </ion-row>
   </form>

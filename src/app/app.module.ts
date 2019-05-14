@@ -7,26 +7,29 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
-import { HttpModule } from '@angular/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UsersProvider } from '../providers/users-providers/users-providers';
 import { LoginPage } from '../pages/login/login';
-
+ 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage
+   
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpClientModule
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     LoginPage
+  
   ],
   providers: [
     StatusBar,

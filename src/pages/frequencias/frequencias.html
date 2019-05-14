@@ -13,7 +13,7 @@
   <ion-list>
     <ion-item-sliding *ngFor="let user of users">
       <!--<ion-item (click)="openUser(user.id)">-->
-        <!--NA TAG ION-ITEM TEM QUE DEFINIR QUAL FUNCÃO O CLICK VAI CHAMAR, NESTE CASO TEMOS QUE CRIAR ESTA FUNÇÃO QUE CHAMO A TABELA DA API OU BANCO DE DADOS NAO SEI!!-->
+        <!--NA TAG ION-ITEM TEM QUE DEFINIR QUAL FUNCÃO O CLICK VAI CHAMAR, NESTE CASO TEMOS QUE CRIAR ESTA FUNÇÃO QUE CHAMA A TABELA DA API OU BANCO DE DADOS NAO SEI!!-->
         
         <ion-item (click)="openTabelaFrequencia(user.id)"> <!--CLICA NO USUARIO ABRE OS DETALHES RELACIONADOS AQU-->
         <h2>{{ user.first_name }} {{ user.last_name }}</h2>
