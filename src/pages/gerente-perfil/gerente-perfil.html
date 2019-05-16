@@ -6,11 +6,13 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  
-  <div text-center>
-    <h1>GERENTE PERFIL NAME</h1>
-     <!--VERIFICAR A NECESSIDADE DE CRIAR ACESSO DO GERENTE AO PERFIL DO USUARIO, COMO CRIAR ESTES ACESSOS-->
-  </div>
-
-</ion-content>
+ 
+  <ion-content>
+      <script>console.log(user.length);</script> 
+      <ion-list inset>
+        <ion-item *ngFor="let user of users">
+            <h2>{{user.first_name}}</h2>
+            <p>{{user.email}}</p>
+        </ion-item>
+      </ion-list>
+    </ion-content>

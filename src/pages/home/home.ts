@@ -35,7 +35,6 @@ export class HomePage {
     this.navCtrl.push ('GerentePerfilPage' );
   }
   logout(){
-    
      localStorage.clear();//limpa se foi gravado no storage 
      this.navCtrl.setRoot(LoginPage);//volta pra pagina inicial
     //this.navCtrl.push('LogoutPage');

@@ -8,13 +8,17 @@
 
 <ion-content padding>
 
-  <ion-list>
+  <ion-list inset>
     <ion-item-sliding *ngFor="let user of users">
-      <ion-item (click)="openUser(user.id)">
-        
-        <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+       <ion-item (click)="openUser(user.id)">
+  
+ 
+                  <h2>{{user.first_name}}</h2>
+                  <p>{{user.email}}</p> <!--Podemos chamar aqui o cargo do funcionario-->
+             
+        <!--<h2>{{ user.first_name }} {{ user.last_name }}</h2>-->
       </ion-item>
-
+<!--
       <ion-item-options side="left">
         <button ion-button color="primary" (click)="openEditUser(user.id)">
             <ion-icon name="create"></ion-icon>
@@ -25,6 +29,7 @@
             Excluir
           </button>
       </ion-item-options>
+    -->
     </ion-item-sliding>
 
   </ion-list>
@@ -35,6 +40,8 @@
   </ion-infinite-scroll>
 
   <ion-fab right bottom>
-    <button ion-fab color="light" (click)="openCreateUser()"><ion-icon name="add"></ion-icon></button>
+    <button ion-fab color="green" (click)="openCreateUser()">
+      <ion-icon name="person-add"></ion-icon>
+    </button>
   </ion-fab>
 </ion-content>
