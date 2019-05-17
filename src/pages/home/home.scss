@@ -1,3 +1,28 @@
 page-home {
-
+ .homePageUsers{
+        background: url("/assets/imgs/background-2.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+ }
+ 
+.tituloPagina{
+    color: #f7f7f7;
+    font-weight: 700;
+    margin-bottom: 4em;
+    
+     }
+    .container {
+         width: 100%;
+         height: 50%;
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         align-items: center
+     }
+     .box {
+          width:250px;
+         height: 400px;
+         background: #f7f7f7;
+   }
 }

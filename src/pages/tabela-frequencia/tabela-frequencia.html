@@ -3,12 +3,10 @@
       <ion-title>Tabela de Frequência</ion-title>
     </ion-navbar>
   </ion-header>
-  <ion-content padding>
-      <ion-item-sliding *ngFor="let user of users">
-      <ion-row justify-content-center align-items-center>
-          <h1 ion-text-center style="margin-bottom: 1em;">{{ user.first_name }} {{ user.last_name }}</h1><!--verificar porque nao esta trazendo o nome-->
-          </ion-row>
-          </ion-item-sliding>
+  <ion-content padding class="homePageTabelaFrequencias">
+      <ion-item *ngFor="let user of users">
+        <h1 ion-text-center style="margin-bottom: 1em;">{{ user.first_name }} {{ user.last_name }}</h1><!--verificar porque nao esta trazendo o nome-->
+        </ion-item >
       <ion-grid>
         
         <ion-row>
@@ -16,15 +14,16 @@
           <ion-col><b>Horário</b></ion-col>
           
         </ion-row>
+      </ion-grid>
         <div *ngFor="let item of lista" > 
              
-          <ion-row>
+          <ion-row class="container">
             <ion-col>{{item.dia}}</ion-col>
             <ion-col>{{item.hora}}</ion-col>
             </ion-row>
          
         </div>
-      </ion-grid>
+       
       <ion-infinite-scroll (ionInfinite)="getUsers($event)">
           <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Aguarde...">
           </ion-infinite-scroll-content>

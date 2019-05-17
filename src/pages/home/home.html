@@ -1,78 +1,67 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      
+      Área do Gerente
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="homePageUsers" >
 
+<div class="tituloPagina">
   <h1 text-center margin-bottom>GERENTE</h1>
-
-<ion-grid>
-  <ion-row>
-      <ion-col>
-        <div></div>
-      </ion-col>
-      <ion-col col-auto>
-        <div>
-            <ion-card class="cardHome1">
-              <ion-card-header (click)="openFrequencias()">
-              <img src="/assets/imgs/logo-pontuall.png" />
-              <p>Gerenciar Funcionários</p>
-              </ion-card-header>
-              </ion-card>
-
-        </div>
-        <div> <ion-card class="cardHome2">
-            <ion-card-header (click)="openGerentePerfil()">
-            <img src="/assets/imgs/logo-pontuall.png" />
-            <p>Meu Perfil</p>
-            </ion-card-header>
-            </ion-card>
+  <p>{{first_name}} Bem vindo - nome -</p>
 </div>
-      </ion-col>
-    </ion-row>
-  <!--coluna da direita Nro2
-  <ion-row> 
-    <ion-col>
-      <div>
-          <button ion-button block (click)="openListUsers()">Dados Funcionários</button>
-      </div>
-    </ion-col>
-  -->
-  <ion-row> 
-    <ion-col>
-      <div>
-      <button ion-button (click)="logout()">Sair</button>
-      </div>
-    </ion-col>
-  </ion-row>
-<!--coluna da esquerda numero3-->
-<!-- botao com icone right  
-<ion-row> 
-  <ion-col>
-    <div>
-<button ion-button icon-end color="primary">
-    em branco
-    <ion-icon name="people"></ion-icon>
-  </button>
-    </div>
-  </ion-col> 
-</ion-row>-->
-</ion-grid>
+ 
+    
+    <ion-card style="background-color: 	#f7f7f7">
+        <ion-item style="background-color: 	#f7f7f7">
+          <ion-icon name="pin" slot="start"></ion-icon>
+          <ion-label  style="color: #3b5998; text-align: center;">Clique para ver as justificativas</ion-label>
+          <button ion-button fill="outline" slot="end"> </button>
+        </ion-item>
+      
+        <ion-card-content>
+       <button ion-button full color="pontuall" (click)="openFrequencias()"><ion-icon slot="end" name="clipboard"> JUSTIFICATIVAS</ion-icon></button>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card style="background-color: 	#f7f7f7">
+          <ion-item style="background-color: 	#f7f7f7">
+            <ion-icon name="pin" slot="start"></ion-icon>
+            <ion-label  style="color: #3b5998; text-align: center;">Clique para ver seu perfil</ion-label>
+            <button ion-button fill="outline" slot="end"> </button>
+          </ion-item>
+        
+          <ion-card-content>
+              <button ion-button full  color="pontuall" (click)="openGerentePerfil()"><ion-icon slot="end" name="person"> PERFIL</ion-icon></button>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card style="background-color: 	#f7f7f7">
+            <ion-item style="background-color: 		#f7f7f7">
+              <ion-icon name="pin" slot="start"></ion-icon>
+              <ion-label style="color: #3b5998; text-align: center;">Clique para sair</ion-label>
+              <button ion-button fill="outline" slot="end"> </button>
+            </ion-item>
+          
+            <ion-card-content>
+                <button ion-button full  color="pontuall"  (click)="logout()"><ion-icon slot="end" name="exit"> SAIR</ion-icon></button>
+            </ion-card-content>
+          </ion-card>
 
   <!--<button ion-button block (click)="openCreateAccount()">Adicionar Funcionário</button>TAREFA DO GESTOR-->
   <!--<button ion-button block (click)="openLogin()">Login</button> TAREFA DO GESTOR-->
-  <!--<button ion-button block (click)="openListUsers()">Listar Funcionários</button>TAREFA DO GESTOR 
+  <!--<button ion-button block (click)="openListUsers()">Listar Funcionários</button>TAREFA DO GESTOR -->
+  <!--
   <button ion-button block (click)="openFrequencias()">Gerenciar Justificativas</button>
   <button ion-button block (click)="openListUsers()">Ver Funcionários</button>
   <button ion-button block (click)="openGerentePerfil()">Meu Perfil</button>
   <button ion-button block (click)="logout()">Sair</button>
+
   -->
+   
+</ion-content>
 
  
-
-</ion-content>
  

@@ -1,14 +1,14 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-     Lista de Frequências.
+     <h4>FREQUÊNCIAS</h4>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="homePageFrequencias">
     <ion-row justify-content-center align-items-center>
-<h1 ion-text-center style="margin-bottom: 1em;">Gerenciar Justificativas</h1>
+<h1 ion-text-center class="tituloPagina">Gerenciar Justificativas</h1>
 </ion-row>
   <ion-list>
     <ion-item-sliding *ngFor="let user of users">
@@ -16,12 +16,11 @@
         <!--NA TAG ION-ITEM TEM QUE DEFINIR QUAL FUNCÃO O CLICK VAI CHAMAR, NESTE CASO TEMOS QUE CRIAR ESTA FUNÇÃO QUE CHAMA A TABELA DA API OU BANCO DE DADOS NAO SEI!!-->
         
         <ion-item (click)="openTabelaFrequencia(user.id)"> <!--CLICA NO USUARIO ABRE OS DETALHES RELACIONADOS AQU-->
+          <!--SE ESTIVER O NOME EM VERMEHO TEM OCORRENCIA (JUSTIFICATIVA PARA O GERENTE APROVAR OU NAO)-->
         <h2>{{ user.first_name }} {{ user.last_name }}</h2>
       </ion-item>
 
     </ion-item-sliding>
-
-
   </ion-list>
 
   <ion-infinite-scroll (ionInfinite)="getUsers($event)">
