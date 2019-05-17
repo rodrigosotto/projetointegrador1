@@ -28,7 +28,7 @@ export class UsersProvider {
         });
     });
   }
-  /**DEFINI QUE MANEIRA SERA FEITO O LOGIN COM A FUNCAO LOGIN */
+  /**DEFINI QUE MANEIRA SERA FEITO O LOGIN COM O METODO LOGIN */
   login(email: string, password: string) {
     return new Promise((resolve, reject) => {
       var data = {
@@ -45,7 +45,7 @@ export class UsersProvider {
         });
     });
   }
-
+//metodos
   getAll(page: number) {
     return new Promise((resolve, reject) => {
 
@@ -60,7 +60,7 @@ export class UsersProvider {
         });
     });
   }
-
+//metodos
   get(id: number) {
     return new Promise((resolve, reject) => {
       let url = this.API_URL + 'users/' + id;
@@ -74,7 +74,7 @@ export class UsersProvider {
         });
     });
   }
-
+//metodos
   insert(user: any) {
     return new Promise((resolve, reject) => {
       let url = this.API_URL + 'users/';

@@ -25,7 +25,7 @@ export class UserEditPage {
         this.navCtrl.pop();
       })
       .catch((error) => {
-        this.toast.create({ message: 'Erro ao salvar o usuário. Erro: ' + error.error, position: 'botton', duration: 3000 }).present();
+        this.toast.create({ message: 'Erro ao salvar o usuário. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();
       })
   }
 

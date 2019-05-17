@@ -10,14 +10,69 @@
 
   <h1 text-center margin-bottom>GERENTE</h1>
 
+<ion-grid>
+  <ion-row>
+      <ion-col>
+        <div></div>
+      </ion-col>
+      <ion-col col-auto>
+        <div>
+            <ion-card class="cardHome1">
+              <ion-card-header (click)="openFrequencias()">
+              <img src="/assets/imgs/logo-pontuall.png" />
+              <p>Gerenciar Funcionários</p>
+              </ion-card-header>
+              </ion-card>
+
+        </div>
+        <div> <ion-card class="cardHome2">
+            <ion-card-header (click)="openGerentePerfil()">
+            <img src="/assets/imgs/logo-pontuall.png" />
+            <p>Meu Perfil</p>
+            </ion-card-header>
+            </ion-card>
+</div>
+      </ion-col>
+    </ion-row>
+  <!--coluna da direita Nro2
+  <ion-row> 
+    <ion-col>
+      <div>
+          <button ion-button block (click)="openListUsers()">Dados Funcionários</button>
+      </div>
+    </ion-col>
+  -->
+  <ion-row> 
+    <ion-col>
+      <div>
+      <button ion-button (click)="logout()">Sair</button>
+      </div>
+    </ion-col>
+  </ion-row>
+<!--coluna da esquerda numero3-->
+<!-- botao com icone right  
+<ion-row> 
+  <ion-col>
+    <div>
+<button ion-button icon-end color="primary">
+    em branco
+    <ion-icon name="people"></ion-icon>
+  </button>
+    </div>
+  </ion-col> 
+</ion-row>-->
+</ion-grid>
+
   <!--<button ion-button block (click)="openCreateAccount()">Adicionar Funcionário</button>TAREFA DO GESTOR-->
   <!--<button ion-button block (click)="openLogin()">Login</button> TAREFA DO GESTOR-->
-  <!--<button ion-button block (click)="openListUsers()">Listar Funcionários</button>TAREFA DO GESTOR-->
+  <!--<button ion-button block (click)="openListUsers()">Listar Funcionários</button>TAREFA DO GESTOR 
   <button ion-button block (click)="openFrequencias()">Gerenciar Justificativas</button>
   <button ion-button block (click)="openListUsers()">Ver Funcionários</button>
   <button ion-button block (click)="openGerentePerfil()">Meu Perfil</button>
   <button ion-button block (click)="logout()">Sair</button>
+  -->
 
-
+ 
 
 </ion-content>
+ 
