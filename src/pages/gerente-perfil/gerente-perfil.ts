@@ -9,14 +9,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'gerente-perfil.html',
 })
 export class GerentePerfilPage {
-  user: any[];
+  user: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.user = this.navParams.data.user;
   }
-
+/*
   ionViewDidLoad() {
     console.log('ionViewDidLoad GerentePerfilPage');
     
-  }
+  }*/ 
 
 }

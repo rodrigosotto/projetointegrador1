@@ -40,4 +40,6 @@ export class HomePage {
     //this.navCtrl.push('LogoutPage');
     //alert("This is logout");
   }
+
+
 }
