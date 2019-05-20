@@ -10,13 +10,14 @@ import { HomePage } from '../pages/home/home';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UsersProvider } from '../providers/users-providers/users-providers';
 import { LoginPage } from '../pages/login/login';
+import { MantenedorPage } from '../pages/mantenedor-page/mantenedor'; 
  
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage
-   
+    
   ],
   imports: [
     BrowserModule,
@@ -29,6 +30,7 @@ import { LoginPage } from '../pages/login/login';
     MyApp,
     HomePage,
     LoginPage
+     
   
   ],
   providers: [

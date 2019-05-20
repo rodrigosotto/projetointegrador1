@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+       Lista de Funcionários
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding class="mantenedorPageUsers" >
+
+      <div class="tituloPagina">
+        <h1 text-center margin-bottom>Gerenciar Funcionários</h1>
+        <p>Arraste o nome para o lado para editar um funcionário --></p>
+      </div>
+
+    <ion-list inset>
+      <ion-item-sliding *ngFor="let user of users">
+
+         <ion-item (click)="openUser(user.id)">
+  
+                    <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+                    <p>{{user.email}}</p> <!--Podemos chamar aqui o cargo do funcionario-->
+               
+        </ion-item>
+ 
+        <ion-item-options side="left">
+          <button ion-button color="primary" (click)="openEditUser(user.id)">
+              <ion-icon name="create"></ion-icon>
+              Editar
+            </button>
+          <button ion-button color="danger" (click)="deleteUser(user)">
+              <ion-icon name="trash"></ion-icon>
+              Excluir
+            </button>
+        </ion-item-options>
+      
+      </ion-item-sliding>
+  
+    </ion-list>
+  
+    <ion-infinite-scroll (ionInfinite)="getUsers($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Aguarde...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  
+    <ion-fab right bottom>
+      <button ion-fab color="secondary" (click)="openCreateUser()">
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+    </ion-fab>
+  </ion-content>

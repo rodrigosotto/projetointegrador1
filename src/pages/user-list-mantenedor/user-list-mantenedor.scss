@@ -1,12 +1,14 @@
-page-user-edit {
-    .tituloEditarFuncionarios{
-        margin-bottom: 4em;
-    }
+page-user-list-mantenedor {
     .mantenedorPageUsers{
         background: url("/assets/imgs/background-2.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     }
-
+    .tituloPagina{
+        color: #f7f7f7;
+        font-weight: 700;
+        margin-bottom: 3em;
+        
+         }
 }

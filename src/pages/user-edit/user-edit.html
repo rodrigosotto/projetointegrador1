@@ -1,22 +1,43 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Rest Api Example
+     Gerenciar Funcionários
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+    <ion-content padding class="homePageUsers" >
+
+        <div class="tituloEditarFuncionarios">
+          <h2 text-center  >Adicionar novos funcionários</h2>
+        </div>
 
   <ion-list>
     <ion-item>
       <ion-label stacked>Nome</ion-label>
       <ion-input type="text" name="first_name" [(ngModel)]="model.first_name"></ion-input>
     </ion-item>
+    <ion-item>
+        <ion-label stacked>Sobrenome</ion-label>
+        <ion-input type="text" name="last_name" [(ngModel)]="model.last_name" placeholder="digite Sobrenome..." required></ion-input>
+      </ion-item>
+   
+    <ion-item>
+        <ion-label stacked>Email</ion-label>
+        <ion-input type="text" name="Email" [(ngModel)]="model.email"></ion-input>
+      </ion-item>
+   
 
     <ion-item>
-      <ion-label stacked>Sobrenome</ion-label>
-      <ion-input type="text" name="last_name" [(ngModel)]="model.last_name"></ion-input>
+      <ion-label stacked>Cargo</ion-label>
+      <ion-input type="text" name="cargo" [(ngModel)]="model.cargo"></ion-input>
+    </ion-item>
+ 
+
+  <ion-item>
+      <ion-label stacked>Telefone</ion-label>
+      <ion-input type="text" name="telefone" [(ngModel)]="model.telefone"></ion-input>
     </ion-item>
   </ion-list>
 
