@@ -1,9 +1,5 @@
 page-login {
   .loginPage {
-    /*background: url("/assets/imgs/background-2.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;*/
     background: #3a7bd5; /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #3a6073, #3a7bd5); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(
@@ -14,7 +10,7 @@ page-login {
   }
   .login-container {
     border-radius: 10px;
-    opacity: 0.9;
+    opacity: 1.0;
     width: 80%;
     text-align: center;
     background-color: #f7f7f7;

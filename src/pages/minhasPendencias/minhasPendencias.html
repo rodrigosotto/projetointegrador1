@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+     <h4>JUSTIFICATIVAS</h4>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="backgroundPages">
+
+    <ion-row justify-content-center align-items-center>
+
+<h2 ion-text-center class="tituloPagina">Gerenciar Justificativas Pendentes</h2>
+</ion-row>
+  <ion-list>
+    <ion-item-sliding *ngFor="let user of users">
+          <ion-item> 
+        <h3>{{ user.first_name }} {{ user.last_name }}</h3>
+        <p>Cargo: Programador</p>
+        <p (click)="abrirModalJustificativas()"><b>Ver Justificativas</b></p>
+      </ion-item>
+ 
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="getUsers($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Aguarde...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  
+ 
+</ion-content>

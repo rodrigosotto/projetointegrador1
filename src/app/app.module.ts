@@ -7,16 +7,22 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {HttpClientModule } from '@angular/common/http';
 import { UsersProvider } from '../providers/users-providers/users-providers';
 import { LoginPage } from '../pages/login/login';
-import { MantenedorPage } from '../pages/mantenedor-page/mantenedor'; 
+import { ModalJustificativasPage } from '../pages/modal-justificativas/modal-justificativas';
+//import { MantenedorPage } from '../pages/mantenedor-page/mantenedor'; 
+
+
  
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    ModalJustificativasPage
+    
+    
     
   ],
   imports: [
@@ -29,7 +35,8 @@ import { MantenedorPage } from '../pages/mantenedor-page/mantenedor';
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    ModalJustificativasPage
      
   
   ],

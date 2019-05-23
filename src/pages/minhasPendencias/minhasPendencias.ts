@@ -1,20 +1,21 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, InfiniteScroll, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, InfiniteScroll, ToastController, ModalController } from 'ionic-angular';
 import { UsersProvider } from '../../providers/users-providers/users-providers';
+import {ModalJustificativasPage} from '../modal-justificativas/modal-justificativas';
 
 
 @IonicPage({})
 @Component({
-  selector: 'page-frequencias',
-  templateUrl: 'frequencias.html',
+  selector: 'page-minhasPendencias',
+  templateUrl: 'minhasPendencias.html',
 })
-export class FrequenciasPage {
+export class MinhasPendenciasPage {
 
   users: any[];
   page: number;
   @ViewChild(InfiniteScroll) infiniteScroll: InfiniteScroll;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toast: ToastController, private userProvider: UsersProvider) { }
+  constructor( public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, private toast: ToastController, private userProvider: UsersProvider) { }
 
   ionViewDidEnter() {
     this.users = [];
@@ -61,6 +62,8 @@ export class FrequenciasPage {
         });
   
     }
+    
+    /*
          //funcao que pega a estrutura da pagina de detalhes do usuario! não sei.. penso em usar como estrutura para este tipo de chamada.
   openTabelaFrequencia(id: number) {
     this.userProvider.get(id)
@@ -72,5 +75,10 @@ export class FrequenciasPage {
       });
 
     }
+    */
+   abrirModalJustificativas(){
+     let modal= this.modalCtrl.create(ModalJustificativasPage);
+     modal.present();
+   }
   
 }

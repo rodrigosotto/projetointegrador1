@@ -6,51 +6,59 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="homePageUsers" >
+<ion-content padding class="homePageUsers">
 
-<div class="tituloPagina">
-  <h1 text-center margin-bottom>GERENTE</h1>
-  <p>{{first_name}} Bem vindo - nome -</p>
-</div>
-    <ion-card style="background-color: 	#f7f7f7">
-        <ion-item style="background-color: 	#f7f7f7">
-          <ion-icon name="pin" slot="start"></ion-icon>
-          <ion-label  style="color: #3b5998; text-align: center;">Clique para ver as pendências</ion-label>
-          <button ion-button fill="outline" slot="end"> </button>
-        </ion-item>
-      
-        <ion-card-content>
-       <button ion-button full color="pontuall" (click)="openFrequencias()"><ion-icon slot="end" name="clipboard"> PENDÊNCIAS</ion-icon></button>
-        </ion-card-content>
-      </ion-card>
+  <div class="tituloPagina">
+    <h1 text-center margin-bottom>GERENTE</h1>
+    <p>{{first_name}} Bem vindo - nome -</p>
+  </div>
+  <ion-card style="background-color: 	#f7f7f7">
+    <ion-item style="background-color: 	#f7f7f7">
+      <ion-icon name="pin" slot="start"></ion-icon>
+      <ion-label style="color: #3b5998; text-align: center;">Clique para ver as pendências</ion-label>
+      <button ion-button fill="outline" slot="end"> </button>
+    </ion-item>
 
-      <ion-card style="background-color: 	#f7f7f7">
-          <ion-item style="background-color: 	#f7f7f7">
-            <ion-icon name="pin" slot="start"></ion-icon>
-            <ion-label  style="color: #3b5998; text-align: center;">Clique para ver seu perfil</ion-label>
-            <button ion-button fill="outline" slot="end"> </button>
-          </ion-item>
-        
-          <ion-card-content>
-              <button ion-button full  color="pontuall" (click)="openGerentePerfil()"><ion-icon slot="end" name="person"> PERFIL</ion-icon></button>
-          </ion-card-content>
-        </ion-card>
+    <ion-card-content>
+      <button ion-button full color="pontuall" (click)="openPendencias()">
+        <ion-icon slot="end" name="clipboard"> PENDÊNCIAS</ion-icon>
+      </button>
+    </ion-card-content>
+  </ion-card>
 
-        <ion-card style="background-color: 	#f7f7f7">
-            <ion-item style="background-color: 		#f7f7f7">
-              <ion-icon name="pin" slot="start"></ion-icon>
-              <ion-label style="color: #3b5998; text-align: center;">Clique para sair</ion-label>
-              <button ion-button fill="outline" slot="end"> </button>
-            </ion-item>
-          
-            <ion-card-content>
-                <button ion-button full  color="pontuall"  (click)="logout()"><ion-icon slot="end" name="exit"> SAIR</ion-icon></button>
-            </ion-card-content>
-          </ion-card>
+  <ion-card style="background-color: 	#f7f7f7">
+    <ion-item style="background-color: 	#f7f7f7">
+      <ion-icon name="pin" slot="start"></ion-icon>
+      <ion-label style="color: #3b5998; text-align: center;">Clique para ver seu perfil</ion-label>
+      <button ion-button fill="outline" slot="end"> </button>
+    </ion-item>
 
-          <!--botoes para acessos provisórios, retirar assim que finalizar todas as paginas--> 
-          <button ion-button full  color="pontuall"  (click)=" openMantenedorPage()"><ion-icon slot="end" name="exit"> MANTENEDOR PAGE </ion-icon></button>
-           
+    <ion-card-content>
+      <button ion-button full color="pontuall" (click)="openGerentePerfil()">
+        <ion-icon slot="end" name="person"> PERFIL</ion-icon>
+      </button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card style="background-color: 	#f7f7f7">
+    <ion-item style="background-color: 		#f7f7f7">
+      <ion-icon name="pin" slot="start"></ion-icon>
+      <ion-label style="color: #3b5998; text-align: center;">Clique para sair</ion-label>
+      <button ion-button fill="outline" slot="end"> </button>
+    </ion-item>
+
+    <ion-card-content>
+      <button ion-button full color="pontuall" (click)="logout()">
+        <ion-icon slot="end" name="exit"> SAIR</ion-icon>
+      </button>
+    </ion-card-content>
+  </ion-card>
+
+  <!--botoes para acessos provisórios, retirar assim que finalizar todas as paginas-->
+  <button ion-button full color="pontuall" (click)=" openMantenedorPage()">
+    <ion-icon slot="end" name="exit"> MANTENEDOR PAGE </ion-icon>
+  </button>
+
   <!--<button ion-button block (click)="openCreateAccount()">Adicionar Funcionário</button>TAREFA DO GESTOR-->
   <!--<button ion-button block (click)="openLogin()">Login</button> TAREFA DO GESTOR-->
   <!--<button ion-button block (click)="openListUsers()">Listar Funcionários</button>TAREFA DO GESTOR -->
@@ -61,8 +69,5 @@
   <button ion-button block (click)="logout()">Sair</button>
 
   -->
-   
-</ion-content>
 
- 
- 
+</ion-content>

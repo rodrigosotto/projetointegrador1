@@ -25,9 +25,14 @@ export class HomePage {
     this.navCtrl.push('UserListPage');
   }
   
-  openFrequencias() {
+  /*openFrequencias() {
     this.navCtrl.push('FrequenciasPage');
+    
   }
+  */
+ openPendencias(){
+   this.navCtrl.push('MinhasPendenciasPage')
+ }
   openTabelaFrequencias() {
     this.navCtrl.push('TabelaFrequenciasPage');
   }
