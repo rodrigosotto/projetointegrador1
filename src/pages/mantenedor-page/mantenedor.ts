@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
-import { UserListMantenedorPage } from '../user-list-mantenedor/user-list-mantenedor'
+//import { UserListMantenedorPage } from '../user-list-mantenedor/user-list-mantenedor'
+import { AreaPage } from '../area/area';
 /**
  * Generated class for the MantenedorPage page.
  *
@@ -30,5 +31,13 @@ export class MantenedorPage {
  }
  openUserListMantenedorPage(){
   this.navCtrl.push ('UserListMantenedorPage' );
+  }
+
+  openTipoDeJustificativa(){
+    this.navCtrl.push('TipoDeJustificativaPage')
+  }
+  openCadastrarArea(){
+    this.navCtrl.push('AreaPage');
+
   }
 }
