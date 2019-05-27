@@ -1,0 +1,59 @@
+<!--
+  Generated template for the AreaListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>ÁREAS DA EMPRESA</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="backgroundPage" >
+
+  <div class="tituloPagina">
+    <h3 text-center margin-bottom>CRIAR NOVAS AREAS DA EMPRESA</h3>
+    <p style="font-size: 14px; text-align: center;">
+      Arraste para editar
+    </p>
+    <ion-icon style="text-align: center; float: right;" name="md-arrow-forward"></ion-icon>
+  </div>
+
+<ion-list inset>
+
+    <ion-item-sliding >
+        <ion-item>
+            <ion-label position="stacked">SETOR: PRODUCAO </ion-label>
+              
+          </ion-item>
+    <ion-item-options side="left">
+      <button ion-button color="primary" (click)="openEditArea()" ><!--nao vai abrir tem q criar funcao adequada com a API-->
+          <ion-icon name="create"></ion-icon>
+          Editar
+        </button>
+      <button ion-button color="danger" (click)="deleteArea()" ><!--NÁO VAI EXCLUIR TEM QUE CRIAR FUNCAO ADEQUADA COM A API-->
+          <ion-icon name="trash"></ion-icon>
+          Excluir
+        </button>
+    </ion-item-options>
+    
+  
+  </ion-item-sliding>
+
+</ion-list>
+<!--Adequar infinite scroll para a lista de tipos de Justificativas caso existir mais 
+
+<ion-infinite-scroll (ionInfinite)="getUsers($event)">
+  <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Aguarde...">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+-->
+<ion-fab right bottom>
+
+<p style="float:left;">Cadastrar Nova </p>
+  <button ion-fab color="secondary" (click)="openCreateArea()" > 
+     <ion-icon name="person-add"></ion-icon>
+  </button>
+</ion-fab>
+</ion-content>

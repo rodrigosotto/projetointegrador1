@@ -2,13 +2,6 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, InfiniteScroll, ToastController } from 'ionic-angular';
 import { UsersProvider } from '../../providers/users-providers/users-providers';
 
-/**
- * Generated class for the JornadaListPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-jornada-list',
@@ -17,7 +10,7 @@ import { UsersProvider } from '../../providers/users-providers/users-providers';
 export class JornadaListPage {
 
   page: number;
-  jornadas: any[];
+  jornada: any[];
   model: JornadaListPage;
 
   @ViewChild(InfiniteScroll) infiniteScroll: InfiniteScroll;
@@ -25,27 +18,28 @@ export class JornadaListPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
      private toast: ToastController, private userProvider: UsersProvider) { }
 
-  openCreateJustificativaPage(){
-    this.navCtrl.push('TipoJustificativaEditPage');
+  openCreateJornada(){
+    this.navCtrl.push('JornadaEditPage');
   }
 
   // abrir para editar jornadas
-  openEditJustificativa(id: number) {
+  /*
+  openEditJornada(id: number) {
     this.userProvider.get(id)
       .then((result: any) => {
-        this.navCtrl.push('JornadaEditPage', { tipoJustificativa: result.data });
+        this.navCtrl.push('JornadaEditPage', { Jornada: result.data });
       }) 
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao recuperar o justificativa. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();
+        this.toast.create({ message: 'Erro ao recuperar a jornada. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();
       });
   }
-
+*/
   //metodo delete  jornadas
-  deleteTipoJustificativa(jornadas: any) {
-    this.userProvider.remove(jornadas.id)
+  deleteJornada(jornada: any) {
+    this.userProvider.remove(jornada.id)
       .then((result: any) => {
-        let index = this.jornadas.indexOf(jornadas);
-        this.jornadas.splice(index, 1);
+        let index = this.jornada.indexOf(jornada);
+        this.jornada.splice(index, 1);
 
         this.toast.create({ message: 'Jornada de trabalho excluída com sucesso.', position: 'botton', 
         duration: 3000 }).present();
@@ -58,23 +52,23 @@ export class JornadaListPage {
   }
 
   //metodo que lista todas jornadas
-  getAllTiposDeJustificativas(page: number) {
+  getAllJornadas(page: number) {
     this.userProvider.getAll(page)
       .then((result: any) => {
         for (var i = 0; i < result.data.length; i++) {
           var user = result.data[i];
-          this.jornadas.push(user);
+          this.jornada.push(this.jornada);
         }
 
         if (this.infiniteScroll) {
           this.infiniteScroll.complete();
-          if (this.jornadas.length == result.total) {
+          if (this.jornada.length == result.total) {
             this.infiniteScroll.enable(false);
           }
         }
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao listar tipos de justificativas. Erro: ' + error.error.error, 
+        this.toast.create({ message: 'Erro ao listar tipos de jornadas. Erro: ' + error.error.error, 
         position: 'botton', duration: 3000 }).present();
       });
   }

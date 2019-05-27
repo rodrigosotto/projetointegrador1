@@ -6,10 +6,34 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>JornadaEdit</ion-title>
+    <ion-title>Editar Jornadas</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="backgroundPage">
+
+    <div class="tituloPagina"> <h3>EDITAR JORNADAS</h3></div>
+    
+    
+  <ion-list>
+      <ion-item>
+        <ion-label stacked>Nome:</ion-label>
+        <ion-input type="text" name="Nome"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label stacked>Entrada:</ion-label>
+          <ion-input type="text" name="Entrada"></ion-input>
+        </ion-item>
+     
+      <ion-item>
+          <ion-label stacked>Saida:</ion-label>
+          <ion-input type="text" name="Saida" ></ion-input>
+        </ion-item>
+
+    </ion-list>
+  
+    <button ion-button block (click)="saveNewJornadas()" color="primary">Salvar</button>
+     
+    
 
 </ion-content>

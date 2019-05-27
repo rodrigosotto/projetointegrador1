@@ -36,8 +36,10 @@ export class MantenedorPage {
   openTipoDeJustificativaList(){
     this.navCtrl.push('TipoDeJustificativaListPage')
   }
-  openCadastrarArea(){
-    this.navCtrl.push('AreaPage');
-
+  openArea(){
+    this.navCtrl.push('AreaListPage');
+  }
+  openJornada(){
+    this.navCtrl.push('JornadaListPage');
   }
 }

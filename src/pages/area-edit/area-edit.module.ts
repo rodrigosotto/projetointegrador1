@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { AreaPage } from './area';
+import { AreaEditPage } from './area-edit';
 
 @NgModule({
   declarations: [
-    AreaPage,
+    AreaEditPage,
   ],
   imports: [
-    IonicPageModule.forChild(AreaPage),
+    IonicPageModule.forChild(AreaEditPage),
   ],
 })
-export class AreaPageModule {}
+export class AreaEditPageModule {}

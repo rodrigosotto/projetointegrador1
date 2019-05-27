@@ -9,7 +9,7 @@
   <ion-content padding class="backgroundPage" >
 
       <div class="tituloPagina">
-        <h2 text-center margin-bottom>CADASTRAR JORNADAS DE TRABALHO</h2>
+        <h2 text-center margin-bottom>CADASTRAR NOVAS JORNADAS</h2>
         <p style="font-size: 14px; text-align: center;">
           Arraste para editar
         </p>
@@ -20,16 +20,17 @@
     
         <ion-item-sliding >
         <ion-item>
-        <h2>Nome: Atraso 1</h2>
-          <h2>Código: 2</h2> 
+        <h2>Nome: MANHA E TARDE</h2>
+          <h2>Entrada:</h2>
+          <h2>Saida:</h2>  
         </ion-item>
  
         <ion-item-options side="left">
-          <button ion-button color="primary" (click)="openEditJustificativa()" ><!--nao vai abrir tem q criar funcao adequada com a API-->
+          <button ion-button color="primary" (click)="openEditJornada()" ><!--nao vai abrir tem q criar funcao adequada com a API-->
               <ion-icon name="create"></ion-icon>
               Editar
             </button>
-          <button ion-button color="danger" (click)="deleteTipoJustificativa" ><!--NÁO VAI EXCLUIR TEM QUE CRIAR FUNCAO ADEQUADA COM A API-->
+          <button ion-button color="danger" (click)="deleteJornada" ><!--NÁO VAI EXCLUIR TEM QUE CRIAR FUNCAO ADEQUADA COM A API-->
               <ion-icon name="trash"></ion-icon>
               Excluir
             </button>
@@ -48,7 +49,7 @@
     <ion-fab right bottom>
 
     <p style="float:left;">Cadastrar Nova </p>
-      <button ion-fab color="secondary" (click)="openCreateJustificativaPage()" > 
+      <button ion-fab color="secondary" (click)="openCreateJornada()" > 
          <ion-icon name="person-add"></ion-icon>
       </button>
     </ion-fab>
