@@ -9,7 +9,7 @@
   <ion-content padding class="backgroundPage" >
 
       <div class="tituloPagina">
-        <h1 text-center margin-bottom>CADASTRAR TIPOS DE JUSTIFICATIVAS</h1>
+        <h2 text-center margin-bottom>CADASTRAR TIPOS DE JUSTIFICATIVAS</h2>
         <p style="font-size: 14px; text-align: center;">
           Arraste para editar
         </p>
@@ -17,13 +17,7 @@
       </div>
 
     <ion-list inset>
-    <!-- 
-            <ion-item-sliding *ngFor="let user of users">
-
-         <ion-item (click)="openUser(user.id)">
-  
-                    <h2>{{ user.first_name }} {{ user.last_name }}</h2>
-                    <p>{{user.email}}</p>Podemos chamar aqui o cargo do funcionario-->
+    
         <ion-item-sliding >
         <ion-item>
         <h2>Nome: Atraso 1</h2>
@@ -31,11 +25,11 @@
         </ion-item>
  
         <ion-item-options side="left">
-          <button ion-button color="primary"><!--(click)="openEditUser(user.id) criar funcao adequada com a API-->
+          <button ion-button color="primary" (click)="openEditJustificativa()" ><!--nao vai abrir tem q criar funcao adequada com a API-->
               <ion-icon name="create"></ion-icon>
               Editar
             </button>
-          <button ion-button color="danger"><!--(click)="deleteUser(user)"-->
+          <button ion-button color="danger" (click)="deleteTipoJustificativa" ><!--NÁO VAI EXCLUIR TEM QUE CRIAR FUNCAO ADEQUADA COM A API-->
               <ion-icon name="trash"></ion-icon>
               Excluir
             </button>
@@ -52,8 +46,10 @@
     </ion-infinite-scroll>
   -->
     <ion-fab right bottom>
-      <button ion-fab color="secondary"><!--(click)="openCreateUser() implementar conforme API-->
-        <ion-icon name="person-add"></ion-icon>
+
+    <p style="float:left;">Cadastrar Nova </p>
+      <button ion-fab color="secondary" (click)="openCreateJustificativaPage()" > 
+         <ion-icon name="person-add"></ion-icon>
       </button>
     </ion-fab>
   </ion-content>
