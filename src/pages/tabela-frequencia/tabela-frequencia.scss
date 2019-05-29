@@ -1,30 +1,40 @@
 page-tabela-frequencia {
-    .backggroundPendenciasPage{
-        background: url("/assets/imgs/background-2.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
- }
- 
-.tituloPaginaPendencias{
-    color: #f7f7f7;
-    font-weight: 700;
-    margin-bottom: 2em;
-    
-     }
+    .backgroundPage {
+        background: #3a7bd5; /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #3a6073, #3a7bd5); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #3a6073,
+          #3a7bd5
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+      .tituloPagina {
+        color: #f7f7f7;
+        font-weight: 700;
+        margin-bottom: 1em;
+        text-align: center;
+      }
      .container {
         width: 100%;
-        height: 50%;
+        height: auto;
         display: flex;
         flex-direction: row;
         justify-content: center;
-        align-items: center
+        align-items: left;
     }
     .box {
-         width:250px;
-        height: 400px;
+         width:100%;
+        height: 42px;
         background: #f7f7f7;
   }
-
+  .dia{
+    left: 10px;
+  }
+  .hora{
+    margin-right: 18px;
+    font-size: 12px;
+    position: relative;
+    text-align: center;
+  }
 }
  

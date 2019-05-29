@@ -3,23 +3,30 @@
       <ion-title>Tabela de Frequência</ion-title>
     </ion-navbar>
   </ion-header>
-  <ion-content padding class="homePageTabelaFrequencias">
+  <ion-content padding class="backgroundPage">
+      <div class="tituloPagina"><h3>CONSULTAR FREQUÊNCIAS</h3></div>
+                   <div class="tituloPagina"><h3>FUNCIONÁRIO: JOSÉ CARLOS</h3></div>
+                               <div class="tituloPagina"><h3>MAIO/2019</h3></div>
+
+
+
       <ion-item *ngFor="let user of users">
         <h1 ion-text-center style="margin-bottom: 1em;">{{ user.first_name }} {{ user.last_name }}</h1><!--verificar porque nao esta trazendo o nome-->
         </ion-item >
-      <ion-grid>
+
         
-        <ion-row>
-          <ion-col><b>Dia</b></ion-col>
-          <ion-col><b>Horário</b></ion-col>
-          
+      <ion-grid>
+         <ion-row>
+          <ion-col style="color:#f7f7f7; font-size:22px;"><b>Dia</b></ion-col>
+          <ion-col style="color:#f7f7f7; font-size:22px;"><b> Manha   /   Tarde </b></ion-col>
         </ion-row>
       </ion-grid>
-        <div *ngFor="let item of lista" > 
-             
-          <ion-row class="container">
-            <ion-col>{{item.dia}}</ion-col>
-            <ion-col>{{item.hora}}</ion-col>
+      
+        <div *ngFor="let item of lista" class="box"> 
+     
+          <ion-row class="">
+            <ion-col class="dia"> <b>{{item.dia}}</b></ion-col>
+            <ion-col class="hora"><b>{{item.hora}}</b></ion-col>
             </ion-row>
          
         </div>

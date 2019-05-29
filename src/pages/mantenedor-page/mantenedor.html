@@ -6,22 +6,76 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="homePageUsers" >
+<ion-content padding class="backgroundPage" >
+<div class="tituloPagina">
+  <h1 text-center margin-bottom>Área do Mantenedor</h1>
+</div>
+<!--LINHA 1-->
+<ion-grid>
 
+ <ion-row>
+  <ion-col col-6 no-padding>
+      <ion-card class="botoes" (click)="openJornada()">
+        <ion-card-header><h2>JORNADAS</h2></ion-card-header>
+          <ion-card-content class="fixline" id="jornadas"></ion-card-content>
+      </ion-card>
+  </ion-col>
+
+  <ion-col col-6 no-padding>
+      <ion-card class="botoes"  (click)="openTipoDeJustificativaList()">
+        <ion-card-header><h2>JUSTIFICATIVAS</h2></ion-card-header>
+          <ion-card-content class="fixline" id="justificativas"></ion-card-content>
+     </ion-card>
+    </ion-col>
+  </ion-row>
+<!--LINHA 2-->
+  <ion-row>
+  <ion-col col-6 no-padding>
+    <ion-card class="botoes" (click)="openUserListMantenedorPage()">
+        <ion-card-header><h2>USUÁRIOS</h2></ion-card-header>
+          <ion-card-content class="fixline" id="usuarios" ></ion-card-content>
+    </ion-card>
+  </ion-col>
+
+<ion-col col-6 no-padding>
+      <ion-card class="botoes">
+        <ion-card-header><h2>FERIADOS</h2></ion-card-header>
+          <ion-card-content class="fixline" id="feriados"></ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+ <!--LINHA 3-->
+  <ion-row>
+  <ion-col col-6 no-padding>
+      <ion-card class="botoes" (click)="openArea()">
+        <ion-card-header><h2>ÁREAS</h2></ion-card-header>
+          <ion-card-content class="fixline" id="areas" ></ion-card-content>
+     </ion-card>
+  </ion-col>
+
+  <ion-col col-6 no-padding>
+    <ion-card class="botoes">
+      <ion-card-header><h2>SAIR</h2></ion-card-header>
+        <ion-card-content class="fixline" id="sair"></ion-card-content>
+    </ion-card>
+  </ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>
+
+<!--
 <div class="tituloPagina">
   <h1 text-center margin-bottom>Área do Mantenedor</h1>
 </div>
 
-<!--botão jornada de trabalho-->
-<ion-card class="background-ion-card">
+ <ion-card class="background-ion-card">
   <ion-card-content>
  <button ion-button full color="pontuall" (click)="openJornada()"><ion-icon slot="end" name="clipboard"> JORNADAS
  </ion-icon></button>
 </ion-card-content>
 </ion-card>
 
-<!--botão jornada de JUSTIFICATIVAS-->
-<ion-card class="background-ion-card">
+ <ion-card class="background-ion-card">
     <ion-card-content>
    <button ion-button full color="pontuall" (click)="openTipoDeJustificativaList()" >
    <ion-icon slot="end" name="clipboard"> TIPO DE JUSTIFICATIVAS
@@ -29,46 +83,41 @@
   </ion-card-content>
   </ion-card>
 
-<!--botao gerenciar areas-->
-<ion-card class="background-ion-card" >
+ <ion-card class="background-ion-card" >
   <ion-card-content>
  <button ion-button full color="pontuall">
  <ion-icon slot="end" name="clipboard" (click)="openArea()"> ÁREAS</ion-icon></button>
   </ion-card-content>
 </ion-card>
 
-<!--botao manter FERIADOS-->
-<ion-card class="background-ion-card" >
+ <ion-card class="background-ion-card" >
   <ion-card-content>
  <button ion-button full color="pontuall" ><ion-icon slot="end" name="clipboard"> FERIADOS</ion-icon></button>
-  </ion-card-content>
+  </ion-card-content>JORNADAS
 </ion-card>
 
-<!--botao manter FERIADOS-->
-<ion-card class="background-ion-card" >
+ <ion-card class="background-ion-card" >
     <ion-card-content>
    <button ion-button full color="pontuall" >
    <ion-icon slot="end" name="clipboard"> TIPOS DE OCORRENCIAS</ion-icon></button>
     </ion-card-content>
   </ion-card>
 
-  <!--botao ver perfil-- >
-  <ion-card class="background-ion-card">
+   <ion-card class="background-ion-card">
     <ion-card-content>
    <button ion-button full color="pontuall" (click)="openUserListMantenedorPage()">
    <ion-icon slot="end" name="clipboard"> USUÁRIOS</ion-icon></button>
     </ion-card-content>
   </ion-card>
 
-<!--botão sair-->
-    <ion-card class="background-ion-card">
+     <ion-card class="background-ion-card">
         <ion-card-content>
             <button ion-button full  color="pontuall" (click)="logout()">
             <ion-icon slot="end" name="exit"> SAIR</ion-icon></button>
         </ion-card-content>
       </ion-card>
 
-<!-- 
+
 <ion-infinite-scroll (ionInfinite)="getUsers($event)">
   <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Aguarde...">
   </ion-infinite-scroll-content>
@@ -82,7 +131,6 @@
 -->
 
    
-</ion-content>
-
+ 
  
  

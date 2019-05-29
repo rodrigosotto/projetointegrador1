@@ -1,3 +1,48 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Área do Gerente
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="backgroundPage" >
+<div class="tituloPagina">
+  <h1 text-center margin-bottom>LOGADO COMO GERENTE</h1>
+</div>
+<!--LINHA 1-->
+<ion-grid>
+
+ <ion-row>
+  <ion-col col-12 no-padding>
+      <ion-card class="botoes"  (click)="openPendencias()">
+        <ion-card-header><h2>PENDENCIAS</h2></ion-card-header>
+          <ion-card-content class="fixline" id="justificativas"></ion-card-content>
+     </ion-card>
+    </ion-col>
+  </ion-row>
+<!--LINHA 2-->
+  <ion-row>
+  <ion-col col-12 no-padding>
+    <ion-card class="botoes" (click)="openGerentePerfil()">
+        <ion-card-header><h2>MEU PERFIL</h2></ion-card-header>
+          <ion-card-content class="fixline" id="usuarios" ></ion-card-content>
+    </ion-card>
+  </ion-col>
+  </ion-row>
+ <!--LINHA 3-->
+  <ion-row>
+  <ion-col col-12 no-padding>
+    <ion-card class="botoes" (click)="logout()">
+      <ion-card-header><h2>SAIR</h2></ion-card-header>
+        <ion-card-content class="fixline" id="sair"></ion-card-content>
+    </ion-card>
+  </ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>
+<!--
 <ion-header>
   <ion-navbar>
     <ion-title>
@@ -54,7 +99,8 @@
     </ion-card-content>
   </ion-card>
 
-  <!--botoes para acessos provisórios, retirar assim que finalizar todas as paginas-->
+ botoes para acessos provisórios, retirar assim que finalizar todas as paginas
+
   <button ion-button full color="pontuall" (click)=" openMantenedorPage()">
     <ion-icon slot="end" name="exit"> MANTENEDOR PAGE </ion-icon>
   </button>
@@ -70,4 +116,4 @@
 
   -->
 
-</ion-content>
+ 
