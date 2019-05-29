@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class UsersProvider {
- private API_URL = 'https://reqres.in/api/'
- private API_PONTUALL = 'http://localhost:8000/api'
+ //private API_URL = 'https://reqres.in/api/'
+ private API_URL = 'http://localhost:8000/api/'
    
   //private API_URL = 'https://jsonplaceholder.typicode.com/users'
 
@@ -120,5 +120,12 @@ export class UsersProvider {
           reject(error);
         });
     });
+  }
+
+  /**para testar */
+  mensagem(message:String)
+  {
+    return 
+
   }
 }

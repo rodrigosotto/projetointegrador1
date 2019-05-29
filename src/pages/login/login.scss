@@ -9,11 +9,15 @@ page-login {
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
   .login-container {
-    border-radius: 10px;
+    border-radius: 20px;
     opacity: 1.0;
     width: 80%;
     text-align: center;
     background-color: #f7f7f7;
+    height: 100%;
+    margin-top: 30%;
+    padding-bottom: 35px;
+    padding-top: 25px;
   }
   .login-logo {
     vertical-align: center;
@@ -26,5 +30,6 @@ page-login {
     border-radius: 15px;
     color: #ffffff;
     background-color: #3b5998;
+  
   }
 }
