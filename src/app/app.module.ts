@@ -11,6 +11,7 @@ import {HttpClientModule } from '@angular/common/http';
 import { UsersProvider } from '../providers/users-providers/users-providers';
 import { LoginPage } from '../pages/login/login';
 import { ModalJustificativasPage } from '../pages/modal-justificativas/modal-justificativas';
+import { FeriadoProvider } from '../providers/feriado/feriado';
 //import { MantenedorPage } from '../pages/mantenedor-page/mantenedor'; 
 
 
@@ -45,6 +46,9 @@ import { ModalJustificativasPage } from '../pages/modal-justificativas/modal-jus
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UsersProvider,
+    FeriadoProvider,
+    FeriadoProvider,
+    FeriadoProvider,
     
   ]
 })

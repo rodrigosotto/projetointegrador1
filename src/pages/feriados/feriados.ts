@@ -21,5 +21,5 @@ export class FeriadosPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad FeriadosPage');
   }
-
+ 
 }

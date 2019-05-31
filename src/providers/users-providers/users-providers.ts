@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+//import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,8 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class UsersProvider {
  //private API_URL = 'https://reqres.in/api/'
  private API_URL = 'http://localhost:8000/api/'
-   
-  //private API_URL = 'https://jsonplaceholder.typicode.com/users'
+//private API_URL = 'https://jsonplaceholder.typicode.com/users'
 
   constructor(public http: HttpClient) { }
 
@@ -29,7 +28,7 @@ export class UsersProvider {
         });
     });
   }
-  /**DEFINI QUE MANEIRA SERA FEITO O LOGIN COM O METODO LOGIN */
+  /**DEFINIR QUE MANEIRA SERA FEITO O LOGIN COM O METODO LOGIN */
   login(email: string, password: string) {
     return new Promise((resolve, reject) => {
       var data = {
@@ -50,7 +49,7 @@ export class UsersProvider {
   getAll(page: number) {
     return new Promise((resolve, reject) => {
 
-      let url = this.API_URL + 'users/?per_page=10&page=' + page;
+      let url = this.API_URL + 'usuarioz/?per_page=10&page=' + page;
 
       this.http.get(url)
         .subscribe((result: any) => {
@@ -64,7 +63,7 @@ export class UsersProvider {
 //metodos
   get(id: number) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'users/' + id;
+      let url = this.API_URL + 'users' + id;
 
       this.http.get(url)
         .subscribe((result: any) => {

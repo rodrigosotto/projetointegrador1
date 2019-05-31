@@ -42,4 +42,9 @@ export class MantenedorPage {
   openJornada(){
     this.navCtrl.push('JornadaListPage');
   }
+
+  openFeriados(){
+    this.navCtrl.push('FeriadosPage');
+  }
+
 }

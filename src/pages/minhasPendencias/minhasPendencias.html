@@ -13,10 +13,11 @@
 <h2 ion-text-center class="tituloPagina">Gerenciar Justificativas Pendentes</h2>
 </ion-row>
   <ion-list>
+
     <ion-item-sliding *ngFor="let user of users">
           <ion-item> 
-        <h3>{{ user.first_name }} {{ user.last_name }}</h3>
-        <p>Cargo: Programador</p>
+        <h3>{{ user.nome }}</h3>
+        <h3>{{user.matricula}}</h3>
         <p (click)="abrirModalJustificativas()"><b>Ver Justificativas</b></p>
       </ion-item>
  
