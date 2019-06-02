@@ -1,12 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-/*
-  Generated class for the FeriadoProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class FeriadoProvider {
 
@@ -48,7 +43,7 @@ export class FeriadoProvider {
 //metodos
   insertFeriados(feriado: any) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'feriados/';
+      let url = this.API_URL + 'feriados';
 
       this.http.post(url, feriado)
         .subscribe((result: any) => {
@@ -62,7 +57,7 @@ export class FeriadoProvider {
 
   updateFeriados(feriado: any) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'feriados/' + feriado.id;
+      let url = this.API_URL + 'feriados' + feriado.id;
       let data = {
         "nome": feriado.nome,
         "data": feriado.data
@@ -80,7 +75,7 @@ export class FeriadoProvider {
 
   removeFeriados(id: number) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'feriados/' + id;
+      let url = this.API_URL + 'feriados' + id;
 
       this.http.delete(url)
         .subscribe((result: any) => {
@@ -91,5 +86,6 @@ export class FeriadoProvider {
         });
     });
   }
+  
 
 }

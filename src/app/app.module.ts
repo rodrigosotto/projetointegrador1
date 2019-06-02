@@ -12,6 +12,7 @@ import { UsersProvider } from '../providers/users-providers/users-providers';
 import { LoginPage } from '../pages/login/login';
 import { ModalJustificativasPage } from '../pages/modal-justificativas/modal-justificativas';
 import { FeriadoProvider } from '../providers/feriado/feriado';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 //import { MantenedorPage } from '../pages/mantenedor-page/mantenedor'; 
 
 
@@ -49,6 +50,7 @@ import { FeriadoProvider } from '../providers/feriado/feriado';
     FeriadoProvider,
     FeriadoProvider,
     FeriadoProvider,
+    AuthServiceProvider,
     
   ]
 })

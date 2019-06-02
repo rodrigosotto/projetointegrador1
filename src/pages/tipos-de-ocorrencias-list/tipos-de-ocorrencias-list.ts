@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the FeriadosPage page.
+ * Generated class for the TiposDeOcorrenciasListPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-feriados',
-  templateUrl: 'feriados.html',
+  selector: 'page-tipos-de-ocorrencias-list',
+  templateUrl: 'tipos-de-ocorrencias-list.html',
 })
-export class FeriadosPage {
+export class TiposDeOcorrenciasListPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FeriadosPage');
+    console.log('ionViewDidLoad TiposDeOcorrenciasListPage');
   }
- 
+
 }

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the TipoDeOcorrenciaPage page.
+ * Generated class for the TiposDeOcorrenciasEditPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-tipo-de-ocorrencia',
-  templateUrl: 'tipo-de-ocorrencia.html',
+  selector: 'page-tipos-de-ocorrencias-edit',
+  templateUrl: 'tipos-de-ocorrencias-edit.html',
 })
-export class TipoDeOcorrenciaPage {
+export class TiposDeOcorrenciasEditPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TipoDeOcorrenciaPage');
+    console.log('ionViewDidLoad TiposDeOcorrenciasEditPage');
   }
 
 }

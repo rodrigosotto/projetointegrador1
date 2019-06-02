@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+    Editar / Remover / Adicionar Feriados
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-content padding class="backgroundPage" >
+
+        <div class="tituloPagina">
+          <h2 text-center  >GERENCIAR FERIADOS</h2>
+        </div>
+<!--precisa adicionar o NGMODEL em cada input referenciando o que ele sao -->
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Nome:</ion-label>
+      <ion-input type="text" name="nome"  placeholder="digite o nome..." required ></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Data:</ion-label>
+        <ion-input type="date" name="data"  ></ion-input>
+      </ion-item>
+   
+  </ion-list>
+
+  <button ion-button block (click)="salvarFeriados()" color="pontuall">Salvar</button>
+
+</ion-content>

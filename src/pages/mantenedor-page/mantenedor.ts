@@ -44,7 +44,7 @@ export class MantenedorPage {
   }
 
   openFeriados(){
-    this.navCtrl.push('FeriadosPage');
+    this.navCtrl.push('FeriadoListPage');
   }
 
 }

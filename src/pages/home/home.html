@@ -9,38 +9,34 @@
 
 <ion-content padding class="backgroundPage" >
 <div class="tituloPagina">
-  <h1 text-center margin-bottom>LOGADO COMO GERENTE</h1>
+  <h3 text-center margin-bottom>GERENTE</h3>
+  <p>Vanderley Fabricio Porto</p>
+  <p> Matricula: 000001</p>
+  <p> Email: vfporto@vsporto.com</p>
+  <br>
 </div>
 <!--LINHA 1-->
-<ion-grid>
+<ion-grid ext-center margin-bottom>
 
  <ion-row>
-  <ion-col col-6 no-padding>
-      <ion-card class="botoes"  (click)="openPendencias()">
-        <ion-card-header><h2>PENDENCIAS</h2></ion-card-header>
-          <ion-card-content class="fixline" id="justificativas"></ion-card-content>
+  <ion-col>
+      <ion-card (click)="openPendencias()">
+        <ion-card-header><p>VER PENDÊNCIAS</p></ion-card-header>
+          <ion-card-content class="imagemPendencias"></ion-card-content>
      </ion-card>
     </ion-col>
-  </ion-row>
+ 
   
-<!--LINHA 2-->
-  <ion-row>
-  <ion-col col-6 no-padding>
-    <ion-card class="botoes" (click)="openGerentePerfil()">
-        <ion-card-header><h2>MEU PERFIL</h2></ion-card-header>
-          <ion-card-content class="fixline" id="usuarios" ></ion-card-content>
+  <ion-col>
+    <ion-card (click)="logout()">
+        <ion-card-header><p>SAIR</p></ion-card-header>
+          <ion-card-content class="imagemSair">
+            
+           </ion-card-content>
     </ion-card>
   </ion-col>
   </ion-row>
- <!--LINHA 3-->
-  <ion-row>
-  <ion-col col-10 no-padding>
-    <ion-card class="botoes" (click)="logout()">
-      <ion-card-header><h2>SAIR</h2></ion-card-header>
-        <ion-card-content class="fixline" id="sair"></ion-card-content>
-    </ion-card>
-  </ion-col>
-</ion-row>
+
 </ion-grid>
 </ion-content>
 <!--

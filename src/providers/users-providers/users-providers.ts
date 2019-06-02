@@ -28,7 +28,7 @@ export class UsersProvider {
         });
     });
   }
-  /**DEFINIR QUE MANEIRA SERA FEITO O LOGIN COM O METODO LOGIN */
+
   login(email: string, password: string) {
     return new Promise((resolve, reject) => {
       var data = {
@@ -93,8 +93,8 @@ export class UsersProvider {
     return new Promise((resolve, reject) => {
       let url = this.API_URL + 'users/' + user.id;
       let data = {
-        "first_name": user.first_name,
-        "last_name": user.last_name
+        "nome": user.nome,
+        "sobrenome": user.sobrenome
       }
 
       this.http.put(url, user)
@@ -121,10 +121,4 @@ export class UsersProvider {
     });
   }
 
-  /**para testar */
-  mensagem(message:String)
-  {
-    return 
-
-  }
 }

@@ -14,8 +14,8 @@ export class LoginPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toast: ToastController, private userProvider: UsersProvider) {
     this.model = new User();
-    this.model.email = 'eve.holt@reqres.in';
-    this.model.password = 'cityslicka';
+    this.model.email = 'vfporto@vfporto';
+    this.model.password = '123456';
   }
   /*
   openHome(){

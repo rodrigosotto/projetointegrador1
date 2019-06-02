@@ -14,62 +14,31 @@ page-home {
     margin-bottom: 1em;
     text-align: center;
   }
-  .botoes{
+ 
+  ion-card{
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+    margin: 0 !important;
     text-align:center;
-    background-color: #e4e4e4 opacity($color: #ffffff4b);
-    -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+    background-color: #f7f7f7 !important;
+ 
   }
-   
-   .fixline{
-     margin-bottom:3em;
-     height: 80px;
-     width: auto;
-     max-width: 90%
-   }
-    #sair{
-      background-image: url("/assets/imgs/exit.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      margin-left: 15px;
-        
-    }
-    #jornadas{
-      background-image: url("/assets/imgs/timer.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      margin-left: 10px;
-        
-    }
-    #justificativas{
-      background-image: url("/assets/imgs/archive.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      margin-left: 10px;
-        
-    }
-    #usuarios{
-      background-image: url("/assets/imgs/user.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      margin-left: 10px;
-      
-    }
-   
-    #areas{
-      background-image: url("/assets/imgs/factory.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      margin-left: 10px;
-    }
-    h2{
-      font-size:18px !important;
-      font-weight: 900 !important;
-    }
+
+.imagemSair{
+  background-image: url("/assets/imgs/exit.png");
+  background-size: 30px;
+  margin-bottom: 1em;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 40px;
+ }
+ .imagemPendencias{
+  background-image: url("/assets/imgs/archive.png");
+  background-size: 30px;
+  margin-bottom: 1em;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 40px;
+ }
 }
