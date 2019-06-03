@@ -6,41 +6,41 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <ion-content padding class="homePageUsers" >
+ 
+     <ion-content padding class="backgroundPage" >
 
-        <div class="tituloEditarFuncionarios">
-          <h2 text-center  >Adicionar novos funcionários</h2>
+        <div class="tituloPagina">
+          <h2 text-center >Adicionar novos funcionários</h2>
         </div>
 
   <ion-list>
     <ion-item>
       <ion-label stacked>Nome</ion-label>
-      <ion-input type="text" name="first_name" [(ngModel)]="model.first_name"></ion-input>
+      <ion-input type="text" name="nome" [(ngModel)]="model.nome" placeholder="digite um nome..." maxlength="25"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label stacked>Sobrenome</ion-label>
-        <ion-input type="text" name="last_name" [(ngModel)]="model.last_name" placeholder="digite Sobrenome..." required></ion-input>
+        <ion-input type="text" name="sobrenome" [(ngModel)]="model.sobrenome" placeholder="digite Sobrenome..." maxlength="20"></ion-input>
       </ion-item>
    
     <ion-item>
         <ion-label stacked>Email</ion-label>
-        <ion-input type="text" name="Email" [(ngModel)]="model.email"></ion-input>
+        <ion-input type="text" name="Email" [(ngModel)]="model.email"  placeholder="digite um email..." maxlength="35" ></ion-input>
       </ion-item>
    
 
     <ion-item>
       <ion-label stacked>Matricula</ion-label>
-      <ion-input type="number" name="cargo" [(ngModel)]="model.cargo"></ion-input>
+      <ion-input type="number" name="cargo" [(ngModel)]="model.cargo" placeholder="insirir matricula..."  maxlength="5"></ion-input>
     </ion-item>
  
 
   <ion-item>
       <ion-label stacked>Telefone</ion-label>
-      <ion-input type="text" name="telefone" [(ngModel)]="model.telefone"></ion-input>
+      <ion-input type="text" name="telefone" [(ngModel)]="model.telefone" placeholder="insira um telefone..."maxlength="16"></ion-input>
     </ion-item>
   </ion-list>
 
-  <button ion-button block (click)="save()" color="primary">Salvar</button>
+  <button ion-button block (click)="save()" color="pontuall">Salvar</button>
 
 </ion-content>

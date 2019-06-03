@@ -1,12 +1,18 @@
 page-user-edit {
-    .tituloEditarFuncionarios{
-        margin-bottom: 4em;
-    }
-    .mantenedorPageUsers{
-        background: url("/assets/imgs/background-2.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
+    .backgroundPage {
+        background: #3a7bd5; /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #3a6073, #3a7bd5); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #3a6073,
+          #3a7bd5
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+      .tituloPagina {
+        color: #f7f7f7;
+        font-weight: 700;
+        margin-bottom: 2em;
+        text-align: center;
+      }
 
 }

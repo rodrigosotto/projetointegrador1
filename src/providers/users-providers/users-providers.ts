@@ -63,7 +63,7 @@ export class UsersProvider {
 //metodos
   get(id: number) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'users' + id;
+      let url = this.API_URL + 'usuariosz/' + id;
 
       this.http.get(url)
         .subscribe((result: any) => {
@@ -77,7 +77,7 @@ export class UsersProvider {
 //metodos
   insert(user: any) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'users/';
+      let url = this.API_URL + 'usuarioz/';
 
       this.http.post(url, user)
         .subscribe((result: any) => {
@@ -91,7 +91,7 @@ export class UsersProvider {
 
   update(user: any) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'users/' + user.id;
+      let url = this.API_URL + 'usuarioz/' + user.id;
       let data = {
         "nome": user.nome,
         "sobrenome": user.sobrenome

@@ -9,7 +9,7 @@
   <ion-content padding class="backgroundPage" >
 
       <div class="tituloPagina">
-        <h1 text-center margin-bottom>Gerenciar Funcionários</h1>
+        <h2 text-center margin-bottom>Gerenciar Funcionários</h2>
         <p style="font-size: 14px; text-align: center;">
           Arraste o nome para o lado para editar um funcionário
         </p>
@@ -21,7 +21,7 @@
 
          <ion-item (click)="openUser(user.id)">
   
-                    <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+                    <h2>{{ user.nome }} {{ user.sobrenome }}</h2>
                     <p>{{user.email}}</p> <!--Podemos chamar aqui o cargo do funcionario-->
                
         </ion-item>
