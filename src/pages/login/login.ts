@@ -2,8 +2,8 @@ import { UsersProvider } from './../../providers/users-providers/users-providers
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { HomePage } from '../home/home';
-//import { HomePage } from './../home/home' ;
-
+import { MantenedorPage } from '../mantenedor-page/mantenedor';
+ 
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -14,7 +14,7 @@ export class LoginPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toast: ToastController, private userProvider: UsersProvider) {
     this.model = new User();
-    this.model.email = 'vfporto@vfporto';
+    this.model.email = 'jefferson@jefferson';
     this.model.password = '123456';
   }
   /*
@@ -27,7 +27,8 @@ export class LoginPage {
     this.userProvider.login(this.model.email, this.model.password)
       .then((result: any) => {
         this.toast.create({ message: 'Usuário logado com sucesso. Token: ' + result.token, position: 'botton', duration: 3000 }).present();
-        this.navCtrl.push(HomePage, {}, {animate: true} );    
+        //chamar a funcao que grava o token no storage
+        this.navCtrl.push(MantenedorPage, {}, {animate: true} );    
 
         //Salvar o token no Ionic Storage para usar em futuras requisições.
         //Redirecionar o usuario para outra tela usando o navCtrl

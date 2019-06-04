@@ -13,7 +13,7 @@ import { LoginPage } from '../pages/login/login';
 import { ModalJustificativasPage } from '../pages/modal-justificativas/modal-justificativas';
 import { FeriadoProvider } from '../providers/feriado/feriado';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
-//import { MantenedorPage } from '../pages/mantenedor-page/mantenedor'; 
+import { MantenedorPage } from '../pages/mantenedor-page/mantenedor'; 
 
 
  
@@ -22,7 +22,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     MyApp,
     HomePage,
     LoginPage,
-    ModalJustificativasPage
+    ModalJustificativasPage,
+    MantenedorPage
     
     
     
@@ -38,7 +39,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     MyApp,
     HomePage,
     LoginPage,
-    ModalJustificativasPage
+    ModalJustificativasPage,
+    MantenedorPage
      
   
   ],
@@ -47,8 +49,6 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UsersProvider,
-    FeriadoProvider,
-    FeriadoProvider,
     FeriadoProvider,
     AuthServiceProvider,
     

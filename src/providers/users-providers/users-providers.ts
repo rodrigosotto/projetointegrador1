@@ -49,7 +49,7 @@ export class UsersProvider {
   getAll(page: number) {
     return new Promise((resolve, reject) => {
 
-      let url = this.API_URL + 'usuarioz/?per_page=10&page=' + page;
+      let url = this.API_URL + 'userz';
 
       this.http.get(url)
         .subscribe((result: any) => {
@@ -63,7 +63,7 @@ export class UsersProvider {
 //metodos
   get(id: number) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'usuariosz/' + id;
+      let url = this.API_URL + 'userz/' + id;
 
       this.http.get(url)
         .subscribe((result: any) => {
@@ -77,7 +77,7 @@ export class UsersProvider {
 //metodos
   insert(user: any) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'usuarioz/';
+      let url = this.API_URL + 'userz/';
 
       this.http.post(url, user)
         .subscribe((result: any) => {
@@ -91,7 +91,7 @@ export class UsersProvider {
 
   update(user: any) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'usuarioz/' + user.id;
+      let url = this.API_URL + 'userz/' + user.id;
       let data = {
         "nome": user.nome,
         "sobrenome": user.sobrenome
@@ -109,7 +109,7 @@ export class UsersProvider {
 
   remove(id: number) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'users/' + id;
+      let url = this.API_URL + 'userz/' + id;
 
       this.http.delete(url)
         .subscribe((result: any) => {

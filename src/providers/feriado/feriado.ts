@@ -15,7 +15,7 @@ export class FeriadoProvider {
   getAllFeriados(page: number) {
     return new Promise((resolve, reject) => {
 
-      let url = this.API_URL + 'feriados/?per_page=10&page=' + page;
+      let url = this.API_URL + 'feriadoz';
 
       this.http.get(url)
         .subscribe((result: any) => {
@@ -29,7 +29,7 @@ export class FeriadoProvider {
 //metodos
   getFeriados(id: number) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'feriados' + id;
+      let url = this.API_URL + 'feriadoz' + id;
 
       this.http.get(url)
         .subscribe((result: any) => {
@@ -43,7 +43,7 @@ export class FeriadoProvider {
 //metodos
   insertFeriados(feriado: any) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'feriados';
+      let url = this.API_URL + 'feriadoz';
 
       this.http.post(url, feriado)
         .subscribe((result: any) => {
@@ -57,7 +57,7 @@ export class FeriadoProvider {
 
   updateFeriados(feriado: any) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'feriados' + feriado.id;
+      let url = this.API_URL + 'feriadoz' + feriado.id;
       let data = {
         "nome": feriado.nome,
         "data": feriado.data
@@ -75,7 +75,7 @@ export class FeriadoProvider {
 
   removeFeriados(id: number) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'feriados' + id;
+      let url = this.API_URL + 'feriadoz' + id;
 
       this.http.delete(url)
         .subscribe((result: any) => {

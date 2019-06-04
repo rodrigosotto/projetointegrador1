@@ -13,7 +13,10 @@ export class UserListPage {
   page: number;
   @ViewChild(InfiniteScroll) infiniteScroll: InfiniteScroll;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toast: ToastController, private userProvider: UsersProvider) { }
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private toast: ToastController, 
+    private userProvider: UsersProvider) { }
 
   ionViewDidEnter() {
     this.users = [];
