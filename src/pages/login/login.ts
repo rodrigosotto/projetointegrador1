@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { MantenedorPage } from '../mantenedor-page/mantenedor';
+import { UsuarioPage } from '../usuario/usuario';
  
 @IonicPage()
 @Component({
@@ -10,18 +11,24 @@ import { MantenedorPage } from '../mantenedor-page/mantenedor';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+
   model: User;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toast: ToastController, private userProvider: UsersProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+    private toast: ToastController, private userProvider: UsersProvider) 
+  {
     this.model = new User();
     this.model.email = 'jefferson@jefferson';
     this.model.password = '123456';
   }
-  /*
+  
   openHome(){
     this.navCtrl.push(HomePage, {}, {animate: true} );    
   }
-  */
+  openUsuarioPage(){
+    this.navCtrl.push(UsuarioPage, {}, {animate: true} );    
+  }
+  
  /**VERIFICA SE O USUARIO EXISTE NA API GRAVA O TOKEN PARA FUTURAS REQUISIÇÕES E SE EXISTE O USER ELE LOGA NO SISTEMA */
   login() {
     this.userProvider.login(this.model.email, this.model.password)

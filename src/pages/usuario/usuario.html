@@ -1,0 +1,32 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>AREA DO FUNCIONÁRIO</ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content padding class="backgroundPage" > 
+    <h3 class="tituloPagina"> PERFIL DO FUNCIONÁRIO </h3>
+          <ion-item >
+
+            <h2>NOME DO FUNCIONARIO LOGADO</h2><!--consumir da api nome do funcionario logado-->
+            <h2>LOGIN DO FUNCIONARIO LOGADO</h2>
+            <p>TRAZER NOME E LOGIN E TALVES EMAIL DA API</p>
+          </ion-item>
+
+              <ion-row>
+              <ion-col col-6 no-padding>
+                  <ion-card class="botoes" (click)="listaDeFrequencias()">
+                    <ion-card-header><p><b>FREQUÊNCIAS</b></p></ion-card-header>
+                    <ion-card-content class="fixline" id="justificativas" ></ion-card-content>
+                  </ion-card>
+              </ion-col>
+
+              <ion-col col-6 no-padding>
+                <ion-card class="botoes">
+                    <ion-card-header><p><b>SAIR</b></p></ion-card-header>
+                    <ion-card-content class="fixline" id="sair"></ion-card-content>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+    </ion-content>

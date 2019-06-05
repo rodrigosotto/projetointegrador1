@@ -14,16 +14,18 @@ import { ModalJustificativasPage } from '../pages/modal-justificativas/modal-jus
 import { FeriadoProvider } from '../providers/feriado/feriado';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { MantenedorPage } from '../pages/mantenedor-page/mantenedor'; 
+import { UsuarioPage } from '../pages/usuario/usuario';
 
 
  
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
     LoginPage,
     ModalJustificativasPage,
-    MantenedorPage
+    MantenedorPage,
+    HomePage,
+    UsuarioPage,
     
     
     
@@ -37,10 +39,11 @@ import { MantenedorPage } from '../pages/mantenedor-page/mantenedor';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
     LoginPage,
     ModalJustificativasPage,
-    MantenedorPage
+    MantenedorPage,
+    HomePage,
+    UsuarioPage
      
   
   ],

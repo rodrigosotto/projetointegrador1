@@ -1,0 +1,50 @@
+page-usuario {
+    .backgroundPage {
+        background: #3a7bd5; /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #3a6073, #3a7bd5); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #3a6073,
+          #3a7bd5
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+      .tituloPagina {
+        color: #f7f7f7;
+        font-weight: 700;
+        margin-bottom: 2em;
+        text-align: center;
+      }
+      .botoes{
+        text-align:center;
+        background-color: #e4e4e4 opacity($color: #ffffff4b);
+        -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+        box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+        height: 140px;
+        width: 160px;
+      }
+       
+       .fixline{
+         margin-bottom:3em;
+         height: 80px;
+         width: auto;
+         max-width: 90%
+       }
+        #sair{
+          background-image: url("/assets/imgs/exit.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          margin-left: 15px;
+            
+        }
+        #justificativas{
+            background-image: url("/assets/imgs/archive.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-left: 10px;
+              
+          }
+
+}
