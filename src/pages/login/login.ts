@@ -4,7 +4,7 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 import { HomePage } from '../home/home';
 import { MantenedorPage } from '../mantenedor-page/mantenedor';
 import { UsuarioPage } from '../usuario/usuario';
- 
+
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -14,28 +14,29 @@ export class LoginPage {
 
   model: User;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, 
-    private toast: ToastController, private userProvider: UsersProvider) 
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private toast: ToastController, private userProvider: UsersProvider)
   {
     this.model = new User();
     this.model.email = 'jefferson@jefferson';
     this.model.password = '123456';
   }
-  
+
   openHome(){
-    this.navCtrl.push(HomePage, {}, {animate: true} );    
+    this.navCtrl.push(HomePage, {}, {animate: true} );
   }
   openUsuarioPage(){
-    this.navCtrl.push(UsuarioPage, {}, {animate: true} );    
+    this.navCtrl.push(UsuarioPage, {}, {animate: true} );
   }
-  
+
  /**VERIFICA SE O USUARIO EXISTE NA API GRAVA O TOKEN PARA FUTURAS REQUISIÇÕES E SE EXISTE O USER ELE LOGA NO SISTEMA */
   login() {
     this.userProvider.login(this.model.email, this.model.password)
       .then((result: any) => {
         this.toast.create({ message: 'Usuário logado com sucesso. Token: ' + result.token, position: 'botton', duration: 3000 }).present();
         //chamar a funcao que grava o token no storage
-        this.navCtrl.push(MantenedorPage, {}, {animate: true} );    
+        //teste commit :)
+        this.navCtrl.push(MantenedorPage, {}, {animate: true} );
 
         //Salvar o token no Ionic Storage para usar em futuras requisições.
         //Redirecionar o usuario para outra tela usando o navCtrl
@@ -46,7 +47,7 @@ export class LoginPage {
         this.toast.create({ message: 'Erro ao efetuar login. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();
       });
   }
-  
+
 }
 
 export class User {
