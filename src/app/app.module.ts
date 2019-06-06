@@ -7,17 +7,31 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
-import {HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { UsersProvider } from '../providers/users-providers/users-providers';
 import { LoginPage } from '../pages/login/login';
 import { ModalJustificativasPage } from '../pages/modal-justificativas/modal-justificativas';
 import { FeriadoProvider } from '../providers/feriado/feriado';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
-import { MantenedorPage } from '../pages/mantenedor-page/mantenedor'; 
+import { MantenedorPage } from '../pages/mantenedor-page/mantenedor';
 import { UsuarioPage } from '../pages/usuario/usuario';
+import { AuthProvider } from '../providers/auth/auth';
+
+import { Storage, IonicStorageModule } from '@ionic/storage';
+import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { GlobalProvider } from '../providers/global/global';
 
 
- 
+export function jwtOptionsFactory(storage) {
+  return {
+    tokenGetter: () => {
+      return storage.get('access_token');
+    },
+    whitelistedDomains: ['localhost:8000/api']
+  }
+}
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -26,15 +40,23 @@ import { UsuarioPage } from '../pages/usuario/usuario';
     MantenedorPage,
     HomePage,
     UsuarioPage,
-    
-    
-    
+
+
+
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
-    
+    HttpClientModule,
+    IonicStorageModule.forRoot(),
+    JwtModule.forRoot({
+      jwtOptionsProvider: {
+        provide: JWT_OPTIONS,
+        useFactory: jwtOptionsFactory,
+        deps: [Storage],
+      }
+    }),
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -44,8 +66,8 @@ import { UsuarioPage } from '../pages/usuario/usuario';
     MantenedorPage,
     HomePage,
     UsuarioPage
-     
-  
+
+
   ],
   providers: [
     StatusBar,
@@ -54,7 +76,9 @@ import { UsuarioPage } from '../pages/usuario/usuario';
     UsersProvider,
     FeriadoProvider,
     AuthServiceProvider,
-    
+    AuthProvider,
+    GlobalProvider,
+
   ]
 })
 export class AppModule {}
