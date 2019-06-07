@@ -12,7 +12,7 @@
   <ion-row justify-content-center align-items-center style="height: 80%">
   <ion-grid class="login-container">
   <!-- <form #loginForm="ngForm" (ngSubmit)="openHome()" autocomplete="off" class="login-form">-->
-  <form> 
+  <form>
   <ion-row align-items-center>
   <ion-col>
     <img src="/assets/imgs/logo-azul-escuro-pontuall.png" width="300px" height="100px">
@@ -35,10 +35,10 @@
   </ion-row>
   <ion-row>
   <ion-col>
-  <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+  <!--<div *ngIf="error" class="alert alert-danger">{{error}}</div>-->
 
   <!--<button ion-button class="submit-btn" fulltype="submit" (click)="login()" >ENTRAR</button>-->
-  <button ion-button block (click)="login()" color="primary">Mantenedor Page</button>
+  <button ion-button block (click)="login()" color="primary">LOGIN</button>
 
     <button ion-button block (click)=" openHome()" color="primary">Gerente Page</button>
 
@@ -52,5 +52,5 @@
   </ion-grid>
 
 
-  
+
   </ion-content>

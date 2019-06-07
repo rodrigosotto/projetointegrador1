@@ -13,6 +13,6 @@ export class GlobalProvider {
   constructor(public http: HttpClient) {
     console.log('Hello GlobalProvider Provider');
   }
-  API_URL = "http://localhost:8000/api";
+  API_URL = "http://localhost:8000/api/";
 
 }
