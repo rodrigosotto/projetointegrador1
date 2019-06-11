@@ -22,7 +22,7 @@ export class LoginPage {
     private global: GlobalProvider, private auth: AuthProvider)
   {
     this.model = new User();
-    this.model.email = 'jefferson@jefferson';
+    this.model.email = 'gestor';//'jefferson@jefferson';
     this.model.password = '123456';
   }
 

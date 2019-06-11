@@ -13,37 +13,37 @@
 <h2 ion-text-center class="tituloPagina">LISTA DE FERIADOS</h2>
 </ion-row>
   <ion-list>
-       <ion-item-sliding *ngFor="let lista of feriados"> 
-      <!-- <ion-item-sliding>
+       <ion-item-sliding *ngFor="let feriado of listaFeriados">
+      <!-- <ion-item-sliding>-->
 <!--APOS a API ESTIVER  COMPLETAMENTE POPULADA TRAZER AQUI A LISTA DE FERIADOS-->
          <ion-item>
             <!--<ion-label position="stacked"><p style="color:#ff0000;">FERIADO DE NATAL</p> </ion-label>-->
-            <p>{{lista.nome}}</p>              
+            <p>{{feriado.data | date:'dd/MM/yyyy'}} - {{feriado.nome}}</p>
           </ion-item>
-          
+
     <ion-item-options side="left">
-      <button ion-button color="primary" (click)="openEditArea()" ><!--nao vai abrir tem q criar funcao adequada com a API-->
+      <button ion-button color="primary" (click)="openEditFeriado(feriado.id)" ><!--nao vai abrir tem q criar funcao adequada com a API-->
           <ion-icon name="create"></ion-icon>
           Editar
         </button>
-      <button ion-button color="danger" (click)="deleteArea()" ><!--NÁO VAI EXCLUIR TEM QUE CRIAR FUNCAO ADEQUADA COM A API-->
+      <button ion-button color="danger" (click)="deleteFeriado(feriado)" ><!--NÁO VAI EXCLUIR TEM QUE CRIAR FUNCAO ADEQUADA COM A API-->
           <ion-icon name="trash"></ion-icon>
           Excluir
         </button>
     </ion-item-options>
- 
+
     </ion-item-sliding>
-     
+
   </ion-list>
-   <ion-infinite-scroll (ionInfinite)="getFeriados($event)"><!--criar a funcao que lista todos os feriados.-->
+   <!--<ion-infinite-scroll (ionInfinite)="getFeriados($event)">
     <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Aguarde...">
     </ion-infinite-scroll-content>
-  </ion-infinite-scroll>
- 
+  </ion-infinite-scroll>-->
+
 <ion-fab right bottom>
-  <button ion-fab color="secondary" (click)="openCreateFeriado()" > 
+  <button ion-fab color="secondary" (click)="openCreateFeriado()" >
      <ion-icon name="person-add"></ion-icon>
   </button>
 </ion-fab>
-  
+
 </ion-content>

@@ -1,3 +1,4 @@
+import { GlobalProvider } from './../global/global';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -5,19 +6,30 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class FeriadoProvider {
 
-  private API_URL = 'http://localhost:8000/api/'
+  //private API_URL = 'http://localhost:8000/api/'
+  private url;
 
 
-  constructor(public http: HttpClient) {}
+  constructor(public http: HttpClient, public global: GlobalProvider) {
+    this.url = this.global.API_URL+'feriados/';
+  }
 
 
   //metodos
-  getAllFeriados(page: number) {
+  getAllFeriados() {
     return new Promise((resolve, reject) => {
-
-      let url = this.API_URL + 'feriadoz';
-
-      this.http.get(url)
+     this.http.get(this.url).subscribe((result: any) => {
+          resolve(result);
+        },
+        (error) => {
+          reject(error);
+        });
+    });
+  }
+//metodos
+  getFeriado(id: number) {
+    return new Promise((resolve, reject) => {
+     this.http.get(this.url+id)
         .subscribe((result: any) => {
           resolve(result);
         },
@@ -27,26 +39,9 @@ export class FeriadoProvider {
     });
   }
 //metodos
-  getFeriados(id: number) {
+  insertFeriado(feriado: any) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'feriadoz' + id;
-
-      this.http.get(url)
-        .subscribe((result: any) => {
-          resolve(result);
-        },
-        (error) => {
-          reject(error);
-        });
-    });
-  }
-//metodos
-  insertFeriados(feriado: any) {
-    return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'feriadoz';
-
-      this.http.post(url, feriado)
-        .subscribe((result: any) => {
+      this.http.post(this.url, feriado).subscribe((result: any) => {
           resolve(result);
         },
         (error) => {
@@ -55,16 +50,14 @@ export class FeriadoProvider {
     });
   }
 
-  updateFeriados(feriado: any) {
+  updateFeriado(feriado: any) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'feriadoz' + feriado.id;
       let data = {
         "nome": feriado.nome,
         "data": feriado.data
       }
 
-      this.http.put(url, feriado)
-        .subscribe((result: any) => {
+      this.http.put(this.url+feriado.id, feriado).subscribe((result: any) => {
           resolve(result.json());
         },
         (error) => {
@@ -73,12 +66,9 @@ export class FeriadoProvider {
     });
   }
 
-  removeFeriados(id: number) {
+  removeFeriado(id: number) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'feriadoz' + id;
-
-      this.http.delete(url)
-        .subscribe((result: any) => {
+     this.http.delete(this.url+id).subscribe((result: any) => {
           resolve(result);
         },
         (error) => {
@@ -86,6 +76,6 @@ export class FeriadoProvider {
         });
     });
   }
-  
+
 
 }

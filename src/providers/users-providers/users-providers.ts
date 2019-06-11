@@ -1,35 +1,24 @@
+import { GlobalProvider } from './../global/global';
 import { Injectable } from '@angular/core';
 //import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { HttpClient } from '@angular/common/http';
+//import { JwtInterceptor} from '@auth0/angular-jwt'; //nao precisa...
 
 
 @Injectable()
 export class UsersProvider {
  //private API_URL = 'https://reqres.in/api/'
- private API_URL = 'http://localhost:8000/api/'
+ //private API_URL = 'http://localhost:8000/api/'
 //private API_URL = 'https://jsonplaceholder.typicode.com/users'
+private url;
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient, public global: GlobalProvider) {
+    this.url = this.global.API_URL+'users/';
+   }
 
-  createAccount(email: string, password: string) {
-    return new Promise((resolve, reject) => {
-      var data = {
-        email: email,
-        password: password
-      };
 
-      this.http.post(this.API_URL + 'register', data)
-        .subscribe((result: any) => {
-          resolve(result);
-        },
-        (error) => {
-          reject(error);
-        });
-    });
-  }
-
-  login(email: string, password: string) {
+  /*login(email: string, password: string) {
     return new Promise((resolve, reject) => {
       var data = {
         email: email,
@@ -44,15 +33,11 @@ export class UsersProvider {
           reject(error);
         });
     });
-  }
+  }*/
 //metodos
   getAll(page: number) {
     return new Promise((resolve, reject) => {
-
-      let url = this.API_URL + 'userz';
-
-      this.http.get(url)
-        .subscribe((result: any) => {
+      this.http.get(this.url).subscribe((result: any) => {
           resolve(result);
         },
         (error) => {
@@ -63,10 +48,7 @@ export class UsersProvider {
 //metodos
   get(id: number) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'userz/' + id;
-
-      this.http.get(url)
-        .subscribe((result: any) => {
+      this.http.get(this.url+id).subscribe((result: any) => {
           resolve(result);
         },
         (error) => {
@@ -77,10 +59,7 @@ export class UsersProvider {
 //metodos
   insert(user: any) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'userz/';
-
-      this.http.post(url, user)
-        .subscribe((result: any) => {
+      this.http.post(this.url, user).subscribe((result: any) => {
           resolve(result);
         },
         (error) => {
@@ -91,14 +70,12 @@ export class UsersProvider {
 
   update(user: any) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'userz/' + user.id;
       let data = {
         "nome": user.nome,
         "sobrenome": user.sobrenome
       }
 
-      this.http.put(url, user)
-        .subscribe((result: any) => {
+      this.http.put(this.url+user.id, user).subscribe((result: any) => {
           resolve(result.json());
         },
         (error) => {
@@ -109,10 +86,7 @@ export class UsersProvider {
 
   remove(id: number) {
     return new Promise((resolve, reject) => {
-      let url = this.API_URL + 'userz/' + id;
-
-      this.http.delete(url)
-        .subscribe((result: any) => {
+      this.http.delete(this.url+id).subscribe((result: any) => {
           resolve(result);
         },
         (error) => {

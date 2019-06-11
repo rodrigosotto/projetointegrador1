@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-    Adicionar Feriados/Editar/Remover 
+    Feriado - Detalhes
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -15,15 +15,15 @@
   <ion-list>
     <ion-item>
       <ion-label stacked>Nome:</ion-label>
-      <ion-input type="text" name="nome"  placeholder="digite o nome..." maxlength="40"></ion-input>
+      <ion-input type="text" name="nome" [(ngModel)]="model.nome" placeholder="digite o nome..." maxlength="40"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label stacked>Data:</ion-label>
-        <ion-input type="date" name="data"  ></ion-input>
+        <ion-input type="text" [(ngModel)]="model.data" name="data"  ></ion-input>
       </ion-item>
-   
+
   </ion-list>
 
-  <button ion-button block (click)="salvarFeriados()" color="pontuall">Salvar</button>
+  <button ion-button block (click)="salvarFeriado()" color="pontuall">Salvar</button>
 
 </ion-content>
