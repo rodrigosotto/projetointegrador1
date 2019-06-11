@@ -52,7 +52,10 @@ export class JornadaListPage {
   }
 
   //metodo que lista todas jornadas
+  
   getAllJornadas(page: number) {
+    console.log("disgraçaaaaa");
+
     this.userProvider.getAll(page)
       .then((result: any) => {
         for (var i = 0; i < result.data.length; i++) {
@@ -66,12 +69,11 @@ export class JornadaListPage {
             this.infiniteScroll.enable(false);
           }
         }
-      })
+       })
       .catch((error: any) => {
         this.toast.create({ message: 'Erro ao listar tipos de jornadas. Erro: ' + error.error.error, 
         position: 'botton', duration: 3000 }).present();
       });
   }
-
 
 }

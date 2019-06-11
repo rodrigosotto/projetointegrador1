@@ -22,23 +22,66 @@ page-home {
     margin: 0 !important;
     text-align:center;
     background-color: #f7f7f7 !important;
- 
+     
   }
-
+/*
 .imagemSair{
   background-image: url("/assets/imgs/exit.png");
-  background-size: 30px;
+  background-size: contain;
   margin-bottom: 1em;
   background-position: center;
   background-repeat: no-repeat;
-  height: 40px;
+  height: 50px;
+ 
+
  }
  .imagemPendencias{
   background-image: url("/assets/imgs/archive.png");
-  background-size: 30px;
+  background-size: contain;
   margin-bottom: 1em;
   background-position: center;
   background-repeat: no-repeat;
-  height: 40px;
+  height: 50px;
  }
+ */
+
+ .botoes{
+  text-align:center;
+  background-color: #e4e4e4 opacity($color: #ffffff4b);
+  -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+  height: 120px;
+  width: 150px;
+  border-radius: 30px;
+  //margin-left: 0em;
+  position: relative;
+
+}
+ 
+ .fixline{
+   margin-bottom:2em;
+   height: 60px;
+   width: auto;
+   max-width: 90%
+ }
+  #sair{
+    background-image: url("/assets/imgs/exit.png");
+    background-size: contain;
+    height: 55px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 15px;
+       
+  }
+  #jornadas{
+    background-image: url("/assets/imgs/timer.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    margin-left: 10px;
+      
+  }
+
+
 }

@@ -18,11 +18,9 @@
 
     <ion-list inset>
     
-        <ion-item-sliding >
+      <ion-item-sliding *ngFor="let jornada of Jornadas">
         <ion-item>
-        <h2>Nome: MANHA E TARDE</h2>
-          <h2>Entrada:</h2>
-          <h2>Saida:</h2>  
+        <p>{{jornada.nome}}</p>
         </ion-item>
  
         <ion-item-options side="left">

@@ -19,18 +19,19 @@
 <ion-grid ext-center margin-bottom>
 
  <ion-row>
+   
   <ion-col>
-      <ion-card (click)="openPendencias()">
-        <ion-card-header><p>VER PENDÊNCIAS</p></ion-card-header>
-          <ion-card-content class="imagemPendencias"></ion-card-content>
-     </ion-card>
+      <ion-card class="botoes" (click)="openPendencias()">
+          <ion-card-header><p><b>VER PENDÊNCIAS</b></p></ion-card-header>
+            <ion-card-content class="fixline" id="jornadas"></ion-card-content>
+        </ion-card>
     </ion-col>
  
   
   <ion-col>
-    <ion-card (click)="logout()">
+    <ion-card  class="botoes" (click)="logout()">
         <ion-card-header><p>SAIR</p></ion-card-header>
-          <ion-card-content class="imagemSair">
+          <ion-card-content class="fixline" id="sair">
             
            </ion-card-content>
     </ion-card>

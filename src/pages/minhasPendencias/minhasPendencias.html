@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-     <h3>VER JUSTIFICATIVAS</h3>
+     <h4>VER JUSTIFICATIVAS</h4>
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -10,18 +10,20 @@
 
     <ion-row justify-content-center align-items-center>
 
-<h2 ion-text-center class="tituloPagina">Justificativas Pendentes</h2>
+<h3 ion-text-center class="tituloPagina">Justificativas Pendentes</h3>
 </ion-row>
   <ion-list>
 
     <ion-item-sliding *ngFor="let user of users">
-          <ion-item no padding> 
-        <h2>Nome: {{ user.nome }}</h2>
+       <ion-item> 
+        <h3 style="margin-top: 5px;">Funcionario: {{ user.nome }}</h3>
         <p>Matrícula Nro:{{user.matricula}}</p>
+     </ion-item>
+ 
+        
         <!--Se tiver justificativas aparece senão nao aparece-->
         <p (click)="abrirModalJustificativas()"><b>Ver Justificativas</b></p>
-      </ion-item>
- 
+  
     </ion-item-sliding>
   </ion-list>
 

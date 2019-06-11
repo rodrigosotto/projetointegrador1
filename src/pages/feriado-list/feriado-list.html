@@ -13,11 +13,12 @@
 <h2 ion-text-center class="tituloPagina">LISTA DE FERIADOS</h2>
 </ion-row>
   <ion-list>
-       <!--<ion-item-sliding *ngFor="let lista of feriados">HABILITAR QUABDO API ESTIVER FUNCIONANDO-->
-       <ion-item-sliding>
+       <ion-item-sliding *ngFor="let lista of feriados"> 
+      <!-- <ion-item-sliding>
 <!--APOS a API ESTIVER  COMPLETAMENTE POPULADA TRAZER AQUI A LISTA DE FERIADOS-->
          <ion-item>
-            <ion-label position="stacked"><p style="color:#ff0000;">FERIADO DE NATAL</p> </ion-label>              
+            <!--<ion-label position="stacked"><p style="color:#ff0000;">FERIADO DE NATAL</p> </ion-label>-->
+            <p>{{lista.nome}}</p>              
           </ion-item>
           
     <ion-item-options side="left">

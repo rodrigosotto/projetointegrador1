@@ -11,7 +11,7 @@ page-mantenedor {
   .tituloPagina {
     color: #f7f7f7;
     font-weight: 700;
-    margin-bottom: 1em;
+  //  margin-bottom: 1em;
     text-align: center;
   }
   .botoes{
@@ -20,13 +20,17 @@ page-mantenedor {
     -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
     box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-    height: 140px;
-    width: 160px;
+    height: 120px;
+    width: 150px;
+    border-radius: 30px;
+    //margin-left: 0em;
+    position: relative;
+
   }
    
    .fixline{
      margin-bottom:3em;
-     height: 80px;
+     height: 60px;
      width: auto;
      max-width: 90%
    }
@@ -34,15 +38,15 @@ page-mantenedor {
       background-image: url("/assets/imgs/exit.png");
       background-size: contain;
       background-repeat: no-repeat;
-      background-position: center;
+      background-position: top;
       margin-left: 15px;
-        
+         
     }
     #jornadas{
       background-image: url("/assets/imgs/timer.png");
       background-size: contain;
       background-repeat: no-repeat;
-      background-position: center;
+      background-position: top;
       margin-left: 10px;
         
     }
@@ -50,7 +54,7 @@ page-mantenedor {
       background-image: url("/assets/imgs/archive.png");
       background-size: contain;
       background-repeat: no-repeat;
-      background-position: center;
+      background-position: top;
       margin-left: 10px;
         
     }
@@ -58,7 +62,7 @@ page-mantenedor {
       background-image: url("/assets/imgs/user.png");
       background-size: contain;
       background-repeat: no-repeat;
-      background-position: center;
+      background-position: top;
       margin-left: 10px;
       
     }
@@ -66,14 +70,14 @@ page-mantenedor {
       background-image: url("/assets/imgs/feriados.png");
       background-size: contain;
       background-repeat: no-repeat;
-      background-position: center;
+      background-position: top;
       margin-left: 10px;
     }
     #areas{
       background-image: url("/assets/imgs/factory.png");
       background-size: contain;
       background-repeat: no-repeat;
-      background-position: center;
+      background-position: top;
       margin-left: 10px;
     }
      
