@@ -6,19 +6,19 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>CRIAR ÁREAS</ion-title>
+    <ion-title>CRIAR NOVAS ÁREAS</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding class="backgroundPage">
 
-    <div class="tituloPagina"><h3 text-center margin-bottom>CRIAR NOVAS ÁREAS DA EMPRESA</h3></div>
+    <div class="tituloPagina"><h4 text-center>CRIAR NOVAS ÁREAS DA EMPRESA</h4></div>
     
-    <ion-item>
-      <ion-label position="stacked">NOME:</ion-label>
+    <ion-item *ngIf="let area">
+      <ion-label position="stacked">NOME: {{area.nome}}</ion-label>
       <ion-input type="text"></ion-input>
     </ion-item>
      <br>
      
-          <button ion-button block (click)="saveNewAreas()" color="primary">Salvar</button>
+          <button ion-button block (click)="salvar()" color="primary">Salvar</button>
   
 </ion-content>

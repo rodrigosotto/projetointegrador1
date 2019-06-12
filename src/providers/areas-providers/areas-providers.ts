@@ -47,11 +47,12 @@ export class AreasProvidersProvider {
 
   updateAreas(areas: any) {
     return new Promise((resolve, reject) => {
-      let data = {
-        "nome": areas.nome
+      /*
+      let areas = {
+        "nome": areas.nome,
         
       }
-
+      */
       this.http.put(this.url+areas.id, areas).subscribe((result: any) => {
           //resolve(result.json());
           resolve(result);

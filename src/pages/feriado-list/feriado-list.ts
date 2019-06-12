@@ -46,7 +46,7 @@ export class FeriadoListPage {
     console.log("openEditFeriado("+id+")");
     this.feriadoProvider.getFeriado(id)
       .then((result: any) => {
-        console.log("result: "+result.nome);
+        //console.log("result: "+result.nome);
         this.navCtrl.push('FeriadoEditPage', { feriado: result });
       })
       .catch((error: any) => {
@@ -55,8 +55,8 @@ export class FeriadoListPage {
   }
 
   deleteFeriado(feriado: any) {
-    console.log("deleteferiado:");
-    console.log(feriado);
+    //console.log("deleteferiado:");
+    //console.log(feriado);
     this.feriadoProvider.removeFeriado(feriado.id)
       .then((result: any) => {
         let index = this.listaFeriados.indexOf(feriado);
@@ -68,10 +68,6 @@ export class FeriadoListPage {
         this.toast.create({ message: 'Erro ao excluir o feriado. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();
       });
   }
-
-
-
-
 
 
   openCreateFeriado(){

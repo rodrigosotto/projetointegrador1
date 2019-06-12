@@ -77,7 +77,7 @@ private url;
       }
 
       this.http.put(this.url+user.id, user).subscribe((result: any) => {
-          resolve(result.json());
+          resolve(result);
         },
         (error) => {
           reject(error);

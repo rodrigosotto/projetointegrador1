@@ -43,17 +43,19 @@ export class AreaListPage {
         }*/
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao listar Areas. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();
+        this.toast.create({ message: 'Erro ao listar Areas. Erro: ' + error.error.error, 
+        position: 'botton', duration: 3000 }).present();
       });
   }
 
-  openEditArea(nome) {
-    this.areaProvider.getAreas(nome)
+  openEditArea(id) {
+    this.areaProvider.getAreas(id)
       .then((result: any) => {
         this.navCtrl.push('AreaEditPage', { area: result.data });
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao recuperar area. Erro: ' + error.error, position: 'botton', duration: 3000 }).present();
+        this.toast.create({ message: 'Erro ao recuperar area. Erro: ' + error.error, 
+        position: 'botton', duration: 3000 }).present();
       });
   }
 
@@ -68,7 +70,8 @@ export class AreaListPage {
         duration: 3000 }).present();
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao excluir a Area. Erro: ' + error.error.error, position: 'botton', 
+        this.toast.create({ message: 'Erro ao excluir a Area. Erro: ' + error.error.error, 
+        position: 'botton', 
         duration: 3000 }).present();
       });
   }
