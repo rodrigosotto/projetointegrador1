@@ -20,6 +20,7 @@ import { AuthProvider } from '../providers/auth/auth';
 import { Storage, IonicStorageModule } from '@ionic/storage';
 import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { GlobalProvider } from '../providers/global/global';
+import { JornadaProvider } from '../providers/jornada/jornada';
 
 
 export function jwtOptionsFactory(storage) {
@@ -78,6 +79,7 @@ export function jwtOptionsFactory(storage) {
     AuthServiceProvider,
     AuthProvider,
     GlobalProvider,
+    JornadaProvider,
 
   ]
 })
