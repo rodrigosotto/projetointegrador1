@@ -66,7 +66,9 @@ export class AuthProvider {
           console.log("teste");
           this.storage.set(TOKEN_KEY, result['token']);
           this.decodedToken = this.helper.decodeToken(result['token']);
-          this.storage.set('user', this.decodedToken.user);
+          console.log(this.decodedToken.user);
+          this.user = this.decodedToken.user;
+          this.storage.set('user', this.user)/*)*/;
           //this.authenticationState.next(true);
           this.statusAutenticacao = true;
           resolve(result);
@@ -79,7 +81,8 @@ export class AuthProvider {
 
   getUser(){
     if(this.statusAutenticacao){
-      return this.storage.get('user');
+      //return this.storage.get('user');
+      return this.user;
     }
     return null;
   }

@@ -64,7 +64,8 @@ export class LoginPage {
   }
 
   openUserHome(){
-    this.auth.getUser().then( (user: any)=>{
+    //this.auth.getUser().then( (user: any)=>{
+      let user = this.auth.getUser();
       console.log("user: "+user.email);
       console.log("tipoUsuarioId: "+user.tipoUsuario.id);
       switch(user.tipoUsuario.id){
@@ -78,7 +79,7 @@ export class LoginPage {
         this.navCtrl.push(MantenedorPage, {}, {animate: true} );
         break;
     }
-    });
+    //});
 
 
   }
