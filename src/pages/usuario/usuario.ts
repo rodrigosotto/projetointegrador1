@@ -1,5 +1,7 @@
+import { AuthProvider } from './../../providers/auth/auth';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the UsuarioPage page.
@@ -14,12 +16,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'usuario.html',
 })
 export class UsuarioPage {
+  user: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,  public auth: AuthProvider) {
+    this.user = this.auth.getUser();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UsuarioPage');
+    console.log(this.user);//ver no console o que esta vindo
   }
-
+  logout(){
+    localStorage.clear();//limpa se foi gravado no storage
+    this.navCtrl.setRoot(LoginPage);//volta pra pagina inicial
+   //this.navCtrl.push('LogoutPage');
+   //alert("This is logout");
+ }
 }

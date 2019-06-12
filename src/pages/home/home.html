@@ -1,117 +1,44 @@
-
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Área do Gerente
+      AREA DO GERENTE
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="backgroundPage" >
-<div class="tituloPagina">
-  <h3 text-center margin-bottom>GERENTE</h3>
-  <p>Vanderley Fabricio Porto</p>
-  <p> Matricula: 000001</p>
-  <p> Email: vfporto@vsporto.com</p>
-  <br>
-</div>
-<!--LINHA 1-->
-<ion-grid ext-center margin-bottom>
-
- <ion-row>
-   
-  <ion-col>
-      <ion-card class="botoes" (click)="openPendencias()">
-          <ion-card-header><p><b>VER PENDÊNCIAS</b></p></ion-card-header>
-            <ion-card-content class="fixline" id="jornadas"></ion-card-content>
-        </ion-card>
-    </ion-col>
- 
-  
-  <ion-col>
-    <ion-card  class="botoes" (click)="logout()">
-        <ion-card-header><p>SAIR</p></ion-card-header>
-          <ion-card-content class="fixline" id="sair">
-            
-           </ion-card-content>
-    </ion-card>
-  </ion-col>
-  </ion-row>
-
-</ion-grid>
-</ion-content>
-<!--
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Área do Gerente
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding class="homePageUsers">
-
+<ion-content padding class="backgroundPage">
   <div class="tituloPagina">
-    <h1 text-center margin-bottom>GERENTE</h1>
-    <p>{{first_name}} Bem vindo - nome -</p>
+    <h3 text-center margin-bottom>LOGADO GERENTE</h3>
+    <h4 text-center>Nome: {{user.nome}}</h4>
+    <p text-center>Matrícula: {{user.matricula}}</p>
+
   </div>
-  <ion-card style="background-color: 	#f7f7f7">
-    <ion-item style="background-color: 	#f7f7f7">
-      <ion-icon name="pin" slot="start"></ion-icon>
-      <ion-label style="color: #3b5998; text-align: center;">Clique para ver as pendências</ion-label>
-      <button ion-button fill="outline" slot="end"> </button>
-    </ion-item>
+  <!--LINHA 1-->
+  <ion-grid text-center margin-bottom>
 
-    <ion-card-content>
-      <button ion-button full color="pontuall" (click)="openPendencias()">
-        <ion-icon slot="end" name="clipboard"> PENDÊNCIAS</ion-icon>
-      </button>
-    </ion-card-content>
-  </ion-card>
+    <ion-row>
 
-  <ion-card style="background-color: 	#f7f7f7">
-    <ion-item style="background-color: 	#f7f7f7">
-      <ion-icon name="pin" slot="start"></ion-icon>
-      <ion-label style="color: #3b5998; text-align: center;">Clique para ver seu perfil</ion-label>
-      <button ion-button fill="outline" slot="end"> </button>
-    </ion-item>
+      <ion-col>
+        <ion-card class="botoes" (click)="openPendencias()">
+          <ion-card-header>
+            <p><b>VER PENDÊNCIAS</b></p>
+          </ion-card-header>
+          <ion-card-content class="fixline" id="jornadas"></ion-card-content>
+        </ion-card>
+      </ion-col>
 
-    <ion-card-content>
-      <button ion-button full color="pontuall" (click)="openGerentePerfil()">
-        <ion-icon slot="end" name="person"> PERFIL</ion-icon>
-      </button>
-    </ion-card-content>
-  </ion-card>
+      <ion-col>
+        <ion-card class="botoes" (click)="logout()">
+          <ion-card-header>
+            <p>SAIR</p>
+          </ion-card-header>
+          <ion-card-content class="fixline" id="sair">
 
-  <ion-card style="background-color: 	#f7f7f7">
-    <ion-item style="background-color: 		#f7f7f7">
-      <ion-icon name="pin" slot="start"></ion-icon>
-      <ion-label style="color: #3b5998; text-align: center;">Clique para sair</ion-label>
-      <button ion-button fill="outline" slot="end"> </button>
-    </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
 
-    <ion-card-content>
-      <button ion-button full color="pontuall" (click)="logout()">
-        <ion-icon slot="end" name="exit"> SAIR</ion-icon>
-      </button>
-    </ion-card-content>
-  </ion-card>
-
- botoes para acessos provisórios, retirar assim que finalizar todas as paginas
-
-  <button ion-button full color="pontuall" (click)=" openMantenedorPage()">
-    <ion-icon slot="end" name="exit"> MANTENEDOR PAGE </ion-icon>
-  </button>
-
-  <!--<button ion-button block (click)="openCreateAccount()">Adicionar Funcionário</button>TAREFA DO GESTOR-->
-  <!--<button ion-button block (click)="openLogin()">Login</button> TAREFA DO GESTOR-->
-  <!--<button ion-button block (click)="openListUsers()">Listar Funcionários</button>TAREFA DO GESTOR -->
-  <!--
-  <button ion-button block (click)="openFrequencias()">Gerenciar Justificativas</button>
-  <button ion-button block (click)="openListUsers()">Ver Funcionários</button>
-  <button ion-button block (click)="openGerentePerfil()">Meu Perfil</button>
-  <button ion-button block (click)="logout()">Sair</button>
-
-  -->
-
+  </ion-grid>
+</ion-content>
  

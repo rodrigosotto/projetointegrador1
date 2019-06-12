@@ -1,52 +1,49 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { GerentePerfilPage } from '../gerente-perfil/gerente-perfil';
+import { NavController, NavParams } from 'ionic-angular';
+//import { GerentePerfilPage } from '../gerente-perfil/gerente-perfil';
 import { LoginPage } from '../login/login';
-import { LogoutPage } from '../logout/logout';
-import { MantenedorPage } from '../mantenedor-page/mantenedor'; 
- 
+//import { LogoutPage } from '../logout/logout';
+//import { MantenedorPage } from '../mantenedor-page/mantenedor'; 
+import { AuthProvider } from '../../providers/auth/auth';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+  user: any;
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AuthProvider) {
+    this.user = this.auth.getUser();
+  }
 
   openCreateAccount() {
     this.navCtrl.push('CreateAccountPage');
+    console.log(this.user);
+
   }
-/*
-  openLogin() {
-    this.navCtrl.push('LoginPage');
-  }*/
 
   openListUsers() {
     this.navCtrl.push('UserListPage');
   }
-  
-  /*openFrequencias() {
-    this.navCtrl.push('FrequenciasPage');
-    
+
+  openPendencias() {
+    this.navCtrl.push('MinhasPendenciasPage')
   }
-  */
- openPendencias(){
-   this.navCtrl.push('MinhasPendenciasPage')
- }
   openTabelaFrequencias() {
     this.navCtrl.push('TabelaFrequenciasPage');
   }
-  openGerentePerfil(){
-    this.navCtrl.push ('GerentePerfilPage' );
+  openGerentePerfil() {
+    this.navCtrl.push('GerentePerfilPage');
   }
-  logout(){
-     localStorage.clear();//limpa se foi gravado no storage 
-     this.navCtrl.setRoot(LoginPage);//volta pra pagina inicial
+  logout() {
+    localStorage.clear();//limpa se foi gravado no storage 
+    this.navCtrl.setRoot(LoginPage);//volta pra pagina inicial
     //this.navCtrl.push('LogoutPage');
     //alert("This is logout");
   }
-  openMantenedorPage(){
-    this.navCtrl.push ('MantenedorPage' );
+  openMantenedorPage() {
+    this.navCtrl.push('MantenedorPage');
   }
 
 }

@@ -58,7 +58,8 @@ export class FeriadoProvider {
       }
 
       this.http.put(this.url+feriado.id, feriado).subscribe((result: any) => {
-          resolve(result.json());
+          //resolve(result.json());
+          resolve(result);
         },
         (error) => {
           reject(error);

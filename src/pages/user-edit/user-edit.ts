@@ -22,7 +22,7 @@ export class UserEditPage {
     this.saveUser()
       .then(() => {
         this.toast.create({ message: 'Usuário salvo com sucesso.', position: 'botton', duration: 3000 }).present();
-        this.navCtrl.pop();
+        //this.navCtrl.pop();
       })
       .catch((error) => {
         this.toast.create({ message: 'Erro ao salvar o usuário. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();

@@ -1,40 +1,69 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-     Gerenciar Funcionários
+      ADICIONAR FUNCIONÁRIOS
     </ion-title>
   </ion-navbar>
 </ion-header>
 
- 
-     <ion-content padding class="backgroundPage" >
 
-        <div class="tituloPagina">
-          <h2 text-center >Adicionar novos funcionários</h2>
-        </div>
+<ion-content padding class="backgroundPage">
+
+  <div class="tituloPagina">
+    <h4 text-center>ADICIONAR NOVO</h4>
+    <p>Para adicionar um novo Funcionário preencha os campos abaixo e clique em salvar.</p>
+  </div>
 
   <ion-list>
+      <ion-item>
+          <ion-label stacked>Area de Trabalho</ion-label>
+          <ion-input type="text" name="area" [(ngModel)]="model.area" placeholder="Digite sua area de trabalho"></ion-input>
+        </ion-item>
     <ion-item>
-      <ion-label stacked>Nome</ion-label>
-      <ion-input type="text" name="nome" [(ngModel)]="model.nome" placeholder="digite um nome..." maxlength="25"></ion-input>
+      <ion-label stacked>Login</ion-label>
+      <ion-input type="text" name="login" [(ngModel)]="model.login" placeholder="digite um login..." maxlength="15"></ion-input>
     </ion-item>
-   
     <ion-item>
-        <ion-label stacked>Email</ion-label>
-        <ion-input type="text" name="Email" [(ngModel)]="model.email"  placeholder="digite um email..." maxlength="35" ></ion-input>
-      </ion-item>
-   
+      <ion-label stacked>Nome Completo</ion-label>
+      <ion-input type="text" name="nome" [(ngModel)]="model.nome" placeholder="digite seu nome completo..." maxlength="25">
+      </ion-input>
+    </ion-item>
 
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input type="text" name="Email" [(ngModel)]="model.email" placeholder="digite seu email..." maxlength="35">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Senha</ion-label>
+        <ion-input type="password" name="password" [(ngModel)]="model.password" maxlength="4"></ion-input>
+      </ion-item>
     <ion-item>
       <ion-label stacked>Matricula</ion-label>
-      <ion-input type="number" name="cargo" [(ngModel)]="model.cargo" placeholder="insirir matricula..."  maxlength="5"></ion-input>
+      <ion-input type="number" name="cargo" [(ngModel)]="model.cargo" placeholder="inserir matricula..." maxlength="10">
+      </ion-input>
     </ion-item>
- 
 
-  <ion-item>
-      <ion-label stacked>Telefone</ion-label>
-      <ion-input type="text" name="telefone" [(ngModel)]="model.telefone" placeholder="insira um telefone..."maxlength="16"></ion-input>
+    <ion-item>
+      <ion-label stacked>Cartão</ion-label>
+      <ion-input type="number" name="cartao" [(ngModel)]="model.cartao" maxlength="10"></ion-input>
     </ion-item>
+    <!-- 
+    <ion-item>
+        <ion-label stacked>Tipo de Funcionário</ion-label>
+        <ion-input type="numver" name="cartao" [(ngModel)]="model.cartao" maxlength="4"></ion-input>
+      </ion-item>
+-->
+    <ion-item>
+      <ion-label stacked>Tipo de Funcionário</ion-label>
+      <ion-select [(ngModel)]="model.tipo_usuario_id">
+        <ion-option value="3">Gerente</ion-option>
+        <ion-option value="2">Gestor</ion-option>
+        <ion-option value="1">Funcionário Normal </ion-option>
+
+      </ion-select>
+    </ion-item>
+
   </ion-list>
 
   <button ion-button block (click)="save()" color="pontuall">Salvar</button>

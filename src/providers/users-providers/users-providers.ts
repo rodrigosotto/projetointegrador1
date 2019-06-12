@@ -72,7 +72,8 @@ private url;
     return new Promise((resolve, reject) => {
       let data = {
         "nome": user.nome,
-        "sobrenome": user.sobrenome
+        "matricula": user.matricula,
+        "email": user.email,//acredito que vai todos da tabela users
       }
 
       this.http.put(this.url+user.id, user).subscribe((result: any) => {

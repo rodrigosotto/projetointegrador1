@@ -1,73 +1,79 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Área do Mantenedor
+      AREA DO GESTOR
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="backgroundPage" >
-<div class="tituloPagina">
-  <h3 text-center margin-bottom>GESTOR</h3>
-    <h4 text-center margin-bottom>{{user.nome}}</h4>
-    <p text-center margin-bottom>{{user.matricula}}</p>
+<ion-content padding class="backgroundPage">
+  <div class="tituloPagina">
+    <h3 text-center margin-bottom>LOGADO GESTOR</h3>
+    <h4 text-center>{{user.nome}}</h4>
+    <p text-center>{{user.matricula}}</p>
 
-</div>
-<!--LINHA 1-->
-<ion-grid>
+  </div>
+  <!--LINHA 1-->
+  <ion-grid>
 
- <ion-row>
-  <ion-col col-6 no-padding>
-      <ion-card class="botoes" (click)="openJornada()">
-        <ion-card-header><p><b>JORNADAS</b></p></ion-card-header>
+    <ion-row>
+      <ion-col col-6 no-padding>
+        <ion-card class="botoes" (click)="openJornada()">
+          <ion-card-header>
+            <p><b>JORNADAS</b></p>
+          </ion-card-header>
           <ion-card-content class="fixline" id="jornadas"></ion-card-content>
-      </ion-card>
-  </ion-col>
+        </ion-card>
+      </ion-col>
 
-  <ion-col col-6 no-padding>
-      <ion-card class="botoes"  (click)="openTipoDeJustificativaList()">
-        <ion-card-header><p><b>JUSTIFICATIVAS</b></p></ion-card-header>
+      <ion-col col-6 no-padding>
+        <ion-card class="botoes" (click)="openTipoDeJustificativaList()">
+          <ion-card-header>
+            <p><b>JUSTIFICATIVAS</b></p>
+          </ion-card-header>
           <ion-card-content class="fixline" id="justificativas"></ion-card-content>
-     </ion-card>
-    </ion-col>
-  </ion-row>
-<!--LINHA 2-->
-  <ion-row>
-  <ion-col col-6 no-padding>
-    <ion-card class="botoes" (click)="openUserListMantenedorPage()">
-        <ion-card-header><p><b>USUÁRIOS</b></p></ion-card-header>
-          <ion-card-content class="fixline" id="usuarios" ></ion-card-content>
-    </ion-card>
-  </ion-col>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <!--LINHA 2-->
+    <ion-row>
+      <ion-col col-6 no-padding>
+        <ion-card class="botoes" (click)="openUserListMantenedorPage()">
+          <ion-card-header>
+            <p><b>USUÁRIOS</b></p>
+          </ion-card-header>
+          <ion-card-content class="fixline" id="usuarios"></ion-card-content>
+        </ion-card>
+      </ion-col>
 
-<ion-col col-6 no-padding>
-      <ion-card class="botoes" (click)="openFeriados()">
-        <ion-card-header><p><b>FERIADOS</b></p></ion-card-header>
+      <ion-col col-6 no-padding>
+        <ion-card class="botoes" (click)="openFeriados()">
+          <ion-card-header>
+            <p><b>FERIADOS</b></p>
+          </ion-card-header>
           <ion-card-content class="fixline" id="feriados"></ion-card-content>
-      </ion-card>
-    </ion-col>
-  </ion-row>
- <!--LINHA 3-->
-  <ion-row>
-  <ion-col col-6 no-padding>
-      <ion-card class="botoes" (click)="openArea()">
-        <ion-card-header><p><b>ÁREAS</b></p></ion-card-header>
-          <ion-card-content class="fixline" id="areas" ></ion-card-content>
-     </ion-card>
-  </ion-col>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <!--LINHA 3-->
+    <ion-row>
+      <ion-col col-6 no-padding>
+        <ion-card class="botoes" (click)="openArea()">
+          <ion-card-header>
+            <p><b>ÁREAS</b></p>
+          </ion-card-header>
+          <ion-card-content class="fixline" id="areas"></ion-card-content>
+        </ion-card>
+      </ion-col>
 
-  <ion-col col-6 no-padding>
-    <ion-card class="botoes">
-      <ion-card-header><p><b>SAIR</b></p></ion-card-header>
-        <ion-card-content class="fixline" id="sair"></ion-card-content>
-    </ion-card>
-  </ion-col>
-</ion-row>
-</ion-grid>
+      <ion-col col-6 no-padding>
+        <ion-card class="botoes">
+          <ion-card-header>
+            <p><b>SAIR</b></p>
+          </ion-card-header>
+          <ion-card-content class="fixline" id="sair"></ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
-
-
-
-
-
-
