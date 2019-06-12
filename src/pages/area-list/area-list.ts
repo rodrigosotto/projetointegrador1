@@ -22,7 +22,7 @@ export class AreaListPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AreaListPage');
     this.getAllAreas();
-    console.log("areas: "+this.listaAreas);
+     
   }
 
   getAllAreas() {
@@ -48,29 +48,29 @@ export class AreaListPage {
       });
   }
 
-  openEditArea(id) {
+  openEditArea(id:number) {
+    console.log("openEditArea: ("+id+")");
     this.areaProvider.getAreas(id)
       .then((result: any) => {
-        this.navCtrl.push('AreaEditPage', { area: result.data });
+        this.navCtrl.push('AreaEditPage', { area: result});
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao recuperar area. Erro: ' + error.error, 
+        this.toast.create({ message: 'Erro ao recuperar Area. Erro: ' + error.error, 
         position: 'botton', duration: 3000 }).present();
       });
   }
 
-
-  deleteArea(deleteArea:any){
-    this.areaProvider.removeAreas(deleteArea.id)
+  deleteArea(areas: any){
+    this.areaProvider.removeAreas(areas.id)
       .then((result: any) => {
-        let index = this.deleteArea;
-        this.deleteArea(1);
+        let index = this.listaAreas.indexOf(areas);
+        this.listaAreas.splice(index, 1);
 
-        this.toast.create({ message: 'Area excluída com sucesso.', position: 'botton', 
-        duration: 3000 }).present();
+        this.toast.create({ message: 'Area excluída com sucesso.', 
+        position: 'botton', duration: 3000 }).present();
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao excluir a Area. Erro: ' + error.error.error, 
+        this.toast.create({ message: 'Erro ao excluir a Area. Erro: ' + error.error, 
         position: 'botton', 
         duration: 3000 }).present();
       });
@@ -79,6 +79,4 @@ export class AreaListPage {
   openCreateArea(){
     this.navCtrl.push('AreaEditPage');
   }
-
-   
 }

@@ -8,11 +8,14 @@ import { FeriadoProvider } from '../../providers/feriado/feriado';
   templateUrl: 'feriado-edit.html',
 })
 export class FeriadoEditPage {
-
   model: Feriado;
 
-constructor(public navCtrl: NavController, public navParams: NavParams,
-  private toast: ToastController, private feriadoProvider:FeriadoProvider ) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private toast: ToastController, 
+    private feriadoProvider: FeriadoProvider
+    ) {
     if (this.navParams.data.feriado) {
       //console.log(this.navParams.data.feriado);
       this.model = this.navParams.data.feriado;
@@ -21,7 +24,7 @@ constructor(public navCtrl: NavController, public navParams: NavParams,
       console.log("não achou feriado");
       this.model = new Feriado();
     }
-}
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FeriadoEditPage');
@@ -30,15 +33,19 @@ constructor(public navCtrl: NavController, public navParams: NavParams,
   salvar() {
     this.salvarFeriado()
       .then(() => {
-        this.toast.create({ message: 'Feriado salvo com sucesso.',
-        position: 'botton', duration: 3000 }).present();
+        this.toast.create({
+          message: 'Feriado salvo com sucesso.',
+          position: 'botton', duration: 3000
+        }).present();
         this.navCtrl.pop();
       })
       .catch((error) => {
         console.log("Erro salvando feriado:");
         console.log(error);
-        this.toast.create({ message: 'Erro ao salvar o feriado. Erro: ' + error.error,
-        position: 'botton', duration: 3000 }).present();
+        this.toast.create({
+          message: 'Erro ao salvar o feriado. Erro: ' + error.error,
+          position: 'botton', duration: 3000
+        }).present();
       })
   }
   private salvarFeriado() {

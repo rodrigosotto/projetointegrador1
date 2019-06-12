@@ -7,38 +7,39 @@ import { GlobalProvider } from '../global/global';
 export class AreasProvidersProvider {
   private url;
 
-  constructor(public http: HttpClient, 
+  constructor(
+    public http: HttpClient,
     public global: GlobalProvider) {
-    this.url = this.global.API_URL+'areas/';
+    this.url = this.global.API_URL + 'areas/';
   }
 
   getAllAreas() {
     return new Promise((resolve, reject) => {
-     this.http.get(this.url).subscribe((result: any) => {
-          resolve(result);
-        },
+      this.http.get(this.url).subscribe((result: any) => {
+        resolve(result);
+      },
         (error) => {
           reject(error);
         });
     });
   }
 
-  getAreas(nome:any) {
+  getAreas(nome: any) {
     return new Promise((resolve, reject) => {
-     this.http.get(this.url+nome)
+      this.http.get(this.url + nome)
         .subscribe((result: any) => {
           resolve(result);
         },
-        (error) => {
-          reject(error);
-        });
+          (error) => {
+            reject(error);
+          });
     });
-  } 
+  }
   insertAreas(areas: any) {
     return new Promise((resolve, reject) => {
       this.http.post(this.url, areas).subscribe((result: any) => {
-          resolve(result);
-        },
+        resolve(result);
+      },
         (error) => {
           reject(error);
         });
@@ -47,27 +48,24 @@ export class AreasProvidersProvider {
 
   updateAreas(areas: any) {
     return new Promise((resolve, reject) => {
-      /*
-      let areas = {
+      let setor = {
         "nome": areas.nome,
-        
       }
-      */
-      this.http.put(this.url+areas.id, areas).subscribe((result: any) => {
-          //resolve(result.json());
-          resolve(result);
-        },
+      this.http.put(this.url + areas.id, areas).subscribe((result: any) => {
+        //resolve(result.json());
+        resolve(result);
+      },
         (error) => {
           reject(error);
         });
     });
   }
 
-  removeAreas(nome:any) {
+  removeAreas(id: number) {
     return new Promise((resolve, reject) => {
-     this.http.delete(this.url+nome).subscribe((result: any) => {
-          resolve(result);
-        },
+      this.http.delete(this.url + id).subscribe((result: any) => {
+        resolve(result);
+      },
         (error) => {
           reject(error);
         });

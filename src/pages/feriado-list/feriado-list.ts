@@ -10,9 +10,11 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 export class FeriadoListPage {
   listaFeriados: any[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-    private toast: ToastController, public feriadoProvider: FeriadoProvider) {
-  }
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private toast: ToastController, 
+    public feriadoProvider: FeriadoProvider){}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FeriadoListPage');
@@ -37,7 +39,8 @@ export class FeriadoListPage {
         }*/
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao listaFeriadosr os feriados. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();
+        this.toast.create({ message: 'Erro ao listaFeriadosr os feriados. Erro: ' + error.error.error, 
+        position: 'botton', duration: 3000 }).present();
       });
   }
 
@@ -50,7 +53,8 @@ export class FeriadoListPage {
         this.navCtrl.push('FeriadoEditPage', { feriado: result });
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao recuperar o feriado. Erro: ' + error.error, position: 'botton', duration: 3000 }).present();
+        this.toast.create({ message: 'Erro ao recuperar o feriado. Erro: ' + error.error, 
+        position: 'botton', duration: 3000 }).present();
       });
   }
 

@@ -9,41 +9,41 @@ export class FeriadoProvider {
   //private API_URL = 'http://localhost:8000/api/'
   private url;
 
-
-  constructor(public http: HttpClient, public global: GlobalProvider) {
-    this.url = this.global.API_URL+'feriados/';
+  constructor(
+    public http: HttpClient,
+    public global: GlobalProvider) {
+    this.url = this.global.API_URL + 'feriados/';
   }
-
 
   //metodos
   getAllFeriados() {
     return new Promise((resolve, reject) => {
-     this.http.get(this.url).subscribe((result: any) => {
-          resolve(result);
-        },
+      this.http.get(this.url).subscribe((result: any) => {
+        resolve(result);
+      },
         (error) => {
           reject(error);
         });
     });
   }
-//metodos
+  //metodos
   getFeriado(id: number) {
     return new Promise((resolve, reject) => {
-     this.http.get(this.url+id)
+      this.http.get(this.url + id)
         .subscribe((result: any) => {
           resolve(result);
         },
-        (error) => {
-          reject(error);
-        });
+          (error) => {
+            reject(error);
+          });
     });
   }
-//metodos
+  //metodos
   insertFeriado(feriado: any) {
     return new Promise((resolve, reject) => {
       this.http.post(this.url, feriado).subscribe((result: any) => {
-          resolve(result);
-        },
+        resolve(result);
+      },
         (error) => {
           reject(error);
         });
@@ -56,11 +56,10 @@ export class FeriadoProvider {
         "nome": feriado.nome,
         "data": feriado.data
       }
-
-      this.http.put(this.url+feriado.id, feriado).subscribe((result: any) => {
-          //resolve(result.json());
-          resolve(result);
-        },
+      this.http.put(this.url + feriado.id, feriado).subscribe((result: any) => {
+        //resolve(result.json());
+        resolve(result);
+      },
         (error) => {
           reject(error);
         });
@@ -69,14 +68,12 @@ export class FeriadoProvider {
 
   removeFeriado(id: number) {
     return new Promise((resolve, reject) => {
-     this.http.delete(this.url+id).subscribe((result: any) => {
-          resolve(result);
-        },
+      this.http.delete(this.url + id).subscribe((result: any) => {
+        resolve(result);
+      },
         (error) => {
           reject(error);
         });
     });
   }
-
-
 }

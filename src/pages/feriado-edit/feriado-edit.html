@@ -1,29 +1,29 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-    EDITAR FERIADOS
+      EDITAR FERIADOS
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-     <ion-content padding class="backgroundPage" >
+<ion-content padding class="backgroundPage">
 
-        <div class="tituloPagina">
-          <h3 text-center>EDITAR</h3>
-        </div>
-<!--precisa adicionar o NGMODEL em cada input referenciando o que ele sao -->
+  <div class="tituloPagina">
+    <h3 text-center>EDITAR</h3>
+  </div>
   <ion-list>
     <ion-item>
       <ion-label stacked>Nome:</ion-label>
-      <ion-input type="text" name="nome" [(ngModel)]="model.nome" placeholder="digite o nome..." maxlength="40"></ion-input>
+      <ion-input type="text" name="nome" [(ngModel)]="model.nome" placeholder="digite o nome..." maxlength="40">
+      </ion-input>
     </ion-item>
     <ion-item>
-        <ion-label stacked>Data:</ion-label>
-        <ion-input type="text" [(ngModel)]="model.data" name="data"  ></ion-input>
-      </ion-item>
+      <ion-label stacked>Data:</ion-label>
+      <ion-input type="text" [(ngModel)]="model.data" name="data"></ion-input>
+    </ion-item>
 
   </ion-list>
 
-  <button ion-button block (click)="salvarFeriado()" color="pontuall">Salvar</button>
+  <button ion-button block (click)="salvar()" color="pontuall">Salvar</button>
 
 </ion-content>

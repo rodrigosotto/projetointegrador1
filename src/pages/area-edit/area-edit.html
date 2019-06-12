@@ -1,9 +1,3 @@
-<!--
-  Generated template for the AreaEditPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
     <ion-title>CRIAR NOVAS ÁREAS</ion-title>
@@ -11,14 +5,16 @@
 </ion-header>
 <ion-content padding class="backgroundPage">
 
-    <div class="tituloPagina"><h4 text-center>CRIAR NOVAS ÁREAS DA EMPRESA</h4></div>
-    
-    <ion-item *ngIf="let area">
-      <ion-label position="stacked">NOME: {{area.nome}}</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-     <br>
-     
-          <button ion-button block (click)="salvar()" color="primary">Salvar</button>
-  
+  <div class="tituloPagina">
+    <h4 text-center>CRIAR NOVAS ÁREAS DA EMPRESA</h4>
+  </div>
+
+  <ion-item>
+    <ion-label stacked>Nome:</ion-label>
+    <ion-input type="text" name="nome" [(ngModel)]="model.nome" placeholder="digite o nome..." maxlength="40">
+    </ion-input>
+  </ion-item>
+
+  <button ion-button block (click)="salvar()" color="primary">Salvar</button>
+
 </ion-content>
