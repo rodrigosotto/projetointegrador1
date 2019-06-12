@@ -17,16 +17,15 @@
       <!-- <ion-item-sliding>-->
 <!--APOS a API ESTIVER  COMPLETAMENTE POPULADA TRAZER AQUI A LISTA DE FERIADOS-->
          <ion-item>
-            <!--<ion-label position="stacked"><p style="color:#ff0000;">FERIADO DE NATAL</p> </ion-label>-->
-            <p>{{feriado.data | date:'dd/MM/yyyy'}} - {{feriado.nome}}</p>
+             <p>{{feriado.data | date:'dd/MM/yyyy'}} - {{feriado.nome}}</p>
           </ion-item>
 
     <ion-item-options side="left">
-      <button ion-button color="primary" (click)="openEditFeriado(feriado.id)" ><!--nao vai abrir tem q criar funcao adequada com a API-->
+      <button ion-button color="primary" (click)="openEditFeriado(feriado.id)" > 
           <ion-icon name="create"></ion-icon>
           Editar
         </button>
-      <button ion-button color="danger" (click)="deleteFeriado(feriado)" ><!--NÁO VAI EXCLUIR TEM QUE CRIAR FUNCAO ADEQUADA COM A API-->
+      <button ion-button color="danger" (click)="deleteFeriado(feriado)" > 
           <ion-icon name="trash"></ion-icon>
           Excluir
         </button>
