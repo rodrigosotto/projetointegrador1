@@ -33,4 +33,8 @@ export class UsuarioPage {
    //this.navCtrl.push('LogoutPage');
    //alert("This is logout");
  }
+
+ openRelatorioFrequencia(){
+   this.navCtrl.push('RelatorioFrequenciaPage');
+ }
 }

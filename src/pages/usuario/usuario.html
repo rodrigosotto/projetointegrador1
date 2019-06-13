@@ -4,18 +4,18 @@
     <ion-title>AREA DO FUNCIONÁRIO</ion-title>
   </ion-navbar>
 </ion-header>
- 
-<ion-content padding class="backgroundPage" > 
+
+<ion-content padding class="backgroundPage" >
   <div class="tituloPagina">
     <h3 text-center margin-bottom>LOGADO FUNCIONÁRIO</h3>
       <h4 text-center >{{user.nome}}</h4>
       <p text-center >{{user.matricula}}</p>
-  
+
   </div>
 
               <ion-row>
               <ion-col col-6 no-padding>
-                  <ion-card class="botoes" (click)="listaDeFrequencias()">
+                  <ion-card class="botoes" (click)="openRelatorioFrequencia()">
                     <ion-card-header><p><b>FREQUÊNCIAS</b></p></ion-card-header>
                     <ion-card-content class="fixline" id="justificativas" ></ion-card-content>
                   </ion-card>

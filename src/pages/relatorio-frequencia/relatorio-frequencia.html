@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Relatório de Frequência</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="backgroundPage">
+  <!--<div class="tituloPagina"><h3>CONSULTAR FREQUÊNCIAS</h3></div>-->
+  <div class="tituloPagina"><h3>Nome: {{ relatorio?.user.nome }}</h3></div>
+  <div class="tituloPagina"><h3>Período: {{ relatorio?.dataini | date: 'MMM/yyyy' }} </h3></div>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col style="color:#3e2baa; font-size:22px;">
+        <b>Dia</b>
+      </ion-col>
+      <ion-col style="color:#3e2baa; font-size:22px;">
+        <b> Marcações </b>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+    <div *ngFor="let item of lista" class="box">
+    <ion-row class="">
+      <ion-col class="dia">
+        <b>{{item.data|date:'dd'}}</b></ion-col>
+      <ion-col class="hora" *ngFor="let reg of item.registros">
+        <b>{{reg.horario}}  </b>
+      </ion-col>
+    </ion-row>
+  </div>
+
+
+</ion-content>
