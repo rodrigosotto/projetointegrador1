@@ -37,7 +37,7 @@ private url;
 //metodos
   getAll(page: number) {
     return new Promise((resolve, reject) => {
-      this.http.get(this.url).subscribe((result: any) => {
+      this.http.get(this.url+'/?per_page=10&page=' + page).subscribe((result: any) => {
           resolve(result);
         },
         (error) => {

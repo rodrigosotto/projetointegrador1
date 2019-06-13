@@ -13,9 +13,9 @@ export class UserEditPage {
   model: User;
 
   constructor(
-    public navCtrl: NavController, 
-    public navParams: NavParams, 
-    private toast: ToastController, 
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private toast: ToastController,
     private userProvider: UsersProvider ) {
     if (this.navParams.data.user) {
       this.model = this.navParams.data.user;
@@ -27,7 +27,7 @@ export class UserEditPage {
   save() {
     this.saveUser()
       .then(() => {
-        this.toast.create({ message: 'Usuário salvo com sucesso.', 
+        this.toast.create({ message: 'Usuário salvo com sucesso.',
         position: 'botton', duration: 3000 }).present();
         //this.navCtrl.pop();
       })
@@ -56,6 +56,10 @@ export class User {
   password:any;
   matricula:number;
   cartao:number;
-  tipoFuncionario:string;
+  /*tipoUsuario: {
+    id: number;
+    nome: string;
+  };*/
+  tipo_usuario_id: number;
 
 }

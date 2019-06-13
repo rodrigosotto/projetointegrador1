@@ -36,7 +36,7 @@
     </ion-item>
     <ion-item>
         <ion-label stacked>Senha</ion-label>
-        <ion-input type="password" name="password" [(ngModel)]="model.password" maxlength="4"></ion-input>
+        <ion-input type="password" name="password" [(ngModel)]="model.password"></ion-input>
       </ion-item>
     <ion-item>
       <ion-label stacked>Matricula</ion-label>
@@ -48,7 +48,7 @@
       <ion-label stacked>Cartão</ion-label>
       <ion-input type="number" name="cartao" [(ngModel)]="model.cartao" maxlength="10"></ion-input>
     </ion-item>
-    <!-- 
+    <!--
     <ion-item>
         <ion-label stacked>Tipo de Funcionário</ion-label>
         <ion-input type="numver" name="cartao" [(ngModel)]="model.cartao" maxlength="4"></ion-input>
@@ -56,7 +56,7 @@
 -->
     <ion-item>
       <ion-label stacked>Tipo de Funcionário</ion-label>
-      <ion-select [(ngModel)]="model.tipoFuncionario">
+      <ion-select [(ngModel)]="model.tipo_usuario_id">
         <ion-option value="3">Gerente</ion-option>
         <ion-option value="2">Gestor</ion-option>
         <ion-option value="1">Funcionário</ion-option>
