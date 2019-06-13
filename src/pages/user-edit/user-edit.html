@@ -17,7 +17,7 @@
   <ion-list>
       <ion-item>
           <ion-label stacked>Area de Trabalho</ion-label>
-          <ion-input type="text" name="area" [(ngModel)]="model.area" placeholder="Digite sua area de trabalho"></ion-input>
+          <ion-input type="text" name="area" [(ngModel)]="model.areaDeTrabalho" placeholder="Digite sua area de trabalho"></ion-input>
         </ion-item>
     <ion-item>
       <ion-label stacked>Login</ion-label>
@@ -40,7 +40,7 @@
       </ion-item>
     <ion-item>
       <ion-label stacked>Matricula</ion-label>
-      <ion-input type="number" name="cargo" [(ngModel)]="model.cargo" placeholder="inserir matricula..." maxlength="10">
+      <ion-input type="number" name="matricula" [(ngModel)]="model.matricula" placeholder="inserir matricula..." maxlength="10">
       </ion-input>
     </ion-item>
 
@@ -56,10 +56,10 @@
 -->
     <ion-item>
       <ion-label stacked>Tipo de Funcionário</ion-label>
-      <ion-select [(ngModel)]="model.tipo_usuario_id">
+      <ion-select [(ngModel)]="model.tipoFuncionario">
         <ion-option value="3">Gerente</ion-option>
         <ion-option value="2">Gestor</ion-option>
-        <ion-option value="1">Funcionário Normal </ion-option>
+        <ion-option value="1">Funcionário</ion-option>
 
       </ion-select>
     </ion-item>

@@ -55,7 +55,7 @@ export class UserListPage {
   openUser(id: number) {
     this.userProvider.get(id)
       .then((result: any) => {
-        this.navCtrl.push('UserDetailPage', { user: result.data });
+        this.navCtrl.push('UserDetailPage', { user: result });
       })
       .catch((error: any) => {
         this.toast.create({ message: 'Erro ao recuperar o usuário. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();

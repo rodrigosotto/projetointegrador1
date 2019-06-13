@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { UsersProvider } from '../../providers/users-providers/users-providers';
+
 
 @IonicPage()
 @Component({
@@ -7,10 +9,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'user-detail.html',
 })
 export class UserDetailPage {
-  user: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.user = this.navParams.data.user;
+  users: any;
+  page: number;
+
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private userProvider: UsersProvider) {
+
+    this.users = this.navParams.data.user;
   }
-
+  voltarButton(){
+    this.navCtrl.push('UserListPage');
+  }
+  
 }

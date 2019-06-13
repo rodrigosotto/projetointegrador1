@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-     Lista de Funcionários
+    LISTA DE FUNCIONÁRIOS
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -11,6 +11,7 @@
   <ion-list inset>
     <ion-item-sliding *ngFor="let user of users">
        <ion-item (click)="openUser(user.id)">
+         
                   <h2>{{user.nome}}</h2>
                   <p>{{user.email}}</p> <!--Podemos chamar aqui o cargo do funcionario-->
              

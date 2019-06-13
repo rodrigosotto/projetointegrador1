@@ -18,9 +18,15 @@ export class UserListMantenedorPage {
 
   users: any[];
   page: number;
+
   @ViewChild(InfiniteScroll) infiniteScroll: InfiniteScroll;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toast: ToastController, private userProvider: UsersProvider) { }
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private toast: ToastController, 
+    private userProvider: UsersProvider
+    ) { }
 
   ionViewDidEnter() {
     this.users = [];
@@ -45,7 +51,8 @@ export class UserListMantenedorPage {
         }
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao listar os usuários. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();
+        this.toast.create({ message: 'Erro ao listar os usuários. Erro: ' + error.error.error,
+         position: 'botton', duration: 3000 }).present();
       });
   }
 
@@ -59,7 +66,7 @@ export class UserListMantenedorPage {
   openUser(id: number) {
     this.userProvider.get(id)
       .then((result: any) => {
-        this.navCtrl.push('UserDetailPage', { user: result.data });
+        this.navCtrl.push('UserDetailPage', { user: result });
       })
       .catch((error: any) => {
         this.toast.create({ message: 'Erro ao recuperar o usuário. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();
@@ -77,7 +84,8 @@ export class UserListMantenedorPage {
         this.navCtrl.push('UserEditPage', { user: result.data });
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao recuperar o usuário. Erro: ' + error.error, position: 'botton', duration: 3000 }).present();
+        this.toast.create({ message: 'Erro ao recuperar o usuário. Erro: ' + error.error, 
+        position: 'botton', duration: 3000 }).present();
       });
   }
 
@@ -87,10 +95,12 @@ export class UserListMantenedorPage {
         let index = this.users.indexOf(user);
         this.users.splice(index, 1);
 
-        this.toast.create({ message: 'Usuário excluído com sucesso.', position: 'botton', duration: 3000 }).present();
+        this.toast.create({ message: 'Usuário excluído com sucesso.', 
+        position: 'botton', duration: 3000 }).present();
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao excluir o usuário. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();
+        this.toast.create({ message: 'Erro ao excluir o usuário. Erro: ' + error.error.error, 
+        position: 'botton', duration: 3000 }).present();
       });
   }
 

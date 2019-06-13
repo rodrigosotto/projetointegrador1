@@ -11,15 +11,14 @@
 
    <ion-list inset>
 
-    <ion-item-sliding *ngFor="let user of users">
-     <ion-item (click)="openUser(user.nome)">
-        
-            <h2>{{user.nome}}</h2>
-            <p>{{user.email}}</p>  
+    <ion-item-sliding>
+         
+        <h2>{{ users.nome }} {{ users.sobrenome }}</h2>
+        <p>{{users.email}}</p>
+        <p>{{users.matricula}</p>
 
-      </ion-item>
- 
     </ion-item-sliding>
     </ion-list>
     </div>
+    <button ion-button block (click)="voltarButton()" color="pontual">Voltar</button>
  </ion-content>

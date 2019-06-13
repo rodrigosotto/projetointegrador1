@@ -1,6 +1,7 @@
 import { UsersProvider } from './../../providers/users-providers/users-providers';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { EmailValidator } from '@angular/forms';
 
 @IonicPage()
 @Component({
@@ -8,9 +9,14 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
   templateUrl: 'user-edit.html',
 })
 export class UserEditPage {
+
   model: User;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toast: ToastController, private userProvider: UsersProvider ) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private toast: ToastController, 
+    private userProvider: UsersProvider ) {
     if (this.navParams.data.user) {
       this.model = this.navParams.data.user;
     } else {
@@ -21,11 +27,13 @@ export class UserEditPage {
   save() {
     this.saveUser()
       .then(() => {
-        this.toast.create({ message: 'Usuário salvo com sucesso.', position: 'botton', duration: 3000 }).present();
+        this.toast.create({ message: 'Usuário salvo com sucesso.', 
+        position: 'botton', duration: 3000 }).present();
         //this.navCtrl.pop();
       })
       .catch((error) => {
-        this.toast.create({ message: 'Erro ao salvar o usuário. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();
+        this.toast.create({ message: 'Erro ao salvar o usuário. Erro: ' + error.error.error, position: 'botton',
+         duration: 3000 }).present();
       })
   }
 
@@ -41,6 +49,13 @@ export class UserEditPage {
 
 export class User {
   id: number;
-  first_name: string;
-  last_name: string;
+  areaDeTrabalho: string;
+  login: string;
+  nome: string;
+  email:EmailValidator;
+  password:any;
+  matricula:number;
+  cartao:number;
+  tipoFuncionario:string;
+
 }
