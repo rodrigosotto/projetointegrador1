@@ -1,54 +1,56 @@
 <ion-header>
-    <ion-navbar>
-      <ion-title>
-       Jornada de Trabalho
-      </ion-title>
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-content padding class="backgroundPage" >
+  <ion-navbar>
+    <ion-title>
+      Jornada de Trabalho
+    </ion-title>
+  </ion-navbar>
+</ion-header>
 
-      <div class="tituloPagina">
-        <h2 text-center margin-bottom>CADASTRAR NOVAS JORNADAS</h2>
-        <p style="font-size: 14px; text-align: center;">
-          Arraste para editar
-        </p>
-        <ion-icon style="text-align: center; float: right;" name="md-arrow-forward"></ion-icon>
-      </div>
+<ion-content padding class="backgroundPage">
 
-    <ion-list inset>
-    
-      <ion-item-sliding *ngFor="let jornada of Jornadas">
-        <ion-item>
+  <div class="tituloPagina">
+    <h2 text-center margin-bottom>CADASTRAR NOVAS JORNADAS</h2>
+    <p style="font-size: 14px; text-align: center;">
+      Arraste para editar
+    </p>
+    <ion-icon style="text-align: center; float: right;" name="md-arrow-forward"></ion-icon>
+  </div>
+
+  <ion-list inset>
+
+    <ion-item-sliding *ngFor="let jornada of listaJornadas">
+      <ion-item>
         <p>{{jornada.nome}}</p>
-        </ion-item>
- 
-        <ion-item-options side="left">
-          <button ion-button color="primary" (click)="openEditJornada()" ><!--nao vai abrir tem q criar funcao adequada com a API-->
-              <ion-icon name="create"></ion-icon>
-              Editar
-            </button>
-          <button ion-button color="danger" (click)="deleteJornada" ><!--NÁO VAI EXCLUIR TEM QUE CRIAR FUNCAO ADEQUADA COM A API-->
-              <ion-icon name="trash"></ion-icon>
-              Excluir
-            </button>
-        </ion-item-options>
-      
-      </ion-item-sliding>
-  
-    </ion-list>
-    <!--Adequar infinite scroll para a lista de tipos de Justificativas caso existir mais 
+      </ion-item>
+
+      <ion-item-options side="left">
+        <button ion-button color="primary" (click)="openEditJornada(jornada.id)">
+          <!--nao vai abrir tem q criar funcao adequada com a API-->
+          <ion-icon name="create"></ion-icon>
+          Editar
+        </button>
+        <button ion-button color="danger" (click)="deleteJornada(jornada)">
+          <!--NÁO VAI EXCLUIR TEM QUE CRIAR FUNCAO ADEQUADA COM A API-->
+          <ion-icon name="trash"></ion-icon>
+          Excluir
+        </button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+  </ion-list>
+  <!--Adequar infinite scroll para a lista de tipos de Justificativas caso existir mais 
   
     <ion-infinite-scroll (ionInfinite)="getUsers($event)">
       <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Aguarde...">
       </ion-infinite-scroll-content>
     </ion-infinite-scroll>
   -->
-    <ion-fab right bottom>
+  <ion-fab right bottom>
 
     <p style="float:left;">Cadastrar Nova </p>
-      <button ion-fab color="secondary" (click)="openCreateJornada()" > 
-         <ion-icon name="person-add"></ion-icon>
-      </button>
-    </ion-fab>
-  </ion-content>
+    <button ion-fab color="secondary" (click)="openCreateJornada()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

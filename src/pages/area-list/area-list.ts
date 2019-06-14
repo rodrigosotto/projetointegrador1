@@ -1,3 +1,4 @@
+//import { Area } from './../area-edit/area-edit';
 import { AreasProvidersProvider } from '../../providers/areas-providers/areas-providers';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
@@ -17,12 +18,17 @@ export class AreaListPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     private toast: ToastController, 
-    public areaProvider:AreasProvidersProvider) {}
-
+    public areaProvider:AreasProvidersProvider) {
+     }
+/*
   ionViewDidLoad() {
     console.log('ionViewDidLoad AreaListPage');
-    this.getAllAreas();
      
+  }
+*/
+  ionViewWillEnter(){
+    
+    this.getAllAreas(); 
   }
 
   getAllAreas() {
@@ -30,9 +36,10 @@ export class AreaListPage {
       .then((result: any) => {
         this.listaAreas = result;
         console.log("areas: "+this.listaAreas);
+         
+
         /*for (var i = 0; i < result.data.length; i++) {
           var user = result.data[i];
-          this.users.push(user);
         }
 
         if (this.infiniteScroll) {
@@ -43,7 +50,7 @@ export class AreaListPage {
         }*/
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao listar Areas. Erro: ' + error.error.error, 
+        this.toast.create({ message: 'Erro ao listar Areas. Erro: ' + error,
         position: 'botton', duration: 3000 }).present();
       });
   }

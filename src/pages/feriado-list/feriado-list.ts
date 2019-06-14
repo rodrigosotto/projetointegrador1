@@ -8,6 +8,7 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
   templateUrl: 'feriado-list.html',
 })
 export class FeriadoListPage {
+  
   listaFeriados: any[];
 
   constructor(
@@ -18,6 +19,10 @@ export class FeriadoListPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FeriadoListPage');
+    
+  }
+
+  ionViewWillEnter(){
     this.getAllFeriados();
   }
 

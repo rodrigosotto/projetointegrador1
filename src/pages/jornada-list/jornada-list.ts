@@ -1,6 +1,7 @@
+import { AreaListPage } from './../area-list/area-list';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, InfiniteScroll, ToastController } from 'ionic-angular';
-import { UsersProvider } from '../../providers/users-providers/users-providers';
+import { JornadaProvider } from '../../providers/jornada/jornada';
 
 @IonicPage()
 @Component({
@@ -10,69 +11,76 @@ import { UsersProvider } from '../../providers/users-providers/users-providers';
 export class JornadaListPage {
 
   page: number;
-  jornada: any[];
-  model: JornadaListPage;
+  
+  listaJornadas: any[];
+   jornada: any[];
 
   @ViewChild(InfiniteScroll) infiniteScroll: InfiniteScroll;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-     private toast: ToastController, private userProvider: UsersProvider) { }
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    private toast: ToastController, 
+    private jornadaProvider: JornadaProvider) { 
 
-  openCreateJornada(){
+     }
+
+    ionViewWillEnter(){
+      this.getAllJornadas();
+    }
+
+  openCreateJornada() {
     this.navCtrl.push('JornadaEditPage');
   }
 
   // abrir para editar jornadas
-  /*
+
   openEditJornada(id: number) {
-    this.userProvider.get(id)
+    this.jornadaProvider.getJornada(id)
       .then((result: any) => {
         this.navCtrl.push('JornadaEditPage', { Jornada: result.data });
-      }) 
+      })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao recuperar a jornada. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();
+        this.toast.create({
+          message: 'Erro ao recuperar a jornada. Erro: ' + error.error,
+          position: 'botton', duration: 3000
+        }).present();
       });
   }
-*/
+
   //metodo delete  jornadas
   deleteJornada(jornada: any) {
-    this.userProvider.remove(jornada.id)
+    this.jornadaProvider.removeJornada(jornada.id)
       .then((result: any) => {
         let index = this.jornada.indexOf(jornada);
         this.jornada.splice(index, 1);
 
-        this.toast.create({ message: 'Jornada de trabalho excluída com sucesso.', position: 'botton', 
-        duration: 3000 }).present();
+        this.toast.create({
+          message: 'Jornada de trabalho excluída com sucesso.', position: 'botton',
+          duration: 3000
+        }).present();
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao excluir a jornada de trabalho. Erro: ' + error.error.error, 
-        position: 'botton', 
-        duration: 3000 }).present();
+        this.toast.create({
+          message: 'Erro ao excluir a jornada de trabalho. Erro: ' + error.error,
+          position: 'botton',
+          duration: 3000
+        }).present();
       });
   }
 
   //metodo que lista todas jornadas
-  
-  getAllJornadas(page: number) {
-    console.log("disgraçaaaaa");
-
-    this.userProvider.getAll(page)
+ 
+  getAllJornadas() {
+     this.jornadaProvider.getAllJornadas()
       .then((result: any) => {
-        for (var i = 0; i < result.data.length; i++) {
-          var user = result.data[i];
-          this.jornada.push(this.jornada);
-        }
-
-        if (this.infiniteScroll) {
-          this.infiniteScroll.complete();
-          if (this.jornada.length == result.total) {
-            this.infiniteScroll.enable(false);
-          }
-        }
-       })
+        this.listaJornadas = result;
+        console.log("jornadas: "+this.listaJornadas);
+      })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao listar tipos de jornadas. Erro: ' + error.error.error, 
-        position: 'botton', duration: 3000 }).present();
+        this.toast.create({
+          message: 'Erro ao listar tipos de jornadas. Erro: ' + error.error,
+          position: 'botton', duration: 3000
+        }).present();
       });
   }
 

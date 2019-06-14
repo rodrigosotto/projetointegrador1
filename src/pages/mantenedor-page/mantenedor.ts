@@ -51,6 +51,9 @@ export class MantenedorPage {
   openFeriados(){
     this.navCtrl.push('FeriadoListPage');
   }
+  openTipoOcorrencia(){
+    this.navCtrl.push('TiposDeOcorrenciasListPage');
+  }
 
 }
 /*
