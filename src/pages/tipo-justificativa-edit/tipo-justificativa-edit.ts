@@ -16,20 +16,20 @@ import { TipoJustificativaProvider } from '../../providers/tipo-justificativa/ti
 })
 export class TipoJustificativaEditPage {
 
-  model: Justificativa;
+  model: TipoJustificativa;
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
     private toast: ToastController,
-    private tipoJustificativa: TipoJustificativaProvider) 
+    private tipoJustificativa: TipoJustificativaProvider)
     {
-      if (this.navParams.data.Justificativa) {
-         this.model = this.navParams.data.Justificativa;
+      if (this.navParams.data.tipoJustificativa) {
+         this.model = this.navParams.data.tipoJustificativa;
         console.log(this.model);
       } else {
         console.log("não achou uma Justificativa");
-        this.model = new Justificativa();
+        this.model = new TipoJustificativa();
       }
 
     }
@@ -39,7 +39,7 @@ export class TipoJustificativaEditPage {
     console.log(this.model);
   }
 
-  //metodo que salva os tipos de justificativas 
+  //metodo que salva os tipos de justificativas
   //em determinadas formas sendo por edit ou create
 
   salvar() {
@@ -73,7 +73,7 @@ export class TipoJustificativaEditPage {
 
 
 }
-export class Justificativa {
+export class TipoJustificativa {
   id: number;
   nome: string;
   codigo: number;
