@@ -1,30 +1,28 @@
-<!--
-  Generated template for the TipoJustificativaEditPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
+ 
 <ion-header>
   <ion-navbar>
-    <ion-title>Tipos de Justificativas</ion-title>
+    <ion-title>EDITAR TIPOS DE JUSTIFICATIVAS</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="backgroundPage">
 
-<div class="tituloPagina"> <h3>CADASTRE TIPOS DE JUSTIFICATIVAS</h3></div>
-
-<ion-item>
-  <ion-label position="stacked">Nome:</ion-label>
-  <ion-input type="text"></ion-input>
-</ion-item>
- <br>
- <ion-item>
-  <ion-label position="floating">Código:</ion-label>
-  <ion-input type="number"></ion-input>
- </ion-item>
-  <button ion-button block (click)="saveTiposJustificativas()" color="primary">Salvar</button>
- 
-
-
-</ion-content>
+    <div class="tituloPagina">
+      <h4 text-center>EDITAR</h4>
+    </div>
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>Nome:</ion-label>
+        <ion-input type="text" name="nome" [(ngModel)]="model.nome" placeholder="digite o nome...">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Código:</ion-label>
+        <ion-input type="number" [(ngModel)]="model.codigo" name="codigo" maxlength="10" ></ion-input>
+      </ion-item>
+  
+    </ion-list>
+  
+    <button ion-button block (click)="salvar()" color="pontuall">Salvar</button>
+  
+  </ion-content>

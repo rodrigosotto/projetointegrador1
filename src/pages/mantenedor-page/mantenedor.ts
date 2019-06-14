@@ -19,7 +19,11 @@ import { LoginPage } from '../login/login';
 export class MantenedorPage {
   user: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AuthProvider) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public auth: AuthProvider) 
+    {
     this.user = this.auth.getUser();
   }
 
@@ -38,8 +42,8 @@ export class MantenedorPage {
   this.navCtrl.push ('UserListMantenedorPage' );
   }
 
-  openTipoDeJustificativaList(){
-    this.navCtrl.push('TipoDeJustificativaListPage')
+  openTipoJustificativa(){
+    this.navCtrl.push('TipoJustificativaListPage')
   }
   openArea(){
     this.navCtrl.push('AreaListPage');

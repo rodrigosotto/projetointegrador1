@@ -56,18 +56,19 @@ export class AreaEditPage {
       .then(() => {
         this.toast.create({
           message: 'Area salva com sucesso.',
-          position: 'botton', duration: 1000
+          position: 'botton', 
+          duration: 2000
         }).present();
         this.navCtrl.pop();
         //this.navCtrl.push('AreaListPage');
 
       })
       .catch((error) => {
-        console.log("Erro salvando area:");
+        console.log("Erro ao salvar Area:");
         console.log(error);
         this.toast.create({
           message: 'Erro ao salvar a Area. Erro: ' + error.error,
-          position: 'botton', duration: 3000
+          position: 'botton', duration: 2000
         }).present();
       })
   }

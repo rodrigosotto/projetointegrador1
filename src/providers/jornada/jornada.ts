@@ -11,14 +11,15 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class JornadaProvider {
   //private API_URL = 'http://localhost:8000/api/'
+
   private url;
 
 
-  constructor(public http: HttpClient, public global: GlobalProvider) {
+  constructor(
+    public http: HttpClient, 
+    public global: GlobalProvider) {
     this.url = this.global.API_URL + 'jornadas/';
   }
-
-
   //metodos
   getAllJornadas() {
     return new Promise((resolve, reject) => {
@@ -31,9 +32,9 @@ export class JornadaProvider {
     });
   }
   //metodos
-  getJornada(id: number) {
+  getJornada(nome: any) {
     return new Promise((resolve, reject) => {
-      this.http.get(this.url + id)
+      this.http.get(this.url + nome)
         .subscribe((result: any) => {
           resolve(result);
         },
@@ -64,7 +65,7 @@ export class JornadaProvider {
       }
 
       this.http.put(this.url + jornada.id, jornada).subscribe((result: any) => {
-        resolve(result.json());
+        resolve(result);
       },
         (error) => {
           reject(error);

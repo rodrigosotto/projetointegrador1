@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>TIPOS DE JUSTIFICATIVAS</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="backgroundPage">
+
+  <ion-row justify-content-center align-items-center>
+
+    <h4 ion-text-center class="tituloPagina">LISTA COM TIPOS DE JUSTIFICATIVAS</h4>
+  </ion-row>
+  <ion-list>
+    <ion-item-sliding *ngFor="let tipo of tipoJustificativa">
+      <ion-item>
+        <p>{{tipo.nome}} - {{tipo.codigo}}</p>
+      </ion-item>
+
+      <ion-item-options side="left">
+        <button ion-button color="primary" (click)="openEditTipoJustificativa(tipo.id)">
+          <ion-icon name="create"></ion-icon>
+          Editar
+        </button>
+        <button ion-button color="danger" (click)="deleteTipoJustificativa(tipo)">
+          <ion-icon name="trash"></ion-icon>
+          Excluir
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+  <!--<ion-infinite-scroll (ionInfinite)="getFeriados($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Aguarde...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>-->
+
+  <ion-fab right bottom>
+    <button ion-fab color="secondary" (click)="openCreatetipoJustificativa()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

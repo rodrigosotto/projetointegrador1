@@ -1,15 +1,7 @@
 import { JornadaProvider } from './../../providers/jornada/jornada';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
-//import { UsersProvider } from '../../providers/users-providers/users-providers';
 import { Time } from '@angular/common';
-
-/**
- * Generated class for the JornadaEditPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -17,7 +9,6 @@ import { Time } from '@angular/common';
   templateUrl: 'jornada-edit.html',
 })
 export class JornadaEditPage {
-
   model: Jornada;
 
   constructor(
@@ -36,16 +27,25 @@ export class JornadaEditPage {
     }
   }
 
-  saveNewJornadas() {
+  salvar() {
     this.saveJornadas()
       .then(() => {
-        this.toast.create({ message: 'Nova jornada salva com sucesso.', position: 'botton', 
-        duration: 3000 }).present();
+        this.toast.create({ 
+        message: 'Jornada salva com Sucesso.',
+        position: 'botton', 
+        duration: 2000 
+      }).present();
         this.navCtrl.pop();
       })
       .catch((error) => {
-        this.toast.create({ message: 'Erro ao salvar nova jornada. Erro: ' + error.error, 
-        position: 'botton', duration: 3000 }).present();
+        console.log("Erro ao salvar Jornada:");
+        console.log(error);
+        
+        this.toast.create({ 
+        message: 'Erro ao salvar Jornada. Erro: ' + error, 
+        position: 'botton', 
+        duration: 2000 
+      }).present();
       })
   }
 

@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
-import { UsersProvider } from '../../providers/users-providers/users-providers';
+import { TipoJustificativaProvider } from '../../providers/tipo-justificativa/tipo-justificativa';
+
+/**
+ * Generated class for the TipoJustificativaEditPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
 @IonicPage()
 @Component({
@@ -8,44 +15,66 @@ import { UsersProvider } from '../../providers/users-providers/users-providers';
   templateUrl: 'tipo-justificativa-edit.html',
 })
 export class TipoJustificativaEditPage {
-  model: TipoJustificativa;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, 
-    private toast: ToastController, private userProvider: UsersProvider ) 
+  model: Justificativa;
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private toast: ToastController,
+    private tipoJustificativa: TipoJustificativaProvider) 
     {
-    if (this.navParams.data.TipoJustificativa) {
-      this.model = this.navParams.data.TipoJustificativa;
-    } else {
-      this.model = new TipoJustificativa();
+      if (this.navParams.data.Justificativa) {
+         this.model = this.navParams.data.Justificativa;
+        console.log(this.model);
+      } else {
+        console.log("não achou uma Justificativa");
+        this.model = new Justificativa();
+      }
+
     }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad TipoJustificativaEditPage');
+    console.log(this.model);
   }
 
- 
- //metodo para salvar todas as justificativas
+  //metodo que salva os tipos de justificativas 
+  //em determinadas formas sendo por edit ou create
 
-saveTiposJustificativas() {
-  this.saveTiposDeJustificativas()
-    .then(() => {
-      this.toast.create({ message: 'Tipo de Justificativa salva com sucesso.', position: 'botton', duration: 3000 }).present();
-      //this.navCtrl.pop();
-    })
-    .catch((error) => {
-      this.toast.create({ message: 'Erro ao salvar o Tipo de Justificativa. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();
-    })
-}
-
-private saveTiposDeJustificativas() {
-  if (this.model.id) {
-    return this.userProvider.update(this.model);
-  } else {
-    return this.userProvider.insert(this.model);
-   }
+  salvar() {
+    this.salvarTipoJustificativa()
+      .then(() => {
+        this.toast.create({
+          message: 'Tipo de Justificativa salvo com sucesso.',
+          position: 'botton', duration: 2000
+        }).present();
+        this.navCtrl.pop();
+      })
+      .catch((error) => {
+        console.log("Erro salvando Tipo de Justificativa:");
+        console.log(error);
+        this.toast.create({
+          message: 'Erro ao salvar o Tipo de Justificativa. Erro: ' + error,
+          position: 'botton', duration: 2000
+        }).present();
+      })
   }
+  private salvarTipoJustificativa() {
+    if (this.model.id) {
+      return this.tipoJustificativa.updateTipoJustificativa(this.model);
+    } else {
+      return this.tipoJustificativa.insertTipoJustificativa(this.model);
+    }
+
+  }
+
+
+
+
 }
- 
-export class TipoJustificativa {
+export class Justificativa {
   id: number;
-  first_name: string;
-  last_name: string;
+  nome: string;
+  codigo: number;
 }
-

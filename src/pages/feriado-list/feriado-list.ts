@@ -15,7 +15,9 @@ export class FeriadoListPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     private toast: ToastController, 
-    public feriadoProvider: FeriadoProvider){}
+    public feriadoProvider: FeriadoProvider){
+
+    }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FeriadoListPage');
@@ -44,8 +46,9 @@ export class FeriadoListPage {
         }*/
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao listaFeriadosr os feriados. Erro: ' + error.error.error, 
-        position: 'botton', duration: 3000 }).present();
+        this.toast.create({ message: 'Erro ao listar os feriados. Erro: ' + error, 
+        position: 'botton', 
+        duration: 2000 }).present();
       });
   }
 
@@ -71,10 +74,15 @@ export class FeriadoListPage {
         let index = this.listaFeriados.indexOf(feriado);
         this.listaFeriados.splice(index, 1);
 
-        this.toast.create({ message: 'Feriado excluído com sucesso.', position: 'botton', duration: 3000 }).present();
+        this.toast.create({ message: 'Feriado excluído com sucesso.', 
+        position: 'botton', 
+        duration: 2000 }).present();
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao excluir o feriado. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();
+        this.toast.create({ 
+          message: 'Erro ao excluir o Feriado. Erro: ' + error, 
+          position: 'botton', 
+          duration: 3000 }).present();
       });
   }
 

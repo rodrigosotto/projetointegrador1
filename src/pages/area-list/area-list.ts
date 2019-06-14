@@ -62,7 +62,8 @@ export class AreaListPage {
         this.navCtrl.push('AreaEditPage', { area: result});
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao recuperar Area. Erro: ' + error.error, 
+        this.toast.create({ 
+          message: 'Erro ao recuperar Area. Erro: ' + error.error, 
         position: 'botton', duration: 3000 }).present();
       });
   }

@@ -11,8 +11,9 @@ export class FeriadoProvider {
 
   constructor(
     public http: HttpClient,
-    public global: GlobalProvider) {
-    this.url = this.global.API_URL + 'feriados/';
+    public global: GlobalProvider) 
+    {
+      this.url = this.global.API_URL + 'feriados/';
   }
 
   //metodos

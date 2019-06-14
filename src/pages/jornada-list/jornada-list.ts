@@ -1,4 +1,4 @@
-import { AreaListPage } from './../area-list/area-list';
+//import { AreaListPage } from './../area-list/area-list';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, InfiniteScroll, ToastController } from 'ionic-angular';
 import { JornadaProvider } from '../../providers/jornada/jornada';
@@ -11,9 +11,8 @@ import { JornadaProvider } from '../../providers/jornada/jornada';
 export class JornadaListPage {
 
   page: number;
-  
   listaJornadas: any[];
-   jornada: any[];
+  jornada: any[];
 
   @ViewChild(InfiniteScroll) infiniteScroll: InfiniteScroll;
 
@@ -35,14 +34,16 @@ export class JornadaListPage {
   // abrir para editar jornadas
 
   openEditJornada(id: number) {
+    console.log("openEditJornada: ("+id+")");
     this.jornadaProvider.getJornada(id)
       .then((result: any) => {
-        this.navCtrl.push('JornadaEditPage', { Jornada: result.data });
+        this.navCtrl.push('JornadaEditPage', { jornada: result});
       })
       .catch((error: any) => {
         this.toast.create({
-          message: 'Erro ao recuperar a jornada. Erro: ' + error.error,
-          position: 'botton', duration: 3000
+          message: 'Erro ao recuperar a jornada. Erro: ' + error,
+          position: 'botton', 
+          duration: 2000
         }).present();
       });
   }
@@ -56,14 +57,14 @@ export class JornadaListPage {
 
         this.toast.create({
           message: 'Jornada de trabalho excluída com sucesso.', position: 'botton',
-          duration: 3000
+          duration: 2000
         }).present();
       })
       .catch((error: any) => {
         this.toast.create({
-          message: 'Erro ao excluir a jornada de trabalho. Erro: ' + error.error,
+          message: 'Erro ao excluir a jornada de trabalho. Erro: ' + error,
           position: 'botton',
-          duration: 3000
+          duration: 2000
         }).present();
       });
   }
@@ -78,8 +79,8 @@ export class JornadaListPage {
       })
       .catch((error: any) => {
         this.toast.create({
-          message: 'Erro ao listar tipos de jornadas. Erro: ' + error.error,
-          position: 'botton', duration: 3000
+          message: 'Erro ao listar tipos de jornadas. Erro: ' + error,
+          position: 'botton', duration: 2000
         }).present();
       });
   }
