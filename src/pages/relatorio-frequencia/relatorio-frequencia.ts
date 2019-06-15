@@ -1,16 +1,8 @@
-import { AuthProvider } from './../../providers/auth/auth';
-import { FrequenciaProvider } from './../../providers/frequencia/frequencia';
+ import { FrequenciaProvider } from './../../providers/frequencia/frequencia';
 import { GlobalProvider } from './../../providers/global/global';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
-
-/**
- * Generated class for the RelatorioFrequenciaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -26,9 +18,12 @@ export class RelatorioFrequenciaPage {
   lista: any;
 
 
-  constructor(public http: HttpClient, public global: GlobalProvider,
-    public frequenciaProvider: FrequenciaProvider, private toast: ToastController/*,
-    public auth: AuthProvider*/) {
+  constructor(
+    public http: HttpClient, 
+    public global: GlobalProvider,
+    public frequenciaProvider: FrequenciaProvider, 
+    private toast: ToastController
+    ) {
     //TODO: contructor stuff
     this.frequenciaMensal();
     //this.user = this.auth.getUser();
@@ -58,16 +53,7 @@ export class RelatorioFrequenciaPage {
       }
 
     );
-    /*this.frequenciaProvider.frequenciaMensal()
-    .then((result: any) =>{
-      this.relatorio = result;
-      this.user2 = this.relatorio;//.user;
-      this.lista = this.relatorio.lista;
-      console.log(this.relatorio);
-    })
-    .catch((error: any) => {
-      this.toast.create({ message: 'Erro ao consultar relatório de frequência. Erro: ' + error.error, position: 'botton', duration: 3000 }).present();
-    });*/
+    
 
   }
 

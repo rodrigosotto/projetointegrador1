@@ -73,7 +73,7 @@ export class TipoJustificativaListPage {
       });
   }
 
-  openCreatetipoJustificativa(){
+  openCreateTipoJustificativa(){
     this.navCtrl.push('TipoJustificativaEditPage');
   }
 }

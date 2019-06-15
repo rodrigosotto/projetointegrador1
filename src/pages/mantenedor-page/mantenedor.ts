@@ -2,14 +2,7 @@ import { AuthProvider } from './../../providers/auth/auth';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
-//import { UserListMantenedorPage } from '../user-list-mantenedor/user-list-mantenedor'
-//import { AreaPage } from '../area/area';
-/**
- * Generated class for the MantenedorPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+ 
 
 @IonicPage()
 @Component({
@@ -56,16 +49,11 @@ export class MantenedorPage {
     this.navCtrl.push('FeriadoListPage');
   }
   openTipoOcorrencia(){
-    this.navCtrl.push('TiposDeOcorrenciasListPage');
+    this.navCtrl.push('TiposOcorrenciaListPage');
   }
+  /*openFrequenciaArea(){
+    this.navCtrl.push('RelatorioFrequenciaPage');
+  }*/
 
 }
-/*
-area: null
-cartao: "10007"
-email: "gestor"
-id: 6
-login: "gestor"
-matricula: 10007
-nome: "gestor"
-*/
+ 

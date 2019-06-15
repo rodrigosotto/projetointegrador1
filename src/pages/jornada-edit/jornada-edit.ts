@@ -61,6 +61,6 @@ export class JornadaEditPage {
 export class Jornada {
   id: number;
   nome: string;
-  Entrada: Time;
-  Saida: Time;
+  entrada: Time;
+  saida: Time;
 }

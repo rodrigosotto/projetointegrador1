@@ -8,9 +8,8 @@
 
 <ion-content padding class="backgroundPage">
   <div class="tituloPagina">
-    <h3 text-center margin-bottom>LOGADO GESTOR</h3>
-    <h4 text-center>{{user.nome}}</h4>
-    <p text-center>{{user.matricula}}</p>
+    <h2 text-center>Nome: {{user.nome}}</h2>
+    <p text-center>Matrícula: {{user.matricula}}</p>
 
   </div>
   <!--LINHA 1-->
@@ -83,6 +82,14 @@
         </ion-card>
       </ion-col>
 
+      <ion-col col-6 no-padding>
+        <ion-card class="botoes">
+          <ion-card-header>
+            <p><b>FREQUENCIA AREA</b></p>
+          </ion-card-header>
+          <ion-card-content class="fixline" id="areaFrequencia"></ion-card-content>
+        </ion-card>
+      </ion-col>
 
     </ion-row>
   </ion-grid>

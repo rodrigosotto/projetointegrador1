@@ -2,12 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { TipoJustificativaProvider } from '../../providers/tipo-justificativa/tipo-justificativa';
 
-/**
- * Generated class for the TipoJustificativaEditPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -68,10 +62,6 @@ export class TipoJustificativaEditPage {
     }
 
   }
-
-
-
-
 }
 export class TipoJustificativa {
   id: number;

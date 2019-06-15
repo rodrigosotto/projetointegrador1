@@ -81,5 +81,20 @@ page-mantenedor {
       margin-left: 10px;
     }
      
-
+    #ocorrencia{
+      background-image: url("/assets/imgs/timer.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top;
+      margin-left: 10px;
+        
+    }
+    #areaFrequencia{
+      background-image: url("/assets/imgs/archive.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top;
+      margin-left: 10px;
+        
+    }
 }

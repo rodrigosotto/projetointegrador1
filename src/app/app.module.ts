@@ -24,6 +24,7 @@ import { JornadaProvider } from '../providers/jornada/jornada';
 import { AreasProvidersProvider } from '../providers/areas-providers/areas-providers';
 import { FrequenciaProvider } from '../providers/frequencia/frequencia';
 import { TipoJustificativaProvider } from '../providers/tipo-justificativa/tipo-justificativa';
+import { TipoOcorrenciaProvider } from '../providers/tipo-ocorrencia/tipo-ocorrencia';
 
 
 export function jwtOptionsFactory(storage) {
@@ -86,6 +87,7 @@ export function jwtOptionsFactory(storage) {
     AreasProvidersProvider,
     FrequenciaProvider,
     TipoJustificativaProvider,
+    TipoOcorrenciaProvider,
 
   ]
 })

@@ -12,7 +12,6 @@ export class JornadaListPage {
 
   page: number;
   listaJornadas: any[];
-  jornada: any[];
 
   @ViewChild(InfiniteScroll) infiniteScroll: InfiniteScroll;
 
@@ -52,8 +51,8 @@ export class JornadaListPage {
   deleteJornada(jornada: any) {
     this.jornadaProvider.removeJornada(jornada.id)
       .then((result: any) => {
-        let index = this.jornada.indexOf(jornada);
-        this.jornada.splice(index, 1);
+        let index = this.listaJornadas.indexOf(jornada);
+        this.listaJornadas.splice(index, 1);
 
         this.toast.create({
           message: 'Jornada de trabalho excluída com sucesso.', position: 'botton',
