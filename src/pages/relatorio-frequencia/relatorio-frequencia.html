@@ -5,9 +5,12 @@
 </ion-header>
 <ion-content padding class="backgroundPage">
   <!--<div class="tituloPagina"><h3>CONSULTAR FREQUÊNCIAS</h3></div>-->
-  <div class="tituloPagina"><h3>Nome: {{ relatorio?.user.nome }}</h3></div>
-  <div class="tituloPagina"><h3>Período: {{ relatorio?.dataini | date: 'MMM/yyyy' }} </h3></div>
-
+  <div class="tituloPagina">
+    <h3>Nome: {{ relatorio?.user.nome }}</h3>
+  </div>
+  <div class="tituloPagina">
+    <h3>Período: {{ relatorio?.dataini | date: "MMM/yyyy" }}</h3>
+  </div>
 
   <ion-grid>
     <ion-row>
@@ -20,16 +23,23 @@
     </ion-row>
   </ion-grid>
 
-
-    <div *ngFor="let item of lista" class="box">
-    <ion-row class="">
-      <ion-col class="dia">
-        <b>{{item.data|date:'dd'}}</b></ion-col>
-      <ion-col class="hora" *ngFor="let reg of item.registros">
-        <b>{{reg.horario}}  </b>
-      </ion-col>
-    </ion-row>
-  </div>
-
-
+  <ion-list>
+    <button
+      ion-item *ngFor="let item of lista"
+      (click)="openOcorrenciaModal(item)"> <!--class="item item-block item-ios"-->
+      <ion-grid>
+          <ion-row>
+              <ion-col>
+                <b>{{ item.data | date: "dd" }}</b>
+              </ion-col>
+              <ion-col *ngFor="let reg of item.registros" style="float: left !important;">
+                <b>{{ reg.horario }}</b>
+              </ion-col>
+              <ion-col>
+                <ion-badge color="danger">{{item.ocorrencias.length||''}}</ion-badge>
+              </ion-col>
+            </ion-row>
+      </ion-grid>
+    </button>
+  </ion-list>
 </ion-content>

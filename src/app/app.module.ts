@@ -25,6 +25,7 @@ import { AreasProvidersProvider } from '../providers/areas-providers/areas-provi
 import { FrequenciaProvider } from '../providers/frequencia/frequencia';
 import { TipoJustificativaProvider } from '../providers/tipo-justificativa/tipo-justificativa';
 import { TipoOcorrenciaProvider } from '../providers/tipo-ocorrencia/tipo-ocorrencia';
+import { OcorrenciaModalPage } from '../pages/ocorrencia-modal/ocorrencia-modal';
 
 
 export function jwtOptionsFactory(storage) {
@@ -61,6 +62,7 @@ export function jwtOptionsFactory(storage) {
         deps: [Storage],
       }
     }),
+    OcorrenciaModalPage,
 
   ],
   bootstrap: [IonicApp],

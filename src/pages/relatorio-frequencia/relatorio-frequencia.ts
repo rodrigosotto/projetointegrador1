@@ -1,7 +1,9 @@
- import { FrequenciaProvider } from './../../providers/frequencia/frequencia';
+import { OcorrenciaModalPage } from './../ocorrencia-modal/ocorrencia-modal';
+import { AuthProvider } from './../../providers/auth/auth';
+import { FrequenciaProvider } from './../../providers/frequencia/frequencia';
 import { GlobalProvider } from './../../providers/global/global';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, ModalController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 
 @IonicPage()
@@ -18,12 +20,10 @@ export class RelatorioFrequenciaPage {
   lista: any;
 
 
-  constructor(
-    public http: HttpClient, 
-    public global: GlobalProvider,
-    public frequenciaProvider: FrequenciaProvider, 
-    private toast: ToastController
-    ) {
+  constructor(public http: HttpClient, public global: GlobalProvider,
+    public frequenciaProvider: FrequenciaProvider, private modal : ModalController,
+    private toast: ToastController/*,
+    public auth: AuthProvider*/) {
     //TODO: contructor stuff
     this.frequenciaMensal();
     //this.user = this.auth.getUser();
@@ -53,10 +53,17 @@ export class RelatorioFrequenciaPage {
       }
 
     );
-    
+
 
   }
 
-
+  openOcorrenciaModal(item: any){
+    console.log("modal(registro)");
+    console.log(item);
+    if(item.ocorrencias.length>0){
+      let modal = this.modal.create(OcorrenciaModalPage, {'item': item});
+      modal.present();
+    }
+  }
 
 }

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons>
+      <button size="medium" color="default" navPop>
+        <!-- <ion-icon name="close"></ion-icon> -->
+        VOLTAR
+      </button>
+    </ion-buttons>
+    <ion-title>Detalhes Registro/Ocorrencias</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <h2>Data: {{item.data}} </h2>
+  <br><h3>Registros:<b *ngFor="let reg of item.registros"> {{reg.horario}} </b> </h3>
+  <br><h3> Ocorrências </h3>
+  <br>
+  <ion-list>
+    <ion-item *ngFor="let o of item.ocorrencias">
+      <h3>{{o.tipo_ocorrencia.codigo}} - {{o.tipo_ocorrencia.nome}} </h3>
+      <button expand="block">Justificar</button>
+
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>
