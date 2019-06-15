@@ -15,11 +15,20 @@
   </div>
 
   <ion-list>
+    <!--
       <ion-item>
           <ion-label stacked>Area de Trabalho</ion-label>
           <ion-input type="text" name="area" [(ngModel)]="model.areaDeTrabalho" placeholder="Digite sua area de trabalho"></ion-input>
         </ion-item>
-    <ion-item>
+      -->
+      <ion-item>
+      <ion-label>Area</ion-label>
+      <ion-select [(ngModel)]="model.area_id">
+        <ion-option *ngFor="let area of listaAreas" value={{area.id}} >{{area.nome}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+        <ion-item>
       <ion-label stacked>Login</ion-label>
       <ion-input type="text" name="login" [(ngModel)]="model.login" placeholder="digite um login..." maxlength="15"></ion-input>
     </ion-item>
@@ -39,7 +48,7 @@
         <ion-input type="password" name="password" [(ngModel)]="model.password"></ion-input>
       </ion-item>
     <ion-item>
-      <ion-label stacked>Matricula</ion-label>
+      <ion-label stacked>Matrícula</ion-label>
       <ion-input type="number" name="matricula" [(ngModel)]="model.matricula" placeholder="inserir matricula..." maxlength="10">
       </ion-input>
     </ion-item>
