@@ -1,6 +1,6 @@
 //import { AreaListPage } from './../area-list/area-list';
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, InfiniteScroll, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, InfiniteScroll, ToastController, AlertController } from 'ionic-angular';
 import { JornadaProvider } from '../../providers/jornada/jornada';
 
 @IonicPage()
@@ -15,10 +15,11 @@ export class JornadaListPage {
 
   @ViewChild(InfiniteScroll) infiniteScroll: InfiniteScroll;
 
-  constructor(public navCtrl: NavController, 
+  constructor(public navCtrl: NavController,
     public navParams: NavParams,
-    private toast: ToastController, 
-    private jornadaProvider: JornadaProvider) { 
+    private toast: ToastController,
+    private jornadaProvider: JornadaProvider,
+    public alertCtrl: AlertController) {
 
      }
 
@@ -41,7 +42,7 @@ export class JornadaListPage {
       .catch((error: any) => {
         this.toast.create({
           message: 'Erro ao recuperar a jornada. Erro: ' + error,
-          position: 'botton', 
+          position: 'botton',
           duration: 2000
         }).present();
       });
@@ -49,27 +50,27 @@ export class JornadaListPage {
 
   //metodo delete  jornadas
   deleteJornada(jornada: any) {
-    this.jornadaProvider.removeJornada(jornada.id)
-      .then((result: any) => {
-        let index = this.listaJornadas.indexOf(jornada);
-        this.listaJornadas.splice(index, 1);
+      this.jornadaProvider.removeJornada(jornada.id)
+        .then((result: any) => {
+          let index = this.listaJornadas.indexOf(jornada);
+          this.listaJornadas.splice(index, 1);
 
-        this.toast.create({
-          message: 'Jornada de trabalho excluída com sucesso.', position: 'botton',
-          duration: 2000
-        }).present();
-      })
-      .catch((error: any) => {
-        this.toast.create({
-          message: 'Erro ao excluir a jornada de trabalho. Erro: ' + error,
-          position: 'botton',
-          duration: 2000
-        }).present();
-      });
+          this.toast.create({
+            message: 'Jornada de trabalho excluída com sucesso.', position: 'botton',
+            duration: 2000
+          }).present();
+        })
+        .catch((error: any) => {
+          this.toast.create({
+            message: 'Erro ao excluir a jornada de trabalho. Erro: ' + error,
+            position: 'botton',
+            duration: 2000
+          }).present();
+        });
   }
 
   //metodo que lista todas jornadas
- 
+
   getAllJornadas() {
      this.jornadaProvider.getAllJornadas()
       .then((result: any) => {
@@ -82,6 +83,33 @@ export class JornadaListPage {
           position: 'botton', duration: 2000
         }).present();
       });
+  }
+
+  confirmaExclusao(jornada: any) { //mudar parametro para o nome que vc precisar
+    //let retorno = false;
+    let alert = this.alertCtrl.create({
+      title: 'Confirma ação?',
+      message: 'Esta ação não poderá ser desfeita!',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            console.log('Ação cancelada');
+
+          }
+        },
+        {
+          text: 'Confirmar',
+          handler: () => {
+            console.log('Ação confirmada');
+            //ESSE Método é que precisa mudar para deleteUsuario, deleteFeriado, etc...
+            this.deleteJornada(jornada);
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
 }

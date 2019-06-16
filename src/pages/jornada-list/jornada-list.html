@@ -25,7 +25,7 @@
           <ion-icon name="create"></ion-icon>
           Editar
         </button>
-        <button ion-button color="danger" (click)="deleteJornada(jornada)">
+        <button ion-button color="danger" (click)="confirmaExclusao(jornada)">
           <!--NÁO VAI EXCLUIR TEM QUE CRIAR FUNCAO ADEQUADA COM A API-->
           <ion-icon name="trash"></ion-icon>
           Excluir
@@ -35,8 +35,8 @@
     </ion-item-sliding>
 
   </ion-list>
-  <!--Adequar infinite scroll para a lista de tipos de Justificativas caso existir mais 
-  
+  <!--Adequar infinite scroll para a lista de tipos de Justificativas caso existir mais
+
     <ion-infinite-scroll (ionInfinite)="getUsers($event)">
       <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Aguarde...">
       </ion-infinite-scroll-content>
