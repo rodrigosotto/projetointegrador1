@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-buttons>
-      <button size="medium" color="default" navPop>
+      <button size="medium" color="danger" navPop>
         <!-- <ion-icon name="close"></ion-icon> -->
         VOLTAR
       </button>
@@ -15,13 +15,17 @@
   <br><h3>Registros:<b *ngFor="let reg of item.registros"> {{reg.horario}} </b> </h3>
   <br><h3> Ocorrências </h3>
   <br>
+
+
   <ion-list>
     <ion-item *ngFor="let o of item.ocorrencias">
-      <h3>{{o.tipo_ocorrencia.codigo}} - {{o.tipo_ocorrencia.nome}} </h3>
-      <button expand="block">Justificar</button>
+      <h2>{{o.tipo_ocorrencia.codigo}} - {{o.tipo_ocorrencia.nome}} </h2>
+      <button color="danger" ion-item>Justificar</button>
 
     </ion-item>
   </ion-list>
+
+  <button size="large" expand="block" ion-item navPop>VOLTAR</button>
 
 
 </ion-content>

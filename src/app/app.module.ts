@@ -1,3 +1,4 @@
+import { OcorrenciaModalPageModule } from './../pages/ocorrencia-modal/ocorrencia-modal.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -40,14 +41,14 @@ export function jwtOptionsFactory(storage) {
 
 @NgModule({
   declarations: [
-    OcorrenciaModalPage, 
+    OcorrenciaModalPage,
     MyApp,
     LoginPage,
     ModalJustificativasPage,
     MantenedorPage,
     HomePage,
     UsuarioPage,
-    
+
 
 
 
@@ -64,6 +65,7 @@ export function jwtOptionsFactory(storage) {
         deps: [Storage],
       }
     }),
+    //OcorrenciaModalPageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -72,7 +74,7 @@ export function jwtOptionsFactory(storage) {
     ModalJustificativasPage,
     MantenedorPage,
     HomePage,
-    OcorrenciaModalPage, 
+    OcorrenciaModalPage,
 
     UsuarioPage
 

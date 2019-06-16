@@ -5,12 +5,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-//import { Platform, AlertController } from '@ionic/angular';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Storage } from '@ionic/storage';
 import { tap, catchError } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
 import { GlobalProvider } from '../global/global';
+import { Platform, AlertController, NavController } from 'ionic-angular';
 
 
 const TOKEN_KEY = 'access_token';
@@ -29,13 +29,14 @@ export class AuthProvider {
   statusAutenticacao = false;
 
   constructor(public http: HttpClient, public helper: JwtHelperService,
-    public storage: Storage, private global : GlobalProvider
-  /*public plt: Platform, public alertController: AlertController*/  ) {
+    public storage: Storage, private global : GlobalProvider,
+    public plt: Platform, public alertController: AlertController,
+    /* public navCtrl: NavController */  ) {
     //console.log('Hello AuthProvider Provider');
-    //this.plt.ready().then(() =>{ //Platform tá dando problemas... parece que é do Ionic 4
+    this.plt.ready().then(() =>{ //Platform tá dando problemas... parece que é do Ionic 4
 
       this.checkToken();
-    //});
+    });
   }
 
   checkToken() {
@@ -49,6 +50,7 @@ export class AuthProvider {
           this.statusAutenticacao = true; // this.authenticationState.next(true);
         } else {
           this.storage.remove(TOKEN_KEY);
+          this.storage.remove('user');
         }
       }
     });
@@ -92,8 +94,10 @@ export class AuthProvider {
 
   logout() {
     this.storage.remove(TOKEN_KEY).then(() => {
+      this.storage.remove('user');
       //this.authenticationState.next(false);
       this.statusAutenticacao = false;
+      //this.navCtrl.setRoot('LoginPage');
     });
   }
 

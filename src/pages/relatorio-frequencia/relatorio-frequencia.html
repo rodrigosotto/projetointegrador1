@@ -12,34 +12,30 @@
     <h3>Período: {{ relatorio?.dataini | date: "MMM/yyyy" }}</h3>
   </div>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col style="color:#3e2baa; font-size:22px;">
+  <ion-list>
+    <ion-grid>
+      <ion-row>
+      <ion-col style="color:#3e2baa; font-size:22px;" col-2>
         <b>Dia</b>
       </ion-col>
-      <ion-col style="color:#3e2baa; font-size:22px;">
+      <ion-col style="color:#3e2baa; font-size:22px;" col-10 align-self-center>
         <b> Marcações </b>
       </ion-col>
     </ion-row>
-  </ion-grid>
-
-  <ion-list>
-    <button
-      ion-item *ngFor="let item of lista"
-      (click)="openOcorrenciaModal(item)"> <!--class="item item-block item-ios"-->
-      <ion-grid>
-          <ion-row>
-              <ion-col>
-                <b>{{ item.data | date: "dd" }}</b>
-              </ion-col>
-              <ion-col *ngFor="let reg of item.registros" style="float: left !important;">
-                <b>{{ reg.horario }}</b>
-              </ion-col>
-              <ion-col>
-                <ion-badge color="danger">{{item.ocorrencias.length||''}}</ion-badge>
-              </ion-col>
-            </ion-row>
-      </ion-grid>
-    </button>
+      <button ion-item *ngFor="let item of lista" (click)="openOcorrenciaModal(item)" >
+        <!--class="item item-block item-ios"-->
+        <ion-row>
+          <ion-col col-1>
+            <b>{{ item.data | date: "dd" }}</b>
+          </ion-col>
+          <ion-col col-9>
+            <b *ngFor="let reg of item.registros">&nbsp; {{ reg.horario }} </b>
+          </ion-col>
+          <ion-col col-2>
+            <ion-badge color="danger">{{item.ocorrencias.length || ""}}</ion-badge>
+          </ion-col>
+        </ion-row>
+      </button>
+    </ion-grid>
   </ion-list>
 </ion-content>

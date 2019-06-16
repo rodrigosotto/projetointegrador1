@@ -22,51 +22,34 @@ export class LoginPage {
     private global: GlobalProvider, private auth: AuthProvider)
   {
     this.model = new User();
-    this.model.email = 'gestor';//'jefferson@jefferson';
+    this.model.email = 'vfporto@vfporto';//'jefferson@jefferson';
     this.model.password = '123456';
   }
 
-  openHome(){
-    this.navCtrl.push(HomePage, {}, {animate: true} );
-  }
-  openUsuarioPage(){
-    this.navCtrl.push(UsuarioPage, {}, {animate: true} );
-  }
+  /*ionViewWillEnter(){
+    console.log("Usuario autenticado? "+this.auth.isAuthenticated());
+    if(this.auth.isAuthenticated()){
+      this.openUserHome();
+    }
+  }*/
+
 
  /**VERIFICA SE O USUARIO EXISTE NA API GRAVA O TOKEN PARA FUTURAS REQUISIÇÕES E SE EXISTE O USER ELE LOGA NO SISTEMA */
   login() {
-    this.auth.login(this.model.email, this.model.password)
-    //this.userProvider.login(this.model.email, this.model.password)
-      .then((result: any) => {
+    this.auth.login(this.model.email, this.model.password).then((result: any) => {
         this.toast.create({ message: 'Usuário logado com sucesso. Token: ' + result.token, position: 'botton', duration: 3000 }).present();
-        //chamar a funcao que grava o token no storage
-
-        //this.navCtrl.push(MantenedorPage, {}, {animate: true} );
-
         this.openUserHome();
-
-        //Salvar o token no Ionic Storage para usar em futuras requisições.
-        //Redirecionar o usuario para outra tela usando o navCtrl
-        //this.navCtrl.pop();
-        //this.navCtrl.setRoot()
-      })
+    })
       .catch((error: any) => {
         this.toast.create({ message: 'Erro ao efetuar login.', position: 'botton', duration: 3000 }).present();
         console.log("Login error: "+error);
       });
-      /*this.auth.login(this.model.email, this.model.password);
-      if (this.auth.isAuthenticated){
-        this.toast.create({ message: 'Usuário logado com sucesso. Token: ' + , position: 'botton', duration: 3000 }).present();
-      } else{
-
-      }*/
-
   }
 
   openUserHome(){
     //this.auth.getUser().then( (user: any)=>{
       let user = this.auth.getUser();
-      console.log("user: "+user.email);
+      console.log("user logado: "+user.email);
       console.log("tipoUsuarioId: "+user.tipoUsuario.id);
       switch(user.tipoUsuario.id){
       case 1:
