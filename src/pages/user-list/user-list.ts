@@ -1,3 +1,4 @@
+import { User } from './../user-edit/user-edit';
 import { UsersProvider } from './../../providers/users-providers/users-providers';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, InfiniteScroll } from 'ionic-angular';
@@ -52,13 +53,18 @@ export class UserListPage {
     }, 500);
   }
 
-  openUser(id: number) {
-    this.userProvider.get(id)
+  openUser(user) {
+    console.log("open user; ");
+    console.log(user);
+    this.userProvider.get(user)
       .then((result: any) => {
         this.navCtrl.push('UserDetailPage', { user: result });
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao recuperar o usuário. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();
+        this.toast.create({ 
+          message: 'Erro ao recuperar o usuário. Erro: ' + error, 
+          position: 'botton', 
+          duration: 2000 }).present();
       });
 
   }
@@ -83,10 +89,16 @@ export class UserListPage {
         let index = this.users.indexOf(user);
         this.users.splice(index, 1);
 
-        this.toast.create({ message: 'Usuário excluído com sucesso.', position: 'botton', duration: 3000 }).present();
+        this.toast.create({ 
+          message: 'Usuário excluído com sucesso.', 
+          position: 'botton', 
+          duration: 2000 }).present();
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao excluir o usuário. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();
+        this.toast.create({ 
+          message: 'Erro ao excluir o usuário. Erro: ' + error, 
+        position: 'botton', 
+        duration: 2000 }).present();
       });
   }
 }

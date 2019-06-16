@@ -28,8 +28,10 @@ export class UsuarioPage {
     console.log(this.user);//ver no console o que esta vindo
   }
   logout(){
-    localStorage.clear();//limpa se foi gravado no storage
+    this.auth.logout();
+    //localStorage.clear();//limpa se foi gravado no storage
     this.navCtrl.setRoot(LoginPage);//volta pra pagina inicial
+
    //this.navCtrl.push('LogoutPage');
    //alert("This is logout");
  }

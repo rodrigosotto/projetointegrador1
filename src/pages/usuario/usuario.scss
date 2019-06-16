@@ -10,8 +10,8 @@ page-usuario {
       }
       .tituloPagina {
         color: #f7f7f7;
-        font-weight: 700;
-        margin-bottom: 2em;
+        font-weight: 900;
+       // margin-bottom: 2em;
         text-align: center;
       }
       .botoes{
@@ -20,15 +20,26 @@ page-usuario {
         -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
         -moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
         box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-        height: 140px;
-        width: 160px;
+        height: 108px;
+        width: 165px;
+        border-radius: 25px;
+
       }
        
        .fixline{
-         margin-bottom:3em;
-         height: 80px;
+         //margin-bottom:3em;
+         height: 50px;
          width: auto;
          max-width: 90%
+       }
+       .card-ios {
+        margin: 7px !important;
+        padding:0px;
+      
+      }
+    
+       .ion-card{
+         display: inline-grid;
        }
         #sair{
           background-image: url("/assets/imgs/exit.png");

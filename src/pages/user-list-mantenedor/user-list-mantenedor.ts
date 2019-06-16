@@ -63,15 +63,10 @@ export class UserListMantenedorPage {
     }, 500);
   }
 
-  openUser(id: number) {
-    this.userProvider.get(id)
-      .then((result: any) => {
-        this.navCtrl.push('UserDetailPage', { user: result });
-      })
-      .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao recuperar o usuário. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();
-      });
-
+  openUser(user) {
+    console.log("open user: ");
+    console.log(user);
+        this.navCtrl.push('UserDetailPage', { user });
   }
 
   openCreateUser() {

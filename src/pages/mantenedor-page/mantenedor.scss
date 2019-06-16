@@ -10,29 +10,38 @@ page-mantenedor {
   }
   .tituloPagina {
     color: #f7f7f7;
-    font-weight: 700;
+    font-weight: 900;
   //  margin-bottom: 1em;
     text-align: center;
   }
   .botoes{
     text-align:center;
-    background-color: #e4e4e4 opacity($color: #ffffff4b);
+    background-color: #e4e4e4 opacity($color: #6982f36b);
     -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
     box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-    height: 120px;
-    width: 150px;
-    border-radius: 30px;
+    height: 108px;
+    width: 165px;
+    border-radius: 25px;
     //margin-left: 0em;
     position: relative;
 
   }
    
    .fixline{
-     margin-bottom:3em;
-     height: 60px;
+    // margin-bottom:3em;
+     height: 50px;
      width: auto;
      max-width: 90%
+   }
+   .card-ios {
+    margin: 7px !important;
+    padding:0px;
+  
+  }
+
+   .ion-card{
+     display: inline-grid;
    }
     #sair{
       background-image: url("/assets/imgs/exit.png");

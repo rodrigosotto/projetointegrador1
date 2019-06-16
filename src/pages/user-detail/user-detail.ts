@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { UsersProvider } from '../../providers/users-providers/users-providers';
-
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, InfiniteScroll, ToastController } from 'ionic-angular';
+ 
 
 @IonicPage()
 @Component({
@@ -10,19 +9,24 @@ import { UsersProvider } from '../../providers/users-providers/users-providers';
 })
 export class UserDetailPage {
 
-  users: any;
-  page: number;
-
-
+  user: any;
+  
   constructor(
     public navCtrl: NavController, 
-    public navParams: NavParams,
-    private userProvider: UsersProvider) {
+    public navParams: NavParams,) {
+    this.user = this.navParams.data.user;
+    console.log(this.user);
+    
+  }
 
-    this.users = this.navParams.data.user;
+  ionViewDidEnter() {
+    /*this.users = [];
+    this.page = 1;
+    this.infiniteScroll.enable(true);
+    this.getAllUsers(this.page);*/
   }
   voltarButton(){
-    this.navCtrl.push('UserListPage');
+    this.navCtrl.pop();
   }
-  
+ 
 }

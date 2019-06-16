@@ -19,9 +19,9 @@
   <ion-list inset>
     <ion-item-sliding *ngFor="let user of users">
 
-      <ion-item (click)="openUser(user.id)">
+      <ion-item (click)="openUser(user)">
 
-        <h2>{{ user.nome }} {{ user.sobrenome }}</h2>
+        <h3>{{ user.nome }}</h3>
         <p>{{user.email}}</p>
 
       </ion-item>
