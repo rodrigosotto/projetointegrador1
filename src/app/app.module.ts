@@ -40,12 +40,14 @@ export function jwtOptionsFactory(storage) {
 
 @NgModule({
   declarations: [
+    OcorrenciaModalPage, 
     MyApp,
     LoginPage,
     ModalJustificativasPage,
     MantenedorPage,
     HomePage,
     UsuarioPage,
+    
 
 
 
@@ -62,8 +64,6 @@ export function jwtOptionsFactory(storage) {
         deps: [Storage],
       }
     }),
-    OcorrenciaModalPage,
-
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -72,6 +72,8 @@ export function jwtOptionsFactory(storage) {
     ModalJustificativasPage,
     MantenedorPage,
     HomePage,
+    OcorrenciaModalPage, 
+
     UsuarioPage
 
 
