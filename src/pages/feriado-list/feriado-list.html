@@ -17,7 +17,7 @@
       <!-- <ion-item-sliding>-->
 <!--APOS a API ESTIVER  COMPLETAMENTE POPULADA TRAZER AQUI A LISTA DE FERIADOS-->
          <ion-item>
-             <p>{{feriado.data | date:'dd/MM/yyyy'}} - {{feriado.nome}}</p>
+             {{feriado.data | date:'dd/MM/yyyy'}} - {{feriado.nome}}
           </ion-item>
 
     <ion-item-options side="left">
@@ -25,7 +25,7 @@
           <ion-icon name="create"></ion-icon>
           Editar
         </button>
-      <button ion-button color="danger" (click)="deleteFeriado(feriado)" > 
+      <button ion-button color="danger" (click)="confirmaExclusao(feriado)" > 
           <ion-icon name="trash"></ion-icon>
           Excluir
         </button>

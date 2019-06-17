@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, InfiniteScroll, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, InfiniteScroll, ToastController, AlertController } from 'ionic-angular';
 import { UsersProvider } from '../../providers/users-providers/users-providers';
 
 /**
@@ -25,7 +25,8 @@ export class UserListMantenedorPage {
     public navCtrl: NavController, 
     public navParams: NavParams, 
     private toast: ToastController, 
-    private userProvider: UsersProvider
+    private userProvider: UsersProvider,
+    public alertCtrl: AlertController
     ) { }
 
   ionViewDidEnter() {
@@ -97,6 +98,32 @@ export class UserListMantenedorPage {
         this.toast.create({ message: 'Erro ao excluir o usuário. Erro: ' + error.error.error, 
         position: 'botton', duration: 3000 }).present();
       });
+  }
+  confirmaExclusao(user: any) { //mudar parametro para o nome que vc precisar
+    //let retorno = false;
+    let alert = this.alertCtrl.create({
+      title: 'Confirma ação?',
+      message: 'Esta ação não poderá ser desfeita!',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            console.log('Ação cancelada');
+
+          }
+        },
+        {
+          text: 'Confirmar',
+          handler: () => {
+            console.log('Ação confirmada');
+            //ESSE Método é que precisa mudar para deleteUsuario, deleteFeriado, etc...
+            this.deleteUser(user);
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
 }

@@ -15,21 +15,21 @@
   <ion-list>
     <ion-grid>
       <ion-row>
-      <ion-col style="color:#3e2baa; font-size:22px;" col-2>
+      <ion-col style="color:#fff; font-size:22px;" col-2>
         <b>Dia</b>
       </ion-col>
-      <ion-col style="color:#3e2baa; font-size:22px;" col-10 align-self-center>
-        <b> Marcações </b>
+      <ion-col style="color:#fff; font-size:22px;" col-10 >
+        <b style="color:#fff; font-weight: 900; margin-left: 15%;"> Marcações </b>
       </ion-col>
     </ion-row>
       <button ion-item *ngFor="let item of lista" (click)="openOcorrenciaModal(item)" >
         <!--class="item item-block item-ios"-->
-        <ion-row>
+        <ion-row align-self-center>
           <ion-col col-1>
-            <b>{{ item.data | date: "dd" }}</b>
+            <b style="font-size: 20px;">{{ item.data | date: "dd" }}</b>
           </ion-col>
           <ion-col col-9>
-            <b *ngFor="let reg of item.registros">&nbsp; {{ reg.horario }} </b>
+            <span *ngFor="let reg of item.registros">&nbsp; {{ reg.horario }} </span>
           </ion-col>
           <ion-col col-2>
             <ion-badge color="danger">{{item.ocorrencias.length || ""}}</ion-badge>

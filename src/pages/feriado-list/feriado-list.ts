@@ -1,6 +1,6 @@
 import { FeriadoProvider } from './../../providers/feriado/feriado';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, AlertController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -15,7 +15,8 @@ export class FeriadoListPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     private toast: ToastController, 
-    public feriadoProvider: FeriadoProvider){
+    public feriadoProvider: FeriadoProvider,
+    public alertCtrl: AlertController){
 
     }
 
@@ -85,9 +86,36 @@ export class FeriadoListPage {
           duration: 3000 }).present();
       });
   }
+  confirmaExclusao(feriado: any) { //mudar parametro para o nome que vc precisar
+    //let retorno = false;
+    let alert = this.alertCtrl.create({
+      title: 'Confirma ação?',
+      message: 'Esta ação não poderá ser desfeita!',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            console.log('Ação cancelada');
+
+          }
+        },
+        {
+          text: 'Confirmar',
+          handler: () => {
+            console.log('Ação confirmada');
+            //ESSE Método é que precisa mudar para deleteUsuario, deleteFeriado, etc...
+            this.deleteFeriado(feriado);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
 
 
   openCreateFeriado(){
     this.navCtrl.push('FeriadoEditPage');
   }
+
 }

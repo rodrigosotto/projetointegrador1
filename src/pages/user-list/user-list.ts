@@ -1,11 +1,10 @@
-import { User } from './../user-edit/user-edit';
 import { UsersProvider } from './../../providers/users-providers/users-providers';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController, InfiniteScroll } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, InfiniteScroll, AlertController } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 
 @IonicPage()
-@Component({
+ @Component({
   selector: 'page-user-list',
   templateUrl: 'user-list.html',
 })
@@ -17,7 +16,10 @@ export class UserListPage {
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, 
     private toast: ToastController, 
-    private userProvider: UsersProvider) { }
+    private userProvider: UsersProvider,
+    public alertCtrl: AlertController) { 
+
+    }
 
   ionViewDidEnter() {
     this.users = [];
@@ -100,5 +102,31 @@ export class UserListPage {
         position: 'botton', 
         duration: 2000 }).present();
       });
+  }
+  confirmaExclusao(user: any) { //mudar parametro para o nome que vc precisar
+    //let retorno = false;
+    let alert = this.alertCtrl.create({
+      title: 'Confirma ação?',
+      message: 'Esta ação não poderá ser desfeita!',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            console.log('Ação cancelada');
+
+          }
+        },
+        {
+          text: 'Confirmar',
+          handler: () => {
+            console.log('Ação confirmada');
+            //ESSE Método é que precisa mudar para deleteUsuario, deleteFeriado, etc...
+            this.deleteUser(user);
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 }

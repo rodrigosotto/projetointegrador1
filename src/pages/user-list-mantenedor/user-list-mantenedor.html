@@ -21,8 +21,8 @@
 
       <ion-item (click)="openUser(user)">
 
-        <h3>{{ user.nome }}</h3>
-        <p>{{user.email}}</p>
+        Nome: {{ user.nome }} <br>
+        Matricula: {{user.matricula}}
 
       </ion-item>
 
@@ -31,7 +31,7 @@
           <ion-icon name="create"></ion-icon>
           Editar
         </button>
-        <button ion-button color="danger" (click)="deleteUser(user)">
+        <button ion-button color="danger" (click)="confirmaExclusao(user)">
           <ion-icon name="trash"></ion-icon>
           Excluir
         </button>

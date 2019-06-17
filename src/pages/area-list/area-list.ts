@@ -1,7 +1,7 @@
 //import { Area } from './../area-edit/area-edit';
 import { AreasProvidersProvider } from '../../providers/areas-providers/areas-providers';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, AlertController } from 'ionic-angular';
 //import { UsersProvider } from '../../providers/users-providers/users-providers';
 
 
@@ -18,7 +18,8 @@ export class AreaListPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     private toast: ToastController, 
-    public areaProvider:AreasProvidersProvider) {
+    public areaProvider:AreasProvidersProvider,
+    public alertCtrl: AlertController) {
      }
 /*
   ionViewDidLoad() {
@@ -83,6 +84,33 @@ export class AreaListPage {
         duration: 3000 }).present();
       });
   }
+  confirmaExclusao(areas: any) { //mudar parametro para o nome que vc precisar
+    //let retorno = false;
+    let alert = this.alertCtrl.create({
+      title: 'Confirma ação?',
+      message: 'Esta ação não poderá ser desfeita!',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            console.log('Ação cancelada');
+
+          }
+        },
+        {
+          text: 'Confirmar',
+          handler: () => {
+            console.log('Ação confirmada');
+            //ESSE Método é que precisa mudar para deleteUsuario, deleteFeriado, etc...
+            this.deleteArea(areas);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
 
   openCreateArea(){
     this.navCtrl.push('AreaEditPage');

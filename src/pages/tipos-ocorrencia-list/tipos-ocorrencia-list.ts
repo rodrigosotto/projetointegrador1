@@ -1,8 +1,10 @@
+import { TipoOcorrencia } from './../tipos-ocorrencia-edit/tipos-ocorrencia-edit';
 import { TipoOcorrenciaProvider } from './../../providers/tipo-ocorrencia/tipo-ocorrencia';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, AlertController } from 'ionic-angular';
 
 
+ 
 @IonicPage()
 @Component({
   selector: 'page-tipos-ocorrencia-list',
@@ -16,7 +18,8 @@ export class TiposOcorrenciaListPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     public toast: ToastController,
-    public tipoOcorrenciaProvider: TipoOcorrenciaProvider
+    public tipoOcorrenciaProvider: TipoOcorrenciaProvider,
+    public alertCtrl: AlertController
     ){
   }
 
@@ -71,6 +74,32 @@ export class TiposOcorrenciaListPage {
           position: 'botton', 
           duration: 2000 }).present();
       });
+  }
+  confirmaExclusao(tipoOcorrencia: any) { //mudar parametro para o nome que vc precisar
+    //let retorno = false;
+    let alert = this.alertCtrl.create({
+      title: 'Confirma ação?',
+      message: 'Esta ação não poderá ser desfeita!',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            console.log('Ação cancelada');
+
+          }
+        },
+        {
+          text: 'Confirmar',
+          handler: () => {
+            console.log('Ação confirmada');
+            //ESSE Método é que precisa mudar para deleteUsuario, deleteFeriado, etc...
+            this.deleteTipoOcorrencia(tipoOcorrencia);
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
   openCreateTipoOcorrencia(){

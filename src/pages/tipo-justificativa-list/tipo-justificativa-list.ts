@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, AlertController } from 'ionic-angular';
 import { TipoJustificativaProvider } from '../../providers/tipo-justificativa/tipo-justificativa';
 
 
@@ -16,7 +16,8 @@ export class TipoJustificativaListPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     public toast: ToastController,
-    public tipoJustificativaProvider: TipoJustificativaProvider
+    public tipoJustificativaProvider: TipoJustificativaProvider,
+    public alertCtrl: AlertController
     ){
   }
 
@@ -72,6 +73,34 @@ export class TipoJustificativaListPage {
           duration: 2000 }).present();
       });
   }
+  
+  confirmaExclusao(justificativas: any) { //mudar parametro para o nome que vc precisar
+    //let retorno = false;
+    let alert = this.alertCtrl.create({
+      title: 'Confirma ação?',
+      message: 'Esta ação não poderá ser desfeita!',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            console.log('Ação cancelada');
+
+          }
+        },
+        {
+          text: 'Confirmar',
+          handler: () => {
+            console.log('Ação confirmada');
+            //ESjornadaSE Método é que precisa mudar para deleteUsuario, deleteFeriado, etc...
+            this.deleteTipoJustificativa(justificativas);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
 
   openCreateTipoJustificativa(){
     this.navCtrl.push('TipoJustificativaEditPage');

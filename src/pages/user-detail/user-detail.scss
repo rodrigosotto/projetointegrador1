@@ -11,7 +11,25 @@ page-user-detail {
       .tituloPagina {
         color: #f7f7f7;
         font-weight: 700;
-        margin-bottom: 2em;
+        margin-bottom: 1em;
         text-align: center;
       }
+      img{
+        width: 75%;
+      }
+      .item-ios h5, .item-ios h6, .item-ios h3, .item-ios h4 {
+        margin: 0 0 0;
+        font-size: 1.7rem;
+        font-weight: 700;
+        line-height: 40px;
+    }
+    .item-ios h2{
+      font-size: 22px;
+      font-weight: 900;
+    }
+    button{
+      font-size: 17px !important;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
 }

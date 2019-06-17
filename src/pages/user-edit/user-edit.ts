@@ -1,3 +1,4 @@
+import { AuthProvider } from './../../providers/auth/auth';
 import { UsersProvider } from './../../providers/users-providers/users-providers';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
@@ -13,6 +14,7 @@ export class UserEditPage {
 
   model: User;
   listaAreas: any[];
+  
 
 
   constructor(

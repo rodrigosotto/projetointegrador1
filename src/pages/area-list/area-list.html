@@ -20,14 +20,14 @@
 
     <ion-item-sliding *ngFor="let area of listaAreas">
       <ion-item>
-        {{area.nome}}
+      {{area.nome}}  
       </ion-item>
       <ion-item-options side="left">
         <button ion-button color="primary" (click)="openEditArea(area.id)">
           <ion-icon name="create"></ion-icon>
           Editar
         </button>
-        <button ion-button color="danger" (click)="deleteArea(area)">
+        <button ion-button color="danger" (click)="confirmaExclusao(area)">
           <ion-icon name="trash"></ion-icon>
           Excluir
         </button>

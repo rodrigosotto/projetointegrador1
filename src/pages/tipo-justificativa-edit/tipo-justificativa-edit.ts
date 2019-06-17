@@ -66,5 +66,5 @@ export class TipoJustificativaEditPage {
 export class TipoJustificativa {
   id: number;
   nome: string;
-  codigo: number;
+  codigo: string;
 }

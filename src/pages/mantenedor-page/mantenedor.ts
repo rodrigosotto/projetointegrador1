@@ -25,12 +25,7 @@ export class MantenedorPage {
     //this.user = this.auth.getUser();
     console.log(this.user);
   }
-  logout(){
-    localStorage.clear();//limpa se foi gravado no storage
-    this.navCtrl.setRoot(LoginPage);//volta pra pagina inicial
-   //this.navCtrl.push('LogoutPage');
-   //alert("This is logout");
- }
+   
  openUserListMantenedorPage(){
   this.navCtrl.push ('UserListMantenedorPage' );
   }
@@ -51,9 +46,13 @@ export class MantenedorPage {
   openTipoOcorrencia(){
     this.navCtrl.push('TiposOcorrenciaListPage');
   }
-  /*openFrequenciaArea(){
-    this.navCtrl.push('RelatorioFrequenciaPage');
-  }*/
+  logout() {
+    this.auth.logout();
+    //localStorage.clear();//limpa se foi gravado no storage 
+    this.navCtrl.setRoot(LoginPage);//volta pra pagina inicial
+    //this.navCtrl.push('LogoutPage');
+    //alert("This is logout");
+  }
 
 }
  

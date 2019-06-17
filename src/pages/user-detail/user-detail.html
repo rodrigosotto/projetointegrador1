@@ -1,18 +1,23 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Perfil do Usuário
+      PERFIL DO USUÁRIOS
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="backgroundPage">
-<div>
-
-   <ion-list inset>
-      <h2>{{user?.nome}}</h2>
-      <p>{{user?.email}}</p>  
-    </ion-list>
-    </div>
-    <button ion-button block (click)="voltarButton()" color="pontual">Voltar</button>
- </ion-content>
+  <div text-center class="">
+   <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659651_960_720.png">
+   </div>
+  <ion-item> 
+    <h2>Nome: {{user?.nome}}</h2><br>
+    <h3>Área: {{user?.area.nome}}</h3>
+    <h3>Email: {{user?.email}}</h3>
+    <h3>Login: {{user?.login}}</h3>
+    <h3>Matricula: {{user?.matricula}}</h3> 
+    <h3>Cartão: {{user?.cartao}}</h3>
+  </ion-item>
+  
+  <button ion-button block (click)="voltarButton()" color="light">VOLTAR</button>
+</ion-content>
