@@ -22,8 +22,9 @@ export class RelatorioFrequenciaPage {
 
   constructor(public http: HttpClient, public global: GlobalProvider,
     public frequenciaProvider: FrequenciaProvider, private modal : ModalController,
-    private toast: ToastController/*,
-    public auth: AuthProvider*/) {
+    private toast: ToastController, public navCtrl: NavController,
+    public navParams: NavParams,
+    /*, public auth: AuthProvider*/) {
     //TODO: contructor stuff
     this.frequenciaMensal();
     //this.user = this.auth.getUser();
@@ -61,8 +62,9 @@ export class RelatorioFrequenciaPage {
     console.log("modal(registro)");
     console.log(item);
     if(item.ocorrencias.length>0){
-      let modal = this.modal.create(OcorrenciaModalPage, {'item': item});
-      modal.present();
+      this.navCtrl.push(OcorrenciaModalPage, {'item': item});
+      //let modal = this.modal.create(OcorrenciaModalPage, {'item': item});
+      //modal.present();
     }
   }
 

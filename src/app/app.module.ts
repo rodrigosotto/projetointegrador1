@@ -27,6 +27,7 @@ import { FrequenciaProvider } from '../providers/frequencia/frequencia';
 import { TipoJustificativaProvider } from '../providers/tipo-justificativa/tipo-justificativa';
 import { TipoOcorrenciaProvider } from '../providers/tipo-ocorrencia/tipo-ocorrencia';
 import { OcorrenciaModalPage } from '../pages/ocorrencia-modal/ocorrencia-modal';
+import { JustificativaProvider } from '../providers/justificativa/justificativa';
 
 
 export function jwtOptionsFactory(storage) {
@@ -94,6 +95,7 @@ export function jwtOptionsFactory(storage) {
     FrequenciaProvider,
     TipoJustificativaProvider,
     TipoOcorrenciaProvider,
+    JustificativaProvider,
 
   ]
 })

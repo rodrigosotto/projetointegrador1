@@ -1,31 +1,70 @@
 <ion-header>
   <ion-navbar>
-    <ion-buttons>
-      <button size="medium" color="danger" navPop>
-        <!-- <ion-icon name="close"></ion-icon> -->
-        VOLTAR
-      </button>
-    </ion-buttons>
+    <!-- <ion-buttons>
+      <button size="medium" color="danger" navPop>VOLTAR</button>
+    </ion-buttons> -->
     <ion-title>Detalhes Registro/Ocorrencias</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <h2>Data: {{item.data}} </h2>
-  <br><h3>Registros:<b *ngFor="let reg of item.registros"> {{reg.horario}} </b> </h3>
+  <h2>Data: {{item.data | date: "dd/MM/yyyy"}} </h2>
+  <h3>Registros:<b *ngFor="let reg of item.registros"> {{reg.horario}} </b> </h3>
   <br><h3> Ocorrências </h3>
-  <br>
 
 
-  <ion-list>
+
+  <!-- <ion-list>
     <ion-item *ngFor="let o of item.ocorrencias">
       <h2>{{o.tipo_ocorrencia.codigo}} - {{o.tipo_ocorrencia.nome}} </h2>
       <button color="danger" ion-item>Justificar</button>
 
     </ion-item>
-  </ion-list>
+  </ion-list> -->
 
-  <button size="large" expand="block" ion-item navPop>VOLTAR</button>
+  <ion-card-content *ngFor="let o of item.ocorrencias"
+  style="border: 3px solid #e8e8e8">
+    <h2>Código: {{o.tipo_ocorrencia.codigo}}</h2>
+    <h3>{{o.tipo_ocorrencia.nome}} </h3>
+    <hr>
+    <h2>Aqui vai a justificativa ;)</h2>
+    <button color="primary" ion-item (click)="justificarOcorrencia(o)" >Justificar</button>
+
+  </ion-card-content>
+  <button color="secondary" expand="block" fill="solid" ion-item>VOLTAR</button>
+
+  <!-- <ion-card-content *ngFor="let o of item.ocorrencias"
+    style="border: 3px solid #e8e8e8">
+
+      <p><b>Código: {{o.tipo_ocorrencia.codigo}}</b></p>
+      <p>{{o.tipo_ocorrencia.nome}}</p>
+      <p>Justificativa:</p>
+      <ion-select [(ngModel)]="model.area_id">
+          <ion-option *ngFor="let area of listaAreas" value={{area.id}} >{{area.nome}}</ion-option>
+        </ion-select>
+
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                 <button ion-button color="success">Aprovar</button>
+              </ion-col>
+              <ion-col>
+                  <button ion-button color="danger">Não Aprovar</button>
+              </ion-col>
+            </ion-row>
+            </ion-grid>
+          </ion-card-content>
+
+
+          <ion-select [(ngModel)]="model.area_id">
+              <ion-option *ngFor="let area of listaAreas" value={{area.id}} >{{area.nome}}</ion-option>
+            </ion-select>
+ -->
+
+
+
+
+
 
 
 </ion-content>

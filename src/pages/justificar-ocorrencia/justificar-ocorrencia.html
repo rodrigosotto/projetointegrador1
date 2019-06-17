@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Justificar Ocorrência</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+      <ion-label>Tipo de Justificativa</ion-label>
+      <ion-select [(ngModel)]="model.tipo_justificativa_id">
+          <ion-option *ngFor="let tipo of tiposJustificativa" value={{tipo.id}} >{{tipo.nome}}</ion-option>
+        </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Descrição</ion-label>
+    <ion-textarea></ion-textarea>
+  </ion-item>
+  <button color="primary" ion-item>Enviar para Aprovação</button>
+
+</ion-content>
