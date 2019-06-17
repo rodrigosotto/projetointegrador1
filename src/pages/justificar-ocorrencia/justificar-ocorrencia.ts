@@ -1,3 +1,5 @@
+import { GlobalProvider } from './../../providers/global/global';
+import { JustificativaProvider } from './../../providers/justificativa/justificativa';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TipoJustificativaProvider } from '../../providers/tipo-justificativa/tipo-justificativa';
@@ -20,7 +22,9 @@ export class JustificarOcorrenciaPage {
   model: Justificativa;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public tipoJustProvider: TipoJustificativaProvider) {
+    public tipoJustProvider: TipoJustificativaProvider,
+    public justificativaProvider: JustificativaProvider,
+    public global: GlobalProvider) {
       this.ocorrencia = this.navParams.get('ocorrencia');
       if(this.ocorrencia.justificativa){
         this.model = this.ocorrencia.justificativa;
@@ -49,7 +53,13 @@ export class JustificarOcorrenciaPage {
   }
 
   enviarJustificativa(){
-
+    this.justificativaProvider.salvarJustificativa(this.model).subscribe((result: any) => {
+      this.global.showAlert("Aviso","Justificativa enviada ao gerente e aguardando aprovação.");
+      this.navCtrl.remove(this.navCtrl.getActive().index-1,2);
+    },
+      (error) => {
+        this.global.showAlert("Resultado","ERRO!");
+      });
   }
 
 }

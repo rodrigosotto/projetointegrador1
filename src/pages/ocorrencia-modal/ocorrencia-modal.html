@@ -26,12 +26,18 @@
   style="border: 3px solid #e8e8e8">
     <h2>Código: {{o.tipo_ocorrencia.codigo}}</h2>
     <h3>{{o.tipo_ocorrencia.nome}} </h3>
-    <hr>
-    <h2>Aqui vai a justificativa ;)</h2>
-    <button color="primary" ion-item (click)="justificarOcorrencia(o)" >Justificar</button>
+    <div *ngIf="o.justificativa">
+        <hr>
+        <h4>Justificativa:</h4>
+        <h5>{{o.justificativa.tipo_justificativa.codigo}}-{{o.justificativa.tipo_justificativa.nome}}</h5>
+        <h5>Status: {{o.justificativa.status}} </h5>
+    </div>
+
+    <button *ngIf="podeEditarJustificativa(o.justificativa)" color="primary" ion-item (click)="justificarOcorrencia(o)" >Editar Justificativa</button>
 
   </ion-card-content>
-  <button color="secondary" expand="block" fill="solid" ion-item>VOLTAR</button>
+  <!-- Não precisa mais esse voltar... mudei de Modal para Page esse trem... -->
+  <!-- <button color="secondary" expand="block" fill="solid" ion-item>VOLTAR</button> -->
 
   <!-- <ion-card-content *ngFor="let o of item.ocorrencias"
     style="border: 3px solid #e8e8e8">

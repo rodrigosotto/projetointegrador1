@@ -28,6 +28,13 @@ export class OcorrenciaModalPage {
     this.navCtrl.push('JustificarOcorrenciaPage', {'ocorrencia': ocorrencia});
   }
 
+
+  podeEditarJustificativa(justificativa: any): boolean {
+    if(!justificativa || justificativa.status == 'PENDENTE')
+      return true;
+    return false;
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad OcorrenciaModalPage');
   }

@@ -26,17 +26,13 @@ export class RelatorioFrequenciaPage {
     public navParams: NavParams,
     /*, public auth: AuthProvider*/) {
     //TODO: contructor stuff
-    this.frequenciaMensal();
+
     //this.user = this.auth.getUser();
     console.log("construtor");
   }
 
-  ionViewDidLoad() {
-    console.log('RelatorioFrequenciaPage - ionViewDidLoad');
-    //this.frequenciaMensal();
-  }
-  ionViewDidEnter() {
-    console.log('RelatorioFrequenciaPage - ionViewDidEnter');
+  ionViewWillEnter(){
+    this.frequenciaMensal();
   }
 
   frequenciaMensal() {
@@ -67,5 +63,11 @@ export class RelatorioFrequenciaPage {
       //modal.present();
     }
   }
+
+  getBadgeColor(ocorrencia: any):string {
+    //aqui vou fazer uns testes
+    return "danger";
+  }
+
 
 }

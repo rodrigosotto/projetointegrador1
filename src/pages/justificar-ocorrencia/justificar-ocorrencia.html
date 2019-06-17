@@ -13,8 +13,8 @@
   </ion-item>
   <ion-item>
     <ion-label>Descrição</ion-label>
-    <ion-textarea></ion-textarea>
+    <ion-textarea [(ngModel)]="model.observacao"></ion-textarea>
   </ion-item>
-  <button color="primary" ion-item>Enviar para Aprovação</button>
+  <button color="primary" ion-item (click)="enviarJustificativa()" >Enviar para Aprovação</button>
 
 </ion-content>
