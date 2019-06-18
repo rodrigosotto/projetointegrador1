@@ -1,7 +1,8 @@
 import { AreasProvidersProvider } from './../../providers/areas-providers/areas-providers';
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
- 
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, ToastController, InfiniteScroll } from 'ionic-angular';
+import { UsersProvider } from './../../providers/users-providers/users-providers';
+
 @IonicPage()
 @Component({
   selector: 'page-area-edit',
@@ -9,12 +10,16 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 })
 export class AreaEditPage {
   model: Area;
-
+  users:any[];
+  page: number;
+ 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private toast: ToastController,
-    private areaProvider: AreasProvidersProvider
+    private areaProvider: AreasProvidersProvider,
+    private userProvider: UsersProvider
+    
   ) {
     if (this.navParams.data.area) {
       //console.log(this.navParams.data.feriado);
@@ -25,6 +30,21 @@ export class AreaEditPage {
       this.model = new Area();
     }
   }
+
+
+  getAllUsers(id) {
+    this.userProvider.getAll(id)
+      .then((result: any) => {
+        for (var i = 0; i < result.data.length; i++) {
+          var user = result.data[i];
+          this.users.push(user);
+        }
+      })
+      .catch((error: any) => {
+        this.toast.create({ message: 'Erro ao listar os usuários. Erro: ' + error.error.error, position: 'botton', duration: 3000 }).present();
+      });
+  }
+
 
   /*
   saveNewAreas() {
@@ -46,6 +66,11 @@ export class AreaEditPage {
     }
   }
   */
+
+ ionViewDidEnter() {
+  this.users = [];
+  this.getAllUsers(this.page);
+}
 
  ionViewDidLoad() {
   console.log('ionViewDidLoad AreaEditPage');

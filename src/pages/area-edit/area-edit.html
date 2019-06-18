@@ -15,6 +15,13 @@
     </ion-input>
   </ion-item>
 
+  <ion-item>
+    <ion-label style="font-size: 15px;">GERENTE DA ÁREA</ion-label>
+    <ion-select style="font-size: 14px;" [(ngModel)]="model.nome">
+      <ion-option *ngFor="let user of users" value={{user.id}} >{{user.nome}}</ion-option>
+    </ion-select>
+  </ion-item>
+
   <button ion-button block (click)="salvar()" color="primary">Salvar</button>
 
 </ion-content>
