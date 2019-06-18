@@ -1,5 +1,5 @@
 import { AreasProvidersProvider } from './../../providers/areas-providers/areas-providers';
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, InfiniteScroll } from 'ionic-angular';
 import { UsersProvider } from './../../providers/users-providers/users-providers';
 
@@ -32,8 +32,8 @@ export class AreaEditPage {
   }
 
 
-  getAllUsers(id) {
-    this.userProvider.getAll(id)
+  getAllUsers( ) {
+    this.userProvider.getAll(1)
       .then((result: any) => {
         for (var i = 0; i < result.data.length; i++) {
           var user = result.data[i];
@@ -69,7 +69,7 @@ export class AreaEditPage {
 
  ionViewDidEnter() {
   this.users = [];
-  this.getAllUsers(this.page);
+  this.getAllUsers( );
 }
 
  ionViewDidLoad() {
@@ -110,5 +110,6 @@ export class AreaEditPage {
 export class Area {
   id: number;
   nome: String;
+  gerente_id:number;
 
 }
