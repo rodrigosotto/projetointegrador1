@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Justificativas Pendentes</ion-title>
+    <ion-title>JUSTIFICATIVAS PENDENTES</ion-title>
   </ion-navbar>
 </ion-header>
 <!--
@@ -46,27 +46,27 @@
     }
    -->
 
-<ion-content padding>
+<ion-content padding class="backgroundPage">
 
     <ion-content>
         <ion-item-group *ngFor="let item of lista">
-          <ion-item-divider color="light">{{item.user.nome}} - {{item.ocorrencia.registro_diario.data|date: 'dd/MM/yyyy'}}</ion-item-divider>
+          <ion-item-divider color="pontuall">{{item.user.nome}} - {{item.ocorrencia.registro_diario.data|date: 'dd/MM/yyyy'}}</ion-item-divider>
           <ion-item>
-            <h2>Ocorrência</h2>
+            <h2><b>OCORRÊNCIA</b></h2>
             <h3>{{item.ocorrencia.tipo_ocorrencia.codigo}} - {{item.ocorrencia.tipo_ocorrencia.nome}}</h3>
           </ion-item>
           <ion-item>
-              <h2>Justificativa</h2>
+              <h2><b>JUSTIFICATIVA</b></h2>
               <h3>{{item.tipo_justificativa.codigo}} - {{item.tipo_justificativa.nome}}</h3>
               <h4>Obs: {{item.observacao}}</h4>
           </ion-item>
           <ion-grid>
               <ion-row>
                 <ion-col>
-                   <button ion-button color="success" (click)="aprovar(item.id)" >Aprovar</button>
+                   <button ion-button color="success" (click)="aprovar(item.id)" >APROVAR</button>
                 </ion-col>
                 <ion-col>
-                    <button ion-button color="danger" (click)="reprovar(item.id)" >Não Aprovar</button>
+                    <button ion-button color="danger" (click)="reprovar(item.id)" >NÃO APROVAR</button>
                 </ion-col>
               </ion-row>
               </ion-grid>
