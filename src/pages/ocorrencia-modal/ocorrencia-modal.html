@@ -3,15 +3,16 @@
     <!-- <ion-buttons>
       <button size="medium" color="danger" navPop>VOLTAR</button>
     </ion-buttons> -->
-    <ion-title>Detalhes Registro/Ocorrencias</ion-title>
+    <ion-title>REGISTROS / OCORRÊNCIAS</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="backgroundPage">
+  <div style="text-align: center; color:#e8e8e8; margin-bottom: 1em;"> 
   <h2>Data: {{item.data | date: "dd/MM/yyyy"}} </h2>
-  <h3>Registros:<b *ngFor="let reg of item.registros"> {{reg.horario}} </b> </h3>
-  <br><h3> Ocorrências </h3>
-
+  <h3>Registros:<b *ngFor="let reg of item.registros"> {{reg.horario}} - </b> </h3>
+  <br><h3> OCORRÊNCIAS </h3>
+  </div>
 
 
   <!-- <ion-list>
@@ -23,17 +24,21 @@
   </ion-list> -->
 
   <ion-card-content *ngFor="let o of item.ocorrencias"
-  style="border: 3px solid #e8e8e8">
-    <h2>Código: {{o.tipo_ocorrencia.codigo}}</h2>
-    <h3>{{o.tipo_ocorrencia.nome}} </h3>
+  style="border: 10px solid #818181; background-color: #e8e8e8;" >
+    <h3>CÓDIGO: {{o.tipo_ocorrencia.codigo}}</h3>
+    <h5 style="text-align: center">{{o.tipo_ocorrencia.nome}} </h5>
+
     <div *ngIf="o.justificativa">
         <hr>
-        <h4>Justificativa:</h4>
+        <h3><b>JUSTIFICATIVA:</b></h3>
+        <div style="text-align: center; margin-bottom: 3em;">
         <h5>{{o.justificativa.tipo_justificativa.codigo}}-{{o.justificativa.tipo_justificativa.nome}}</h5>
         <h5>Status: {{o.justificativa.status}} </h5>
+        </div>
     </div>
 
-    <button *ngIf="podeEditarJustificativa(o.justificativa)" color="primary" ion-item (click)="justificarOcorrencia(o)" >Editar Justificativa</button>
+    <button *ngIf="podeEditarJustificativa(o.justificativa)"
+     color="pontuall" ion-item (click)="justificarOcorrencia(o)" >EDITAR JUSTIFICATIVA</button>
 
   </ion-card-content>
   <!-- Não precisa mais esse voltar... mudei de Modal para Page esse trem... -->

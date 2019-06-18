@@ -1,20 +1,23 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Justificar Ocorrência</ion-title>
+    <ion-title>JUSTIFICAR OCORRÊNCIAS</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="backgroundPage">
+  <p style="color:#e8e8e8; font-size: 19px; text-align: center"> Escolha <b>TIPO DE JUSTIFICATIVA,</b> 
+    e <b> DESCRIÇÃO </b> para justificar esta ocorrência.</p>
   <ion-item>
-      <ion-label>Tipo de Justificativa</ion-label>
+      <ion-label style="font-size: 16px; float: left; font-weight: 900; color:#000;">TIPO JUSTIFICATIVA: </ion-label>
       <ion-select [(ngModel)]="model.tipo_justificativa_id">
           <ion-option *ngFor="let tipo of tiposJustificativa" value={{tipo.id}} >{{tipo.nome}}</ion-option>
         </ion-select>
   </ion-item>
   <ion-item>
-    <ion-label>Descrição</ion-label>
-    <ion-textarea [(ngModel)]="model.observacao"></ion-textarea>
+    <ion-label style="font-size: 16px; float: left; font-weight: 900; color:#000;">DESCRIÇÃO: </ion-label>
+    <ion-textarea rows="4" placeholder="Digite a descrição aqui..." position="stacked" [(ngModel)]="model.observacao"></ion-textarea>
   </ion-item>
-  <button color="primary" ion-item (click)="enviarJustificativa()" >Enviar para Aprovação</button>
+
+  <button color="secondary" ion-item (click)="enviarJustificativa()" >ENVIAR PARA APROVAÇÃO</button>
 
 </ion-content>
