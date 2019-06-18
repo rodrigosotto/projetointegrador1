@@ -27,4 +27,12 @@ export class JustificativaProvider {
 
   }
 
+  justificativasPendentes(){
+    return this.http.get(this.url+'justificativas/pendentes');
+  }
+
+  setParecer(id: number, parecer: string){
+    return this.http.get(this.url+'justificativas/parecer/'+id+'/'+parecer);
+  }
+
 }

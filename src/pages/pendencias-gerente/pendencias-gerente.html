@@ -1,15 +1,76 @@
-<!--
-  Generated template for the PendenciasGerentePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
-    <ion-title>PendenciasGerente</ion-title>
+    <ion-title>Justificativas Pendentes</ion-title>
   </ion-navbar>
 </ion-header>
+<!--
+    {
+        "id": 1,
+        "observacao": "consulta medica",
+        "ocorrencia_id": 21,
+        "tipo_justificativa_id": 1,
+        "user_id": 4,
+        "area_id": 2,
+        "status": "PENDENTE",
+        "ocorrencia": {
+            "id": 21,
+            "registro_diario_id": 31,
+            "tipo_ocorrencia_id": 10,
+            "registro_diario": {
+                "id": 31,
+                "data": "2019-06-03"
+            },
+            "tipo_ocorrencia": {
+                "id": 10,
+                "codigo": "NMI",
+                "nome": "Número de marcações insuficientes"
+            }
+        },
+        "tipo_justificativa": {
+            "id": 1,
+            "codigo": "ATM",
+            "nome": "Atestado Médico"
+        },
+        "user": {
+            "id": 4,
+            "email": "funcionario",
+            "email_verified_at": null,
+            "login": "funcionario",
+            "nome": "Conta Teste Funcionário",
+            "matricula": 10005,
+            "cartao": "10005",
+            "tipo_usuario_id": 1,
+            "area_id": 2,
+            "remember_token": null
+        }
+    }
+   -->
 
 <ion-content padding>
+
+    <ion-content>
+        <ion-item-group *ngFor="let item of lista">
+          <ion-item-divider color="light">{{item.user.nome}} - {{item.ocorrencia.registro_diario.data|date: 'dd/MM/yyyy'}}</ion-item-divider>
+          <ion-item>
+            <h2>Ocorrência</h2>
+            <h3>{{item.ocorrencia.tipo_ocorrencia.codigo}} - {{item.ocorrencia.tipo_ocorrencia.nome}}</h3>
+          </ion-item>
+          <ion-item>
+              <h2>Justificativa</h2>
+              <h3>{{item.tipo_justificativa.codigo}} - {{item.tipo_justificativa.nome}}</h3>
+              <h4>Obs: {{item.observacao}}</h4>
+          </ion-item>
+          <ion-grid>
+              <ion-row>
+                <ion-col>
+                   <button ion-button color="success" (click)="aprovar(item.id)" >Aprovar</button>
+                </ion-col>
+                <ion-col>
+                    <button ion-button color="danger" (click)="reprovar(item.id)" >Não Aprovar</button>
+                </ion-col>
+              </ion-row>
+              </ion-grid>
+        </ion-item-group>
+      </ion-content>
 
 </ion-content>

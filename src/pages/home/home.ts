@@ -3,7 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 //import { GerentePerfilPage } from '../gerente-perfil/gerente-perfil';
 import { LoginPage } from '../login/login';
 //import { LogoutPage } from '../logout/logout';
-//import { MantenedorPage } from '../mantenedor-page/mantenedor'; 
+//import { MantenedorPage } from '../mantenedor-page/mantenedor';
 import { AuthProvider } from '../../providers/auth/auth';
 
 @Component({
@@ -28,7 +28,8 @@ export class HomePage {
   }
 
   openPendencias() {
-    this.navCtrl.push('MinhasPendenciasPage')
+    //this.navCtrl.push('MinhasPendenciasPage')
+    this.navCtrl.push('PendenciasGerentePage');
   }
   openTabelaFrequencias() {
     this.navCtrl.push('TabelaFrequenciasPage');
@@ -38,7 +39,7 @@ export class HomePage {
   }
   logout() {
     this.auth.logout();
-    //localStorage.clear();//limpa se foi gravado no storage 
+    //localStorage.clear();//limpa se foi gravado no storage
     this.navCtrl.setRoot(LoginPage);//volta pra pagina inicial
     //this.navCtrl.push('LogoutPage');
     //alert("This is logout");

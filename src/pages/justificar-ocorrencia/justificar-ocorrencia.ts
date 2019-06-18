@@ -1,3 +1,4 @@
+import { AuthProvider } from './../../providers/auth/auth';
 import { GlobalProvider } from './../../providers/global/global';
 import { JustificativaProvider } from './../../providers/justificativa/justificativa';
 import { Component } from '@angular/core';
@@ -20,11 +21,14 @@ export class JustificarOcorrenciaPage {
   ocorrencia: any;
   tiposJustificativa: any[];
   model: Justificativa;
+  user: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public tipoJustProvider: TipoJustificativaProvider,
     public justificativaProvider: JustificativaProvider,
-    public global: GlobalProvider) {
+    public global: GlobalProvider, public auth: AuthProvider) {
+
+      this.user = this.auth.getUser();
       this.ocorrencia = this.navParams.get('ocorrencia');
       if(this.ocorrencia.justificativa){
         this.model = this.ocorrencia.justificativa;
@@ -32,6 +36,8 @@ export class JustificarOcorrenciaPage {
         this.model = new Justificativa();
       }
       this.model.ocorrencia_id = this.ocorrencia.id;
+      this.model.user_id = this.user.id; //temporario
+      this.model.area_id = this.user.area_id; //temporario
       this.getListaTiposJustificativa();
   }
 
@@ -69,6 +75,8 @@ export class Justificativa {
   observacao: string;
   ocorrencia_id: number;
   tipo_justificativa_id: number;
+  user_id: number; //temporario
+  area_id: number; //temporario
   status: string;
 }
 
