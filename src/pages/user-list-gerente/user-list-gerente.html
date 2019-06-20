@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        Lista de Funcionários
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding class="backgroundPage">
+
+    <div class="tituloPagina">
+      <h2 text-center margin-bottom>Gerenciar Funcionários</h2>
+    </div>
+
+    <ion-list inset *ngFor="let user of users">
+
+
+        <ion-item (click)="openUser(user)">
+
+          Nome: {{ user.nome }} <br>
+          Matricula: {{user.matricula}}
+
+        </ion-item>
+
+    </ion-list>
+
+  </ion-content>

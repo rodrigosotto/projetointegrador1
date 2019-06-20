@@ -31,8 +31,9 @@ export class HomePage {
     //this.navCtrl.push('MinhasPendenciasPage')
     this.navCtrl.push('PendenciasGerentePage');
   }
-  openTabelaFrequencias() {
-    this.navCtrl.push('TabelaFrequenciasPage');
+  openListArea() {
+    //this.navCtrl.push('TabelaFrequenciasPage');
+    this.navCtrl.push('UserListGerentePage');
   }
   openGerentePerfil() {
     this.navCtrl.push('GerentePerfilPage');
